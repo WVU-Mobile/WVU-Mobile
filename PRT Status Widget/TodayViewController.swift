@@ -13,24 +13,35 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var time: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let PRTStatus = getPRTStatus()
-        statusLabel.text = String(describing: PRTStatus?.status)
-        messageLabel.text = PRTStatus?.message
-        // Do any additional setup after loading the view from its nib.
+        
+        DispatchQueue.global().async {
+            self.getPRTStatus(completion: { result in
+                DispatchQueue.main.sync {
+                    if let prt = result {
+                        self.statusLabel.text = prt.status.overall
+                        self.messageLabel.text = prt.message
+                        self.time.text = "\(prt.time.prettyPrint) ~ \(prt.time.timeAgo)"
+                        print("is this hit")
+                    }
+                }
+            })
+        }
     }
     
-    func getPRTStatus() -> PRTStatus? {
+    func getPRTStatus(completion: (PRT?) -> Void) {
         
         let timestamp = Int(Date().timeIntervalSince1970)
         let urlPath: String = "https://prtstatus.wvu.edu/api/\(timestamp)/?format=json"
         print(urlPath)
         
         guard let url = URL(string: urlPath) else {
-            return nil
+            completion(nil)
+            return
         }
         
         do {
@@ -39,22 +50,25 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             
             if let json = try JSONSerialization.jsonObject(with: jsonData, options: []) as? NSDictionary {
                 guard let status = json["status"] as? String else {
-                    return nil
+                    completion(nil)
+                    return
                 }
                 guard let message =  json["message"] as? String else {
-                    return nil
+                    completion(nil)
+                    return
                 }
                 guard let time = json["timestamp"] as? String else {
-                    return nil
+                    completion(nil)
+                    return
                 }
-                return PRTStatus(status: Int(status)!, message: message, time: Int(time)!)
+                completion(PRT(status: Int(status)!, message: message, time: Int(time)!))
             }
         }
         catch let error as NSError {
             print("Error: \(error)")
         }
         
-        return nil
+        completion(nil)
     }
     
     override func didReceiveMemoryWarning() {

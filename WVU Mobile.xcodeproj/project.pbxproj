@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44022A731E06CA4A004FC92F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A721E06CA4A004FC92F /* Date.swift */; };
 		9C8603531E03764600FE6531 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8603521E03764600FE6531 /* AppDelegate.swift */; };
 		9C8603551E03764600FE6531 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8603541E03764600FE6531 /* FirstViewController.swift */; };
 		9C8603571E03764600FE6531 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8603561E03764600FE6531 /* SecondViewController.swift */; };
@@ -17,7 +18,7 @@
 		9C8603701E037FDB00FE6531 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C86036F1E037FDB00FE6531 /* TodayViewController.swift */; };
 		9C8603731E037FDB00FE6531 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C8603711E037FDB00FE6531 /* MainInterface.storyboard */; };
 		9C8603771E037FDB00FE6531 /* PRT Status Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C86036A1E037FDB00FE6531 /* PRT Status Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		9CECBA9E1E060463001D8854 /* PRTStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CECBA9D1E060463001D8854 /* PRTStatus.swift */; };
+		9CECBA9E1E060463001D8854 /* PRT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CECBA9D1E060463001D8854 /* PRT.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		44022A721E06CA4A004FC92F /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		9C86034F1E03764600FE6531 /* WVU Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WVU Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8603521E03764600FE6531 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C8603541E03764600FE6531 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +60,7 @@
 		9C86036F1E037FDB00FE6531 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		9C8603721E037FDB00FE6531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		9C8603741E037FDB00FE6531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9CECBA9D1E060463001D8854 /* PRTStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRTStatus.swift; sourceTree = "<group>"; };
+		9CECBA9D1E060463001D8854 /* PRT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRT.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,9 +127,10 @@
 			isa = PBXGroup;
 			children = (
 				9C86036F1E037FDB00FE6531 /* TodayViewController.swift */,
-				9CECBA9D1E060463001D8854 /* PRTStatus.swift */,
+				9CECBA9D1E060463001D8854 /* PRT.swift */,
 				9C8603711E037FDB00FE6531 /* MainInterface.storyboard */,
 				9C8603741E037FDB00FE6531 /* Info.plist */,
+				44022A721E06CA4A004FC92F /* Date.swift */,
 			);
 			path = "PRT Status Widget";
 			sourceTree = "<group>";
@@ -248,7 +251,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CECBA9E1E060463001D8854 /* PRTStatus.swift in Sources */,
+				9CECBA9E1E060463001D8854 /* PRT.swift in Sources */,
+				44022A731E06CA4A004FC92F /* Date.swift in Sources */,
 				9C8603701E037FDB00FE6531 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
