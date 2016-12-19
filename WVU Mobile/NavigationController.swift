@@ -15,6 +15,7 @@ class NavigationController: UINavigationController {
 
         self.navigationBar.barTintColor = Colors.lightYellow
         self.navigationBar.tintColor = Colors.lightBlue
+        self.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 27)!]
     }
 
     override func didReceiveMemoryWarning() {

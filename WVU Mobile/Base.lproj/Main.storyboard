@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First View Controller-->
+        <!--Home-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="WVU_Mobile" customModuleProvider="target" sceneMemberID="viewController">
@@ -42,7 +42,7 @@
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bKq-R0-rAt">
+                    <navigationItem key="navigationItem" title="Home" id="bKq-R0-rAt">
                         <barButtonItem key="rightBarButtonItem" image="Settings" id="z6g-RA-dg3"/>
                     </navigationItem>
                 </viewController>
@@ -50,7 +50,7 @@
             </objects>
             <point key="canvasLocation" x="1688.8" y="-957.57121439280365"/>
         </scene>
-        <!--View Controller-->
+        <!--Transportation-->
         <scene sceneID="D32-VY-jKW">
             <objects>
                 <viewController id="Tcg-85-7Ty" sceneMemberID="viewController">
@@ -63,13 +63,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="GbZ-Vd-04u"/>
+                    <navigationItem key="navigationItem" title="Transportation" id="GbZ-Vd-04u"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dqP-9i-59b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1688.8" y="416.94152923538235"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Events-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="WVU_Mobile" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,13 +103,13 @@
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="IJS-nv-MgR"/>
+                    <navigationItem key="navigationItem" title="Events" id="IJS-nv-MgR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1688.8" y="-271.21439280359823"/>
         </scene>
-        <!--View Controller-->
+        <!--On Campus-->
         <scene sceneID="pmp-L7-qZg">
             <objects>
                 <viewController id="taJ-Cx-NqL" sceneMemberID="viewController">
@@ -122,13 +122,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="SgF-Bw-eFY"/>
+                    <navigationItem key="navigationItem" title="On Campus" id="SgF-Bw-eFY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DJr-3e-hHD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1688.8" y="1127.5862068965519"/>
         </scene>
-        <!--View Controller-->
+        <!--News-->
         <scene sceneID="e8D-Mq-9jL">
             <objects>
                 <viewController id="FXR-08-K43" sceneMemberID="viewController">
@@ -141,7 +141,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="fe8-Sd-m0K"/>
+                    <navigationItem key="navigationItem" title="News" id="fe8-Sd-m0K"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5cC-Ls-2SE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
