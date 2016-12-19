@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		44022A731E06CA4A004FC92F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A721E06CA4A004FC92F /* Date.swift */; };
+		44022A751E06DC00004FC92F /* DiningHall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A741E06DC00004FC92F /* DiningHall.swift */; };
+		44022A771E06DE3F004FC92F /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A761E06DE3F004FC92F /* Menu.swift */; };
+		44022A791E06DEC3004FC92F /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A781E06DEC3004FC92F /* MenuItem.swift */; };
+		44022A7C1E06FF04004FC92F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A7B1E06FF04004FC92F /* Colors.swift */; };
+		44022A7E1E0700FD004FC92F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A7D1E0700FD004FC92F /* TabBarController.swift */; };
+		44022A801E0707A6004FC92F /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A7F1E0707A6004FC92F /* NavigationController.swift */; };
 		9C8603531E03764600FE6531 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8603521E03764600FE6531 /* AppDelegate.swift */; };
 		9C8603551E03764600FE6531 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8603541E03764600FE6531 /* FirstViewController.swift */; };
 		9C8603571E03764600FE6531 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8603561E03764600FE6531 /* SecondViewController.swift */; };
@@ -47,6 +53,12 @@
 
 /* Begin PBXFileReference section */
 		44022A721E06CA4A004FC92F /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		44022A741E06DC00004FC92F /* DiningHall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningHall.swift; sourceTree = "<group>"; };
+		44022A761E06DE3F004FC92F /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		44022A781E06DEC3004FC92F /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		44022A7B1E06FF04004FC92F /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		44022A7D1E0700FD004FC92F /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		44022A7F1E0707A6004FC92F /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		9C86034F1E03764600FE6531 /* WVU Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WVU Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8603521E03764600FE6531 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C8603541E03764600FE6531 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +94,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44022A7A1E06DF3A004FC92F /* Dining */ = {
+			isa = PBXGroup;
+			children = (
+				44022A741E06DC00004FC92F /* DiningHall.swift */,
+				44022A761E06DE3F004FC92F /* Menu.swift */,
+				44022A781E06DEC3004FC92F /* MenuItem.swift */,
+			);
+			name = Dining;
+			sourceTree = "<group>";
+		};
 		9C8603461E03764500FE6531 = {
 			isa = PBXGroup;
 			children = (
@@ -104,13 +126,17 @@
 		9C8603511E03764600FE6531 /* WVU Mobile */ = {
 			isa = PBXGroup;
 			children = (
+				44022A7A1E06DF3A004FC92F /* Dining */,
 				9C8603521E03764600FE6531 /* AppDelegate.swift */,
 				9C8603541E03764600FE6531 /* FirstViewController.swift */,
 				9C8603561E03764600FE6531 /* SecondViewController.swift */,
+				44022A7B1E06FF04004FC92F /* Colors.swift */,
+				44022A7D1E0700FD004FC92F /* TabBarController.swift */,
 				9C8603581E03764600FE6531 /* Main.storyboard */,
 				9C86035B1E03764600FE6531 /* Assets.xcassets */,
 				9C86035D1E03764600FE6531 /* LaunchScreen.storyboard */,
 				9C8603601E03764600FE6531 /* Info.plist */,
+				44022A7F1E0707A6004FC92F /* NavigationController.swift */,
 			);
 			path = "WVU Mobile";
 			sourceTree = "<group>";
@@ -242,8 +268,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C8603571E03764600FE6531 /* SecondViewController.swift in Sources */,
+				44022A7E1E0700FD004FC92F /* TabBarController.swift in Sources */,
+				44022A751E06DC00004FC92F /* DiningHall.swift in Sources */,
 				9C8603531E03764600FE6531 /* AppDelegate.swift in Sources */,
+				44022A801E0707A6004FC92F /* NavigationController.swift in Sources */,
+				44022A7C1E06FF04004FC92F /* Colors.swift in Sources */,
+				44022A791E06DEC3004FC92F /* MenuItem.swift in Sources */,
 				9C8603551E03764600FE6531 /* FirstViewController.swift in Sources */,
+				44022A771E06DE3F004FC92F /* Menu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
