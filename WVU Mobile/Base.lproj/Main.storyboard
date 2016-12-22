@@ -42,9 +42,7 @@
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="bKq-R0-rAt">
-                        <barButtonItem key="rightBarButtonItem" image="Settings" id="z6g-RA-dg3"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Home" id="bKq-R0-rAt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -280,7 +278,6 @@
         <image name="Home" width="25" height="25"/>
         <image name="Navigation" width="16" height="16"/>
         <image name="News" width="16" height="16"/>
-        <image name="Settings" width="25" height="25"/>
         <image name="Transportation" width="25" height="25"/>
     </resources>
 </document>
