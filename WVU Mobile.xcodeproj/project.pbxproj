@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		427537781E0C2581007E46B1 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427537771E0C2581007E46B1 /* Event.swift */; };
+		4275377A1E0C25F3007E46B1 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427537791E0C25F3007E46B1 /* Date.swift */; };
+		4275377C1E0C2FDC007E46B1 /* PRTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4275377B1E0C2FDC007E46B1 /* PRTView.swift */; };
+		4275377E1E0C352A007E46B1 /* LiteEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4275377D1E0C352A007E46B1 /* LiteEventCell.swift */; };
+		427537801E0C3775007E46B1 /* LiteEventsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4275377F1E0C3775007E46B1 /* LiteEventsTable.swift */; };
+		427537821E0C6485007E46B1 /* EventRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427537811E0C6485007E46B1 /* EventRequest.swift */; };
+		427537841E0C66A8007E46B1 /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427537831E0C66A8007E46B1 /* RSSParser.swift */; };
+		427537861E0C66B7007E46B1 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427537851E0C66B7007E46B1 /* Events.swift */; };
 		44022A731E06CA4A004FC92F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A721E06CA4A004FC92F /* Date.swift */; };
 		44022A751E06DC00004FC92F /* DiningHall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A741E06DC00004FC92F /* DiningHall.swift */; };
 		44022A771E06DE3F004FC92F /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A761E06DE3F004FC92F /* Menu.swift */; };
@@ -52,6 +60,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		427537771E0C2581007E46B1 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		427537791E0C25F3007E46B1 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		4275377B1E0C2FDC007E46B1 /* PRTView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRTView.swift; sourceTree = "<group>"; };
+		4275377D1E0C352A007E46B1 /* LiteEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiteEventCell.swift; sourceTree = "<group>"; };
+		4275377F1E0C3775007E46B1 /* LiteEventsTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiteEventsTable.swift; sourceTree = "<group>"; };
+		427537811E0C6485007E46B1 /* EventRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRequest.swift; sourceTree = "<group>"; };
+		427537831E0C66A8007E46B1 /* RSSParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSParser.swift; sourceTree = "<group>"; };
+		427537851E0C66B7007E46B1 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		44022A721E06CA4A004FC92F /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		44022A741E06DC00004FC92F /* DiningHall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningHall.swift; sourceTree = "<group>"; };
 		44022A761E06DE3F004FC92F /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
@@ -137,6 +153,14 @@
 				9C86035D1E03764600FE6531 /* LaunchScreen.storyboard */,
 				9C8603601E03764600FE6531 /* Info.plist */,
 				44022A7F1E0707A6004FC92F /* NavigationController.swift */,
+				427537771E0C2581007E46B1 /* Event.swift */,
+				427537791E0C25F3007E46B1 /* Date.swift */,
+				4275377B1E0C2FDC007E46B1 /* PRTView.swift */,
+				4275377D1E0C352A007E46B1 /* LiteEventCell.swift */,
+				4275377F1E0C3775007E46B1 /* LiteEventsTable.swift */,
+				427537811E0C6485007E46B1 /* EventRequest.swift */,
+				427537831E0C66A8007E46B1 /* RSSParser.swift */,
+				427537851E0C66B7007E46B1 /* Events.swift */,
 			);
 			path = "WVU Mobile";
 			sourceTree = "<group>";
@@ -212,12 +236,12 @@
 				TargetAttributes = {
 					9C86034E1E03764500FE6531 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 26JM79D5BW;
+						DevelopmentTeam = 4P5LM6HTJ7;
 						ProvisioningStyle = Automatic;
 					};
 					9C8603691E037FDB00FE6531 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 26JM79D5BW;
+						DevelopmentTeam = 4P5LM6HTJ7;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -267,15 +291,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				427537821E0C6485007E46B1 /* EventRequest.swift in Sources */,
 				9C8603571E03764600FE6531 /* SecondViewController.swift in Sources */,
+				427537801E0C3775007E46B1 /* LiteEventsTable.swift in Sources */,
 				44022A7E1E0700FD004FC92F /* TabBarController.swift in Sources */,
 				44022A751E06DC00004FC92F /* DiningHall.swift in Sources */,
 				9C8603531E03764600FE6531 /* AppDelegate.swift in Sources */,
+				427537781E0C2581007E46B1 /* Event.swift in Sources */,
 				44022A801E0707A6004FC92F /* NavigationController.swift in Sources */,
 				44022A7C1E06FF04004FC92F /* Colors.swift in Sources */,
 				44022A791E06DEC3004FC92F /* MenuItem.swift in Sources */,
+				4275377A1E0C25F3007E46B1 /* Date.swift in Sources */,
+				4275377C1E0C2FDC007E46B1 /* PRTView.swift in Sources */,
 				9C8603551E03764600FE6531 /* HomeViewController.swift in Sources */,
+				4275377E1E0C352A007E46B1 /* LiteEventCell.swift in Sources */,
+				427537861E0C66B7007E46B1 /* Events.swift in Sources */,
 				44022A771E06DE3F004FC92F /* Menu.swift in Sources */,
+				427537841E0C66A8007E46B1 /* RSSParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +457,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 26JM79D5BW;
+				DEVELOPMENT_TEAM = 4P5LM6HTJ7;
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -441,7 +473,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 26JM79D5BW;
+				DEVELOPMENT_TEAM = 4P5LM6HTJ7;
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -455,7 +487,7 @@
 		9C8603791E037FDB00FE6531 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 26JM79D5BW;
+				DEVELOPMENT_TEAM = 4P5LM6HTJ7;
 				INFOPLIST_FILE = "PRT Status Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -469,7 +501,7 @@
 		9C86037A1E037FDB00FE6531 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 26JM79D5BW;
+				DEVELOPMENT_TEAM = 4P5LM6HTJ7;
 				INFOPLIST_FILE = "PRT Status Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
