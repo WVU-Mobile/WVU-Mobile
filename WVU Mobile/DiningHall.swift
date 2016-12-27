@@ -20,6 +20,29 @@ enum DiningHall: Int {
         }
     }
     
+    func url(on date: Date) -> String {
+        let components = NSCalendar.current.dateComponents([.day, .month, .year], from: date)
+        
+        return "https://diningmenuservice.wvu.edu/\(self.rawValue)/\(components.month!)/\(10)/\(components.year!)/1410376600000/?callback="
+    }
+    
+    var name: String {
+        switch self {
+        case .CafeEvansdale:
+            return "Cafe Evansdale"
+        case .Summit:
+            return "Summit"
+        case .Arnold:
+            return "Arnold"
+        case .Boreman:
+            return "Boreman"
+        case .TerraceRoom:
+            return "Terrace Room"
+        case .Hatfields:
+            return "Hatfields"
+        }
+    }
+    
     // hours of operation -- hard coded bc there is no API
     
     // location -- coordinates

@@ -9,6 +9,7 @@
 import UIKit
 
 class LiteEventsTable: UITableView {
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
 
     override func draw(_ rect: CGRect) {
         self.layer.shadowOpacity = 0.3

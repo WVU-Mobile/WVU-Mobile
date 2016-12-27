@@ -9,31 +9,36 @@
 import Foundation
 
 class EventRequest: NSObject, XMLParserDelegate {
-    
     var events =  [Event]()
     var currentElement = Event()
     
     var elementName = ""
-    let parser:XMLParser
-
-    override init() {
-        let urlString = "https://calendar.wvu.edu/page/rss/?duration=1days"
+    var parser = XMLParser()
+    
+    func getEvents(days: Int, completion: ([Event]) -> Void) {
+        events = []
+        currentElement = Event()
+        elementName = ""
         
+        let urlString = "https://calendar.wvu.edu/page/rss/?duration=1days"
         let url = URL(string: urlString)!
         
         parser = XMLParser(contentsOf: url)!
         
-        super.init()
-        
         parser.delegate = self
         parser.parse()
         
+        let cal = Calendar.autoupdatingCurrent
+        var today = [Event]()
+        
         for e in events {
-            print(e.title)
-            print(e.description)
-            print(e.link)
-            print(e.date.rssPrint)
+            if cal.isDateInToday(e.date) {
+                today.append(e)
+            }
         }
+        
+        completion(today)
+
     }
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {

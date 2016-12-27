@@ -9,15 +9,23 @@
 import Foundation
 
 class MenuItem {
-    var meal: Meal
+    var meal: Menu.Meal
     var name: String
     
-    init(meal: Meal, name: String) {
-        self.meal = meal
+    init(meal: String, name: String) {
+        let m = meal.lowercased()
+        
+        if m.contains("breakfast") {
+            self.meal = .breakfast
+        } else if m.contains("lunch") {
+            self.meal = .lunch
+        } else {
+            self.meal = .dinner
+        }
         self.name = name
     }
     
-    enum Meal {
-        case breakfast, lunch, dinner
+    var string: String {
+        return "meal is \(meal) \(name)"
     }
 }
