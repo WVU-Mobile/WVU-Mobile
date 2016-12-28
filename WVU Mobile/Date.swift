@@ -20,13 +20,7 @@ extension Date {
         dateFormatter.dateFormat = "hh:mm a"
         return dateFormatter.string(from: self)
     }
-    
-    var rssPrint: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "E, dd MMM yyyy hh:mm:ss 'GMT'"
-        return dateFormatter.string(from: self)
-    }
-    
+
     var timeAgo: String {
         let secondsAgo = Int(self.timeIntervalSince(Date()) * -1) // TimeInterval is in seconds 60
         let minutesAgo = Int(secondsAgo / 60)
@@ -50,11 +44,16 @@ extension Date {
         }
     }
     
-    //Fri, 23 Dec 2016 05:00:00 GMT
     static func rssDate(date: String) -> Date {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "E, dd MMM yyyy hh:mm:ss 'GMT'"
-        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        var dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "E, dd MMM yyyy HH:mm:ss zzz"
+        if let d = dateFormatter.date(from: date) {
+            return d
+        }
+        
+        dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "E, dd MMM yyyy HH:mm:ss Z"
+
         if let d = dateFormatter.date(from: date) {
             return d
         } else {

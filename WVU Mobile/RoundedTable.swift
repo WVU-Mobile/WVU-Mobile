@@ -1,15 +1,14 @@
 //
-//  LiteEventsTable.swift
+//  RoundedTable.swift
 //  WVU Mobile
 //
-//  Created by Kaitlyn Landmesser on 12/22/16.
+//  Created by Kaitlyn Landmesser on 12/27/16.
 //  Copyright © 2016 WVU Mobile. All rights reserved.
 //
 
 import UIKit
 
-class LiteEventsTable: UITableView {
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
+class RoundedTable: UITableView {
 
     override func draw(_ rect: CGRect) {
         self.layer.shadowOpacity = 0.3
@@ -20,4 +19,5 @@ class LiteEventsTable: UITableView {
         
         self.layer.cornerRadius = 5
     }
+
 }

@@ -16,9 +16,7 @@ class MenuRequest {
             completion(nil)
             return
         }
-        
-        print(url)
-        
+                
         do {
             let data = try Data(contentsOf: url)
             let json = try JSONSerialization.jsonObject(with: data, options:.mutableContainers) as! [[String:Any]]

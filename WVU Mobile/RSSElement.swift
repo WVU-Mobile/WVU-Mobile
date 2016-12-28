@@ -7,13 +7,20 @@
 //
 
 import Foundation
+import UIKit
 
-class Event {
+struct RSSElement {
     var title: String
     var description: String
     var link: String // possible URL? 
     var guid: String // no idea what this is
     var date: Date
+    var source: RSSRequest.NewsSource?
+    var image: Image?
+    
+    var string: String {
+        return "\(title) \(description) \(link)"
+    }
     
     init(title: String, description: String, link: String, guid: String, date: Date) {
         self.title = title
@@ -30,4 +37,15 @@ class Event {
         self.guid = ""
         self.date = Date()
     }
+    
+    struct Image {
+        var url: String
+        var image: UIImage?
+        
+        init(url: String) {
+            self.url = url
+        }
+    }
+    
+    
 }

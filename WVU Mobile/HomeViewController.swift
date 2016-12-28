@@ -10,27 +10,27 @@ import UIKit
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var prtView: PRTView!
-    @IBOutlet weak var eventsTable: LiteEventsTable!
+    @IBOutlet weak var eventsView: LiteEventsView!
     @IBOutlet weak var diningMenu: LiteDiningMenu!
     
-    var events = [Event]()
+    var events = [RSSElement]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.eventsTable.dataSource = self
-        self.eventsTable.delegate = self
+        self.eventsView.eventsTable.dataSource = self
+        self.eventsView.eventsTable.delegate = self
         
-        let parser = EventRequest()
+        let parser = RSSRequest()
         
-        self.eventsTable.spinner.startAnimating()
+        self.eventsView.spinner.startAnimating()
         DispatchQueue.global().async {
             parser.getEvents(days: 1, completion: { events in
                 DispatchQueue.main.sync {
                     self.events = events
-                    self.eventsTable.reloadData()
-                    self.eventsTable.spinner.stopAnimating()
-                    self.eventsTable.spinner.isHidden = true
+                    self.eventsView.eventsTable.reloadData()
+                    self.eventsView.spinner.stopAnimating()
+                    self.eventsView.spinner.isHidden = true
                 }
             })
         }
@@ -40,7 +40,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             PRTRequest.getPRTStatus(completion: { result in
                 DispatchQueue.main.sync {
                     if let prt = result {
-                        self.prtView.mainLabel.text = prt.status.overall
                         self.prtView.detailLabel.text = prt.status.statusWith(time: prt.time)
                         self.prtView.spinner.stopAnimating()
                         self.prtView.spinner.isHidden = true
@@ -55,10 +54,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             MenuRequest.getMenu(on: Date(), at: DiningHall.Boreman, completion: { result in
                 DispatchQueue.main.sync {
                     if let r = result {
-                        self.diningMenu.setMenu(menu: r, meal: Menu.Meal.dinner)
-                        for i in r.menu {
-                            print(i.string)
-                        }
+                        self.diningMenu.setMenu(menu: r, meal: Menu.Meal.breakfast)
                     }
                     self.diningMenu.spinner.stopAnimating()
                     self.diningMenu.spinner.isHidden = true
@@ -72,7 +68,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     @IBAction func prtTapped(_ sender: Any) {
-        self.prtView.press()
         print("pressed")
     }
     
@@ -87,7 +82,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = eventsTable.dequeueReusableCell(withIdentifier: "eventLite", for: indexPath) as! LiteEventCell
+        let cell = eventsView.eventsTable.dequeueReusableCell(withIdentifier: "eventLite", for: indexPath) as! LiteEventCell
         
         if events[indexPath.row].date.hourPrint == "12:00 AM" {
             cell.time.text = "All Day"

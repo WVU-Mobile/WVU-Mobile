@@ -14,11 +14,11 @@ class NavigationController: UINavigationController {
         super.viewDidLoad()
 
         self.navigationBar.barTintColor = Colors.lightYellow
-        self.navigationBar.tintColor = Colors.lightBlue
-        self.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 27)!]
+        self.navigationBar.isOpaque = false
+        self.navigationBar.isTranslucent = false
+        self.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 24)!]
         self.navigationBar.shadowImage = UIImage()
         self.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        
     }
 
     override func didReceiveMemoryWarning() {
