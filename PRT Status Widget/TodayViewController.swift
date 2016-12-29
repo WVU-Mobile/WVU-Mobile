@@ -15,7 +15,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var time: UILabel!
     
-    let wvuMobileURL = NSURL(string: "WVU-Mobile://")!
+    //let wvuMobileURL = NSURL(string: "WVU-Mobile:")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +34,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         }
     }
     
-    func open(_ wvuMobileURL: URL, completionHandler: ((Bool) -> Void)? = nil) {
-        print("You tapped the widget.")
+    @IBAction func openApp(_ sender: Any) {
+        let url: URL? = URL(string: "WVU-Mobile:")!
+        
+        if let appurl = url {
+            self.extensionContext!.open(appurl, completionHandler: nil)
+        }
     }
     
     func getPRTStatus(completion: (PRT?) -> Void) {
