@@ -27,7 +27,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         DispatchQueue.global().async {
             parser.getEvents(days: 1, completion: { events in
                 DispatchQueue.main.sync {
-                    self.events = events
+                    let cal = Calendar.autoupdatingCurrent
+                    var today = [RSSElement]()
+                    
+                    for e in events {
+                        if cal.isDateInToday(e.date) {
+                            today.append(e)
+                        }
+                    }
+                    
+                    self.events = today
                     self.eventsView.eventsTable.reloadData()
                     self.eventsView.spinner.stopAnimating()
                     self.eventsView.spinner.isHidden = true

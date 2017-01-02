@@ -1,31 +1,34 @@
 //
-//  NewsCell.swift
+//  LargeEventsCell.swift
 //  WVU Mobile
 //
-//  Created by Kaitlyn Landmesser on 12/28/16.
+//  Created by Kaitlyn Landmesser on 12/29/16.
 //  Copyright © 2016 WVU Mobile. All rights reserved.
 //
 
 import UIKit
 
-class NewsCell: UITableViewCell {
+class LargeEventsCell: UITableViewCell {
 
-    @IBOutlet weak var title: UILabel!
     @IBOutlet weak var details: UILabel!
-    @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var sourceName: UILabel!
-    @IBOutlet weak var source: UIImageView!
-    
+    @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var star: UIButton!
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.star.imageView?.tintColor = Colors.lightBlue
+        self.star.tintColor = Colors.lightBlue
+        
         self.layoutMargins = UIEdgeInsets.zero
         self.preservesSuperviewLayoutMargins = false
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+        // Configure the view for the selected state
     }
 
 }

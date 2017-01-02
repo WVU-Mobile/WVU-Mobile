@@ -15,12 +15,24 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
+    var day: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        return dateFormatter.string(from: self)
+    }
+    
     var hourPrint: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm a"
         return dateFormatter.string(from: self)
     }
 
+    var rssDate: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "E, dd MMM yyyy HH:mm:ss zzz"
+        return dateFormatter.string(from: self)
+    }
+    
     var timeAgo: String {
         let secondsAgo = Int(self.timeIntervalSince(Date()) * -1) // TimeInterval is in seconds 60
         let minutesAgo = Int(secondsAgo / 60)

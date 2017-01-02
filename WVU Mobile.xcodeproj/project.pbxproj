@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42173E431E1572C300CD1B4A /* EventsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42173E421E1572C300CD1B4A /* EventsTable.swift */; };
 		425D1AA01E12F2C400B88972 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425D1A9F1E12F2C400B88972 /* ShadowView.swift */; };
 		425D1AA21E12F89600B88972 /* RoundedTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425D1AA11E12F89600B88972 /* RoundedTable.swift */; };
 		425D1AAB1E1402B500B88972 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425D1AAA1E1402B500B88972 /* NewsCell.swift */; };
@@ -20,6 +21,8 @@
 		427537821E0C6485007E46B1 /* RSSRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427537811E0C6485007E46B1 /* RSSRequest.swift */; };
 		42D6472E1E14388900D0CE9F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D6472D1E14388900D0CE9F /* WebViewController.swift */; };
 		42D647301E1440E300D0CE9F /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D6472F1E1440E300D0CE9F /* Image.swift */; };
+		42FE8F8F1E157EA100FFCD85 /* LargeEventsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE8F8E1E157EA100FFCD85 /* LargeEventsCell.swift */; };
+		42FE8F911E1ABD6700FFCD85 /* FavoriteEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE8F901E1ABD6700FFCD85 /* FavoriteEventsTableViewController.swift */; };
 		44022A731E06CA4A004FC92F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A721E06CA4A004FC92F /* Date.swift */; };
 		44022A751E06DC00004FC92F /* DiningHall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A741E06DC00004FC92F /* DiningHall.swift */; };
 		44022A771E06DE3F004FC92F /* MenuRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A761E06DE3F004FC92F /* MenuRequest.swift */; };
@@ -31,6 +34,7 @@
 		44D097661E0D6AF0007476DD /* PRTRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D097651E0D6AF0007476DD /* PRTRequest.swift */; };
 		44D097681E0DEB5D007476DD /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D097671E0DEB5D007476DD /* Menu.swift */; };
 		44D0976A1E0E0755007476DD /* LiteDiningMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D097691E0E0755007476DD /* LiteDiningMenu.swift */; };
+		73497A515B69D2B0FF6DE443 /* Pods_PRT_Status_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B273B0E33D7BFB6819C6606E /* Pods_PRT_Status_Widget.framework */; };
 		9C8603531E03764600FE6531 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8603521E03764600FE6531 /* AppDelegate.swift */; };
 		9C8603551E03764600FE6531 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8603541E03764600FE6531 /* HomeViewController.swift */; };
 		9C8603571E03764600FE6531 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8603561E03764600FE6531 /* EventsViewController.swift */; };
@@ -42,6 +46,7 @@
 		9C8603731E037FDB00FE6531 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C8603711E037FDB00FE6531 /* MainInterface.storyboard */; };
 		9C8603771E037FDB00FE6531 /* PRT Status Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C86036A1E037FDB00FE6531 /* PRT Status Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9CECBA9E1E060463001D8854 /* PRT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CECBA9D1E060463001D8854 /* PRT.swift */; };
+		A58290146FE7C110C2F4A59C /* Pods_WVU_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942477C8A4B6B62F1DB1B436 /* Pods_WVU_Mobile.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +74,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		17589BFFC7BC6CDEDF138938 /* Pods-PRT Status Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PRT Status Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PRT Status Widget/Pods-PRT Status Widget.debug.xcconfig"; sourceTree = "<group>"; };
+		27C4A3E2EF693647B2218A0D /* Pods-WVU Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WVU Mobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WVU Mobile/Pods-WVU Mobile.debug.xcconfig"; sourceTree = "<group>"; };
+		42173E3F1E15704500CD1B4A /* WVU Mobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WVU Mobile-Bridging-Header.h"; sourceTree = "<group>"; };
+		42173E421E1572C300CD1B4A /* EventsTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTable.swift; sourceTree = "<group>"; };
 		425D1A9F1E12F2C400B88972 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		425D1AA11E12F89600B88972 /* RoundedTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTable.swift; sourceTree = "<group>"; };
 		425D1AAA1E1402B500B88972 /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
@@ -82,6 +91,8 @@
 		427537811E0C6485007E46B1 /* RSSRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSRequest.swift; sourceTree = "<group>"; };
 		42D6472D1E14388900D0CE9F /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		42D6472F1E1440E300D0CE9F /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		42FE8F8E1E157EA100FFCD85 /* LargeEventsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeEventsCell.swift; sourceTree = "<group>"; };
+		42FE8F901E1ABD6700FFCD85 /* FavoriteEventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteEventsTableViewController.swift; sourceTree = "<group>"; };
 		44022A721E06CA4A004FC92F /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		44022A741E06DC00004FC92F /* DiningHall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningHall.swift; sourceTree = "<group>"; };
 		44022A761E06DE3F004FC92F /* MenuRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuRequest.swift; sourceTree = "<group>"; };
@@ -93,6 +104,8 @@
 		44D097651E0D6AF0007476DD /* PRTRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRTRequest.swift; sourceTree = "<group>"; };
 		44D097671E0DEB5D007476DD /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		44D097691E0E0755007476DD /* LiteDiningMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiteDiningMenu.swift; sourceTree = "<group>"; };
+		4D33691FFEDCFF585CEACD1C /* Pods-PRT Status Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PRT Status Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-PRT Status Widget/Pods-PRT Status Widget.release.xcconfig"; sourceTree = "<group>"; };
+		942477C8A4B6B62F1DB1B436 /* Pods_WVU_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WVU_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C86034F1E03764600FE6531 /* WVU Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WVU Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8603521E03764600FE6531 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C8603541E03764600FE6531 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +120,8 @@
 		9C8603721E037FDB00FE6531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		9C8603741E037FDB00FE6531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CECBA9D1E060463001D8854 /* PRT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRT.swift; sourceTree = "<group>"; };
+		B273B0E33D7BFB6819C6606E /* Pods_PRT_Status_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PRT_Status_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5A2270D727D6FC39C15AE66 /* Pods-WVU Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WVU Mobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-WVU Mobile/Pods-WVU Mobile.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A58290146FE7C110C2F4A59C /* Pods_WVU_Mobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C86036D1E037FDB00FE6531 /* NotificationCenter.framework in Frameworks */,
+				73497A515B69D2B0FF6DE443 /* Pods_PRT_Status_Widget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,8 +195,20 @@
 				425D1AA11E12F89600B88972 /* RoundedTable.swift */,
 				425D1AAA1E1402B500B88972 /* NewsCell.swift */,
 				425D1AAE1E14114800B88972 /* NewsImageCell.swift */,
+				42FE8F8E1E157EA100FFCD85 /* LargeEventsCell.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		5C99DB6204B7F91903826C92 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				17589BFFC7BC6CDEDF138938 /* Pods-PRT Status Widget.debug.xcconfig */,
+				4D33691FFEDCFF585CEACD1C /* Pods-PRT Status Widget.release.xcconfig */,
+				27C4A3E2EF693647B2218A0D /* Pods-WVU Mobile.debug.xcconfig */,
+				D5A2270D727D6FC39C15AE66 /* Pods-WVU Mobile.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		9C8603461E03764500FE6531 = {
@@ -189,6 +218,8 @@
 				9C86036E1E037FDB00FE6531 /* PRT Status Widget */,
 				9C86036B1E037FDB00FE6531 /* Frameworks */,
 				9C8603501E03764600FE6531 /* Products */,
+				5C99DB6204B7F91903826C92 /* Pods */,
+				42173E3F1E15704500CD1B4A /* WVU Mobile-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -206,11 +237,12 @@
 			children = (
 				9C8603521E03764600FE6531 /* AppDelegate.swift */,
 				9C8603541E03764600FE6531 /* HomeViewController.swift */,
-				9C8603561E03764600FE6531 /* EventsViewController.swift */,
 				44022A7D1E0700FD004FC92F /* TabBarController.swift */,
 				44022A7F1E0707A6004FC92F /* NavigationController.swift */,
 				425D1AAC1E14044000B88972 /* NewsViewController.swift */,
 				42D6472D1E14388900D0CE9F /* WebViewController.swift */,
+				9C8603561E03764600FE6531 /* EventsViewController.swift */,
+				42FE8F901E1ABD6700FFCD85 /* FavoriteEventsTableViewController.swift */,
 				425D1AA51E14002F00B88972 /* Model */,
 				425D1AA41E14002100B88972 /* Web Request */,
 				425D1AA31E13FFFC00B88972 /* Home */,
@@ -220,6 +252,7 @@
 				9C86035D1E03764600FE6531 /* LaunchScreen.storyboard */,
 				9C8603601E03764600FE6531 /* Info.plist */,
 				9C86035B1E03764600FE6531 /* Assets.xcassets */,
+				42173E421E1572C300CD1B4A /* EventsTable.swift */,
 			);
 			path = "WVU Mobile";
 			sourceTree = "<group>";
@@ -228,6 +261,8 @@
 			isa = PBXGroup;
 			children = (
 				9C86036C1E037FDB00FE6531 /* NotificationCenter.framework */,
+				B273B0E33D7BFB6819C6606E /* Pods_PRT_Status_Widget.framework */,
+				942477C8A4B6B62F1DB1B436 /* Pods_WVU_Mobile.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -251,10 +286,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C8603631E03764600FE6531 /* Build configuration list for PBXNativeTarget "WVU Mobile" */;
 			buildPhases = (
+				0D472175F437D2C2C0926D9E /* [CP] Check Pods Manifest.lock */,
 				9C86034B1E03764500FE6531 /* Sources */,
 				9C86034C1E03764500FE6531 /* Frameworks */,
 				9C86034D1E03764500FE6531 /* Resources */,
 				9C86037B1E037FDB00FE6531 /* Embed App Extensions */,
+				D60D6660AD3DE2AEFB1B6347 /* [CP] Embed Pods Frameworks */,
+				3669DDB30C417207492A2463 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -270,9 +308,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C8603781E037FDB00FE6531 /* Build configuration list for PBXNativeTarget "PRT Status Widget" */;
 			buildPhases = (
+				D37CC6D6214A5E6C129088DB /* [CP] Check Pods Manifest.lock */,
 				9C8603661E037FDB00FE6531 /* Sources */,
 				9C8603671E037FDB00FE6531 /* Frameworks */,
 				9C8603681E037FDB00FE6531 /* Resources */,
+				E4BA4AA640CF2D346137A595 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -346,11 +386,90 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0D472175F437D2C2C0926D9E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3669DDB30C417207492A2463 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WVU Mobile/Pods-WVU Mobile-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D37CC6D6214A5E6C129088DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D60D6660AD3DE2AEFB1B6347 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WVU Mobile/Pods-WVU Mobile-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4BA4AA640CF2D346137A595 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PRT Status Widget/Pods-PRT Status Widget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9C86034B1E03764500FE6531 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42173E431E1572C300CD1B4A /* EventsTable.swift in Sources */,
 				427537821E0C6485007E46B1 /* RSSRequest.swift in Sources */,
 				9C8603571E03764600FE6531 /* EventsViewController.swift in Sources */,
 				427537801E0C3775007E46B1 /* LiteEventsView.swift in Sources */,
@@ -368,8 +487,10 @@
 				44022A7C1E06FF04004FC92F /* Colors.swift in Sources */,
 				44022A791E06DEC3004FC92F /* MenuItem.swift in Sources */,
 				425D1AAD1E14044000B88972 /* NewsViewController.swift in Sources */,
+				42FE8F911E1ABD6700FFCD85 /* FavoriteEventsTableViewController.swift in Sources */,
 				44D097641E0D693D007476DD /* PRT.swift in Sources */,
 				4275377A1E0C25F3007E46B1 /* Date.swift in Sources */,
+				42FE8F8F1E157EA100FFCD85 /* LargeEventsCell.swift in Sources */,
 				42D647301E1440E300D0CE9F /* Image.swift in Sources */,
 				4275377C1E0C2FDC007E46B1 /* PRTView.swift in Sources */,
 				425D1AA21E12F89600B88972 /* RoundedTable.swift in Sources */,
@@ -523,6 +644,7 @@
 		};
 		9C8603641E03764600FE6531 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27C4A3E2EF693647B2218A0D /* Pods-WVU Mobile.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -533,6 +655,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "wvumobile.WVU-Mobile";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WVU Mobile-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -541,6 +664,7 @@
 		};
 		9C8603651E03764600FE6531 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5A2270D727D6FC39C15AE66 /* Pods-WVU Mobile.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -551,6 +675,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "wvumobile.WVU-Mobile";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WVU Mobile-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -558,6 +683,7 @@
 		};
 		9C8603791E037FDB00FE6531 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17589BFFC7BC6CDEDF138938 /* Pods-PRT Status Widget.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 4P5LM6HTJ7;
 				INFOPLIST_FILE = "PRT Status Widget/Info.plist";
@@ -572,6 +698,7 @@
 		};
 		9C86037A1E037FDB00FE6531 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D33691FFEDCFF585CEACD1C /* Pods-PRT Status Widget.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 4P5LM6HTJ7;
 				INFOPLIST_FILE = "PRT Status Widget/Info.plist";

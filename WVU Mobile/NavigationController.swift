@@ -14,6 +14,8 @@ class NavigationController: UINavigationController {
         super.viewDidLoad()
 
         self.navigationBar.barTintColor = Colors.lightYellow
+        self.navigationBar.tintColor = UIColor.black
+
         self.navigationBar.isOpaque = false
         self.navigationBar.isTranslucent = false
         self.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 24)!]
@@ -36,5 +38,4 @@ class NavigationController: UINavigationController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

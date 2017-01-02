@@ -17,9 +17,14 @@ struct RSSElement {
     var date: Date
     var source: RSSRequest.NewsSource?
     var image: Image?
+    var favorite: Bool = false
     
     var string: String {
         return "\(title) \(description) \(link)"
+    }
+    
+    var identifier: String {
+        return "\(date.rssDate) %%& \(title) %%& \(description)"
     }
     
     init(title: String, description: String, link: String, guid: String, date: Date) {

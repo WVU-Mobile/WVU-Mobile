@@ -22,7 +22,7 @@ class RSSRequest: NSObject, XMLParserDelegate {
         currentElement = RSSElement()
         elementName = ""
         
-        let urlString = "https://calendar.wvu.edu/page/rss/?duration=1days"
+        let urlString = "https://calendar.wvu.edu/page/rss/?duration=\(days)days"
         let url = URL(string: urlString)!
         
         parser = XMLParser(contentsOf: url)!
@@ -30,16 +30,7 @@ class RSSRequest: NSObject, XMLParserDelegate {
         parser.delegate = self
         parser.parse()
         
-        let cal = Calendar.autoupdatingCurrent
-        var today = [RSSElement]()
-        
-        for e in elements {
-            if cal.isDateInToday(e.date) {
-                today.append(e)
-            }
-        }
-        
-        completion(today)
+        completion(elements)
 
     }
     
@@ -94,7 +85,6 @@ class RSSRequest: NSObject, XMLParserDelegate {
             currentElement.description = string
         case "pubDate":
             currentElement.date = Date.rssDate(date: string) // todo
-            print(string)
         case "guid":
             currentElement.guid = string // todo
         default:
