@@ -561,7 +561,7 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = 4P5LM6HTJ7;
 				INFOPLIST_FILE = "PRT Status Widget/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "wvumobile.WVU-Mobile.PRT-Status-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -575,7 +575,7 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = 4P5LM6HTJ7;
 				INFOPLIST_FILE = "PRT Status Widget/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "wvumobile.WVU-Mobile.PRT-Status-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";

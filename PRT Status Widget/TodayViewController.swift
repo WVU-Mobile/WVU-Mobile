@@ -15,22 +15,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var time: UILabel!
     
-    //let wvuMobileURL = NSURL(string: "WVU-Mobile:")!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.global().async {
-            self.getPRTStatus(completion: { result in
-                DispatchQueue.main.sync {
-                    if let prt = result {
-                        self.statusLabel.text = prt.status.overall
-                        self.messageLabel.text = prt.message
-                        self.time.text = "\(prt.time.prettyPrint) ~ \(prt.time.timeAgo)"
-                        print("is this hit")
-                    }
-                }
-            })
+        // Adds the "Show More" button
+        if #available(iOSApplicationExtension 10.0, *) {
+            self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+        } else {
+            // Fallback on earlier versions
         }
     }
     
@@ -43,10 +35,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     func getPRTStatus(completion: (PRT?) -> Void) {
-        
         let timestamp = Int(Date().timeIntervalSince1970)
         let urlPath: String = "https://prtstatus.wvu.edu/api/\(timestamp)/?format=json"
-        print(urlPath)
         
         guard let url = URL(string: urlPath) else {
             completion(nil)
@@ -55,7 +45,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         do {
             let jsonData = try Data(contentsOf: url)
-            print("HTML : \(jsonData)")
             
             if let json = try JSONSerialization.jsonObject(with: jsonData, options: []) as? NSDictionary {
                 guard let status = json["status"] as? String else {
@@ -87,11 +76,21 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
+        DispatchQueue.global().async {
+            self.getPRTStatus(completion: { result in
+                DispatchQueue.main.sync {
+                    if let prt = result {
+                        self.statusLabel.text = prt.status.overall
+                        self.messageLabel.text = prt.message
+                        self.time.text = "\(prt.time.prettyPrint) ~ \(prt.time.timeAgo)"
+                    }
+                }
+            })
+        }
         
         // If an error is encountered, use NCUpdateResult.Failed
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
-        
         completionHandler(NCUpdateResult.newData)
     }
     
