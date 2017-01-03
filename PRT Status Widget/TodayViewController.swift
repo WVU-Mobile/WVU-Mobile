@@ -26,6 +26,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         }
     }
     
+    @available(iOSApplicationExtension 10.0, *)
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        if activeDisplayMode == .expanded {
+            preferredContentSize = CGSize(width: maxSize.width, height: 200)
+        } else {
+            preferredContentSize = maxSize
+        }
+    }
+    
     @IBAction func openApp(_ sender: Any) {
         let url: URL? = URL(string: "WVU-Mobile:")!
         
