@@ -212,7 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				42A3E7571E1BEA3600DB8140 /* PRT.txt */,
-				42A3E7601E1BEB2200DB8140 /* MapViewController.swift */,
 				4252D4871E1C46C900946774 /* MapStyles.swift */,
 			);
 			name = Map;
@@ -262,6 +261,7 @@
 				9C8603561E03764600FE6531 /* EventsViewController.swift */,
 				42FE8F901E1ABD6700FFCD85 /* FavoriteEventsTableViewController.swift */,
 				4233455E1E1BE6C000630003 /* OnCampusTableViewController.swift */,
+				42A3E7601E1BEB2200DB8140 /* MapViewController.swift */,
 				425D1AA51E14002F00B88972 /* Model */,
 				425D1AA41E14002100B88972 /* Web Request */,
 				425D1AA31E13FFFC00B88972 /* Home */,

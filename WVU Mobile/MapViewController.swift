@@ -120,7 +120,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDelega
     
     func filterContentForSearchText(searchText: String, scope: String = "All") {
         filtered = markers.filter { marker in
-            return (marker.title?.lowercased().contains(searchText.lowercased()))!
+            return (marker.title?.lowercased().contains(searchText.lowercased()))! || (marker.snippet?.lowercased().contains(searchText.lowercased()))!
         }
         
         tableView.reloadData()
