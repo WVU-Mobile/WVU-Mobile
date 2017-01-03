@@ -10,6 +10,7 @@ import UIKit
 
 class OnCampusTableViewController: UITableViewController {
     var items = ["Campus Map","Dining Halls", "Libraries"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,6 +51,13 @@ class OnCampusTableViewController: UITableViewController {
         return 80
     }
 
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let view = MapViewController()
+            self.navigationController?.pushViewController(view, animated: true)
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

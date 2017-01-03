@@ -723,7 +723,7 @@
                         <inset key="imageInsets" minX="0.0" minY="-1" maxX="0.0" maxY="1"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8VL-h1-LS6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8VL-h1-LS6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -744,7 +744,7 @@
                         <inset key="imageInsets" minX="0.0" minY="-1" maxX="0.0" maxY="1"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xSk-eQ-MSp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="xSk-eQ-MSp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -765,7 +765,7 @@
                         <inset key="imageInsets" minX="0.0" minY="-1" maxX="0.0" maxY="1"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="euL-Ee-OOf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="euL-Ee-OOf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -786,7 +786,7 @@
                         <inset key="imageInsets" minX="0.0" minY="-1" maxX="0.0" maxY="1"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dv8-gX-xKO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Dv8-gX-xKO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -825,9 +825,6 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <connections>
-                                    <segue destination="lZ1-Op-A5a" kind="show" id="PzS-54-Xvf"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -841,24 +838,6 @@
             </objects>
             <point key="canvasLocation" x="1693" y="1129"/>
         </scene>
-        <!--Map View Controller-->
-        <scene sceneID="DFT-5D-sI5">
-            <objects>
-                <viewController id="lZ1-Op-A5a" customClass="MapViewController" customModule="WVU_Mobile" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ojQ-mR-9vx"/>
-                        <viewControllerLayoutGuide type="bottom" id="gDV-pa-dV7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7ZY-pu-QMg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hw3-CR-N0P" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2720.8000000000002" y="1127.5862068965519"/>
-        </scene>
         <!--News-->
         <scene sceneID="ce9-Bx-Aff">
             <objects>
@@ -867,7 +846,7 @@
                         <inset key="imageInsets" minX="0.0" minY="-1" maxX="0.0" maxY="1"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AcH-Y5-AaV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="AcH-Y5-AaV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

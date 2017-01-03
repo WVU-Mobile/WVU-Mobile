@@ -10,13 +10,13 @@ import UIKit
 import GoogleMaps
 
 extension MapViewController: UISearchResultsUpdating {
-    @available(iOS 8.0, *)
     public func updateSearchResults(for searchController: UISearchController) {
-        
-    }
-
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        filterContentForSearchText(searchText: searchController.searchBar.text!)
+        if searchController.isActive {
+            view.addSubview(tableView)
+            filterContentForSearchText(searchText: searchController.searchBar.text!)
+        } else {
+            tableView.removeFromSuperview()
+        }
     }
 }
 
@@ -25,17 +25,14 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDelega
     var mapView = GMSMapView()
     
     var markers = [GMSMarker]()
-    
-    let locationManager = CLLocationManager()
     var filtered = [GMSMarker]()
+
+    let locationManager = CLLocationManager()
 
     // filter objects 
     var tableView = UITableView()
-    var active:Bool = false
-    var gesture = UITapGestureRecognizer()
     
     let searchController = UISearchController(searchResultsController: nil)
-    
     
     struct MapCoordinate {
         var code: String
@@ -45,22 +42,21 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDelega
         var longitude: Double
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let camera = GMSCameraPosition.camera(withLatitude: 39.635786,
-                                              longitude: -79.954274,
-                                              zoom: 14)
+        let camera = GMSCameraPosition.camera(withLatitude: 39.635786, longitude: -79.954274, zoom: 14)
         
-        mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+        mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
         mapView.delegate = self
         
-        let marker = GMSMarker()
-        marker.position = camera.target
-        marker.snippet = "Hello World"
-        marker.appearAnimation = kGMSMarkerAnimationPop
-        marker.map = mapView
-        
+        /*do {
+            mapView.mapStyle = try GMSMapStyle(jsonString: MapStyles.dayMode)
+        } catch {
+            NSLog("The style definition could not be loaded: \(error)")
+        }*/
+
         view = mapView
         
         parsePRTCoords()
@@ -68,6 +64,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDelega
         //search
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
         definesPresentationContext = true
         
         navigationItem.titleView = searchController.searchBar
@@ -75,12 +72,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDelega
         tableView = UITableView(frame: mapView.frame, style: .grouped)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = Colors.lightBlue
-        
-        mapView.addSubview(tableView)
-        
-        gesture = UITapGestureRecognizer(target: self, action: nil)
-        self.view.addGestureRecognizer(gesture)
+        tableView.backgroundColor = Colors.alphaGray
     }
     
     func parsePRTCoords() {
@@ -165,10 +157,18 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let c = filtered[indexPath.row]
+        let c: GMSMarker
+        
+        if searchController.isActive && searchController.searchBar.text != "" {
+            c = filtered[indexPath.row]
+        } else {
+            c = markers[indexPath.row]
+        }
+        
         let camera = GMSCameraPosition(target: CLLocationCoordinate2D(latitude: CLLocationDegrees(c.position.latitude), longitude: CLLocationDegrees(c.position.longitude)), zoom: 18, bearing: 30, viewingAngle: 90)
         mapView.animate(to: camera)
         mapView.selectedMarker = c
+        
         dismiss()
     }
     
@@ -179,7 +179,12 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDelega
         cell.detailTextLabel?.textColor = UIColor.white
         
         var c : GMSMarker
-        c = filtered[indexPath.row]
+        
+        if searchController.isActive && searchController.searchBar.text != "" {
+            c = filtered[indexPath.row]
+        } else {
+            c = markers[indexPath.row]
+        }
         
         // Configure the cell
         cell.textLabel?.text = c.title
@@ -189,14 +194,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDelega
     }
     
     func dismiss() {
-        if active == true{
-            filtered = []
-            tableView.reloadData()
-            tableView.removeFromSuperview()
-            tableView.clearsContextBeforeDrawing = true
-            self.view.addGestureRecognizer(gesture)
-            active = false
-        }
+        searchController.isActive = false
     }
 
     
