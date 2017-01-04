@@ -7,30 +7,31 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class DiningInfoViewController: UIViewController {
     var diningHall = DiningHall.Arnold
     
+    @IBOutlet weak var info: UILabel!
+    @IBOutlet weak var hours: UILabel!
+    @IBOutlet weak var map: GMSMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.info.text = diningHall.description
+        self.hours.text = diningHall.hoursOfOperation
+        
+        let camera = GMSCameraPosition.camera(withLatitude: diningHall.latitude, longitude: diningHall.longitude, zoom: 14)
+        self.map.camera = camera
+        
+        let position = CLLocationCoordinate2D(latitude: diningHall.latitude, longitude: diningHall.longitude)
+        let marker = GMSMarker(position: position)
+        marker.map = map
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

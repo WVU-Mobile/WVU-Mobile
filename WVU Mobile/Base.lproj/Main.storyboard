@@ -900,19 +900,21 @@
                                             <segment title="Menu"/>
                                             <segment title="Info"/>
                                         </segments>
-                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="segmentChanged:" destination="5pU-Np-L5X" eventType="valueChanged" id="8MW-yN-894"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
-                                <color key="backgroundColor" red="0.66513854269999995" green="0.69484376910000001" blue="0.86074572800000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.85882352939999995" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Y8Z-GV-DnX" firstAttribute="centerX" secondItem="9KT-eZ-IVg" secondAttribute="centerX" id="R4s-b4-U1p"/>
                                     <constraint firstAttribute="height" constant="49" id="dNU-IS-7KZ"/>
                                     <constraint firstItem="Y8Z-GV-DnX" firstAttribute="centerY" secondItem="9KT-eZ-IVg" secondAttribute="centerY" constant="2.5" id="fyS-Gt-g2Y"/>
                                 </constraints>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AEH-Wr-mzN">
-                                <rect key="frame" x="0.0" y="46" width="375" height="621"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AEH-Wr-mzN">
+                                <rect key="frame" x="0.0" y="49" width="375" height="618"/>
                                 <connections>
                                     <segue destination="iq7-oS-Rtm" kind="embed" id="qZo-EK-ErB"/>
                                 </connections>
@@ -921,6 +923,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="9KT-eZ-IVg" secondAttribute="trailing" id="0Vb-W8-Imc"/>
+                            <constraint firstItem="AEH-Wr-mzN" firstAttribute="top" secondItem="9KT-eZ-IVg" secondAttribute="bottom" id="4Na-3h-eFA"/>
+                            <constraint firstItem="AEH-Wr-mzN" firstAttribute="leading" secondItem="uye-oy-ldG" secondAttribute="leading" id="7T4-Cy-uRd"/>
+                            <constraint firstItem="FLw-yK-YHE" firstAttribute="top" secondItem="AEH-Wr-mzN" secondAttribute="bottom" id="BGV-XH-Qn2"/>
+                            <constraint firstItem="AEH-Wr-mzN" firstAttribute="top" secondItem="9KT-eZ-IVg" secondAttribute="bottom" id="BNj-YY-Uqd"/>
+                            <constraint firstAttribute="trailing" secondItem="AEH-Wr-mzN" secondAttribute="trailing" id="DA4-Wo-GKO"/>
                             <constraint firstItem="9KT-eZ-IVg" firstAttribute="top" secondItem="uye-oy-ldG" secondAttribute="top" id="p4q-sC-g2I"/>
                             <constraint firstItem="9KT-eZ-IVg" firstAttribute="leading" secondItem="uye-oy-ldG" secondAttribute="leading" id="sNE-Ys-ZjP"/>
                         </constraints>
@@ -932,7 +939,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bes-Zt-uMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3412" y="1128"/>
+            <point key="canvasLocation" x="3412" y="1127.5862068965519"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="nPt-D3-Y5B">
@@ -962,7 +969,7 @@
                                     <constraint firstAttribute="height" constant="285" id="6cc-no-pno"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUk-mg-tld">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUk-mg-tld">
                                 <rect key="frame" x="0.0" y="284" width="375" height="76"/>
                                 <color key="backgroundColor" red="0.76740958120000002" green="0.76740958120000002" blue="0.76740958120000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -972,15 +979,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6O-3j-5Pd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6O-3j-5Pd">
                                 <rect key="frame" x="0.0" y="392" width="375" height="275"/>
                                 <color key="backgroundColor" red="0.91764705879999997" green="0.85882352939999995" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="js3-YW-MJA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="js3-YW-MJA">
                                 <rect key="frame" x="0.0" y="360" width="375" height="32"/>
+                                <color key="backgroundColor" red="0.69411764710000001" green="0.78823529410000004" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="koJ-jP-EdX"/>
                                 </constraints>
@@ -1004,10 +1012,16 @@
                             <constraint firstItem="lQl-uK-0MH" firstAttribute="leading" secondItem="4V0-3I-ydp" secondAttribute="leading" id="mFP-Lc-QiQ"/>
                             <constraint firstAttribute="trailing" secondItem="lQl-uK-0MH" secondAttribute="trailing" id="olX-Vb-fqK"/>
                             <constraint firstItem="PUk-mg-tld" firstAttribute="leading" secondItem="js3-YW-MJA" secondAttribute="leading" id="sMC-1A-weP"/>
+                            <constraint firstItem="UAf-i2-H4S" firstAttribute="top" secondItem="U6O-3j-5Pd" secondAttribute="bottom" id="sef-6t-QQ8"/>
                             <constraint firstItem="js3-YW-MJA" firstAttribute="top" secondItem="PUk-mg-tld" secondAttribute="bottom" id="vAZ-6J-hmr"/>
                             <constraint firstItem="lQl-uK-0MH" firstAttribute="top" secondItem="4V0-3I-ydp" secondAttribute="top" id="yIa-ol-Vxy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="hours" destination="U6O-3j-5Pd" id="OWU-yW-iex"/>
+                        <outlet property="info" destination="PUk-mg-tld" id="Yz1-9m-tC4"/>
+                        <outlet property="map" destination="lQl-uK-0MH" id="pNh-2e-jz2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZZ-Rb-lFc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

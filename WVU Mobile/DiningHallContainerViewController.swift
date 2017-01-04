@@ -49,6 +49,15 @@ class DiningHallContainerViewController: UIViewController, UIPageViewControllerD
         
     }
 
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        if segmentControl.selectedSegmentIndex == 1 {
+            pager.setViewControllers([pages[1]], direction: .forward, animated: true, completion: nil)
+
+        } else {
+            pager.setViewControllers([pages[0]], direction: .reverse, animated: true, completion: nil)
+        }
+    }
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         guard let currentIndex = pages.index(of: viewController) else {
             return nil
