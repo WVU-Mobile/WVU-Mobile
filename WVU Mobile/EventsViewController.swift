@@ -82,7 +82,6 @@ class EventsViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
             parser.getEvents(days: 60, completion: { events in
                 DispatchQueue.main.sync {
                     for i in events {
-                        print("\(i.date.day) test")
                         if eventsDate[i.date.day] == nil {
                             eventsDate[i.date.day] = []
                         }
@@ -97,7 +96,6 @@ class EventsViewController: UIViewController, FSCalendarDataSource, FSCalendarDe
     func loadDay(date: Date) {
         if let _ = self.eventsByDate[date.day] {
             self.events.reloadData()
-            print("reloading")
             return
         }
     }
