@@ -56,6 +56,9 @@ class OnCampusTableViewController: UITableViewController {
         if indexPath.row == 0 {
             let view = MapViewController()
             self.navigationController?.pushViewController(view, animated: true)
+        } else if indexPath.row == 1 {
+            let view = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DiningHallFirst")
+            self.navigationController?.pushViewController(view, animated: true)
         }
     }
     /*

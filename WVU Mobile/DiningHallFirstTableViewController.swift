@@ -13,7 +13,7 @@ class DiningHallFirstTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -40,7 +40,7 @@ class DiningHallFirstTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         cell.textLabel?.text = items[indexPath.row].name
         
@@ -52,10 +52,9 @@ class DiningHallFirstTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            let view = MapViewController()
-            self.navigationController?.pushViewController(view, animated: true)
-        }
+        let view = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DiningContainer") as! DiningHallContainerViewController
+        view.diningHall = items[indexPath.row]
+        self.navigationController?.pushViewController(view, animated: true)
     }
 
     /*

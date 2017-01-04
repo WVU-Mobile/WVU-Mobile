@@ -9,7 +9,8 @@
 import UIKit
 
 class DiningInfoViewController: UIViewController {
-
+    var diningHall = DiningHall.Arnold
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
