@@ -23,7 +23,7 @@ enum DiningHall: Int {
     func url(on date: Date) -> String {
         let components = NSCalendar.current.dateComponents([.day, .month, .year], from: date)
         
-        return "https://diningmenuservice.wvu.edu/\(self.rawValue)/\(components.month!)/\(10)/\(components.year!)/1410376600000/?callback="
+        return "https://diningmenuservice.wvu.edu/\(self.rawValue)/\(components.month!)/\(components.day!)/\(components.year!)/1410376600000/?callback="
     }
     
     var name: String {
@@ -70,6 +70,17 @@ enum DiningHall: Int {
             return  "Breakfast: 7:15 am - 10:00 am\n" +
                     "Lunch: 11:00 am - 2:00 pm\n" +
                     "Saturday, Sunday & Holidays Closed"
+        }
+    }
+    
+    var meals: [Menu.Meal] {
+        switch self {
+        case .Arnold,  .CafeEvansdale, .Summit:
+            return  [.breakfast, .lunch, .dinner]
+        case .Boreman,  .TerraceRoom:
+            return   [.lunch, .dinner]
+        case .Hatfields:
+            return  [.breakfast, .lunch]
         }
     }
     

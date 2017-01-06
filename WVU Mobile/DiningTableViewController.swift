@@ -9,7 +9,7 @@
 import UIKit
 import FSCalendar
 
-class DiningTableViewController: UIViewController {
+class DiningTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FSCalendarDataSource, FSCalendarDelegate {
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var menuTable: UITableView!
@@ -35,15 +35,22 @@ class DiningTableViewController: UIViewController {
         self.calendar.scope = .week
         self.calendar.scopeGesture.isEnabled = true
         
+        menuTable.delegate = self
+        menuTable.dataSource = self
+        
+        menu.diningHall = diningHall
+        
         loadToday()
 
     }
     
     func loadToday() {
         DispatchQueue.global().async {
-            MenuRequest.getMenu(on: Date(), at: self.diningHall, completion: { result in
+            MenuRequest.getMenu(on: self.selectedDate, at: self.diningHall, completion: { result in
                 DispatchQueue.main.sync {
                     if let r = result {
+                        print(r.menu)
+
                         self.menu = r
                     }
                     self.menuTable.reloadData()
@@ -53,7 +60,7 @@ class DiningTableViewController: UIViewController {
     }
     
     func minimumDate(for calendar: FSCalendar) -> Date {
-        return Date().addingTimeInterval(-2.0)
+        return Date().addingTimeInterval(-calendarRange)
     }
     
     func maximumDate(for calendar: FSCalendar) -> Date {
@@ -64,6 +71,7 @@ class DiningTableViewController: UIViewController {
         NSLog("change page to \(self.formatter.string(from: calendar.currentPage))")
     }
     
+    
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         NSLog("calendar did select date \(self.formatter.string(from: date))")
         if monthPosition == .previous || monthPosition == .next {
@@ -71,6 +79,7 @@ class DiningTableViewController: UIViewController {
         }
         
         self.selectedDate = date
+        loadToday()
     }
     
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
@@ -79,18 +88,22 @@ class DiningTableViewController: UIViewController {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return menu.diningHall.meals.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menu.menu.count
+        return menu.getMeal(meal: menu.diningHall.meals[section]).count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return menu.diningHall.meals[section].name
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menu-item", for: indexPath)
         
-        cell.textLabel?.text = menu.menu[indexPath.row].name
+        cell.textLabel?.text = menu.getMeal(meal: menu.diningHall.meals[indexPath.section])[indexPath.row].name
         
         return cell
     }

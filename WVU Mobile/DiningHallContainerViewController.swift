@@ -26,7 +26,9 @@ class DiningHallContainerViewController: UIViewController, UIPageViewControllerD
         pager.delegate = self
         
         self.addChildViewController(pager)
-        pager.view.frame = CGRect(x: 0, y: 0, width: pageViewContainer.frame.width, height: pageViewContainer.frame.height)
+        
+        self.pageViewContainer.frame = self.view.frame
+        pager.view.frame = CGRect(x: 0, y: 0, width: pageViewContainer.frame.width, height: self.view.frame.height)
         self.pageViewContainer.addSubview(pager.view)
         pager.didMove(toParentViewController: self)
         

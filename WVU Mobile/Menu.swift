@@ -29,5 +29,16 @@ class Menu {
     
     enum Meal {
         case breakfast, lunch, dinner
+        
+        var name: String {
+            switch self {
+            case .breakfast:
+                return "Breakfast"
+            case .lunch:
+                return "Lunch"
+            case .dinner:
+                return "Dinner"
+            }
+        }
     }
 }

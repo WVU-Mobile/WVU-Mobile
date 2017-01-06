@@ -20,7 +20,6 @@ class MenuRequest {
         do {
             let data = try Data(contentsOf: url)
             let json = try JSONSerialization.jsonObject(with: data, options:.mutableContainers) as! [[String:Any]]
-            
             for j in json {
                 if let name = j["item"] as? String {
                     if name.isEmpty {
