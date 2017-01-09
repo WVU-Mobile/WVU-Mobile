@@ -39,6 +39,29 @@
 		442B484E1E1CA25D0014349E /* DiningTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B484D1E1CA25D0014349E /* DiningTableViewController.swift */; };
 		442B48501E1CA2820014349E /* DiningInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B484F1E1CA2820014349E /* DiningInfoViewController.swift */; };
 		44764CBC1E1F5F310041CC26 /* DiningHallSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44764CBB1E1F5F310041CC26 /* DiningHallSelectionCell.swift */; };
+		44A80B0E1E2125B5006DBFEA /* 1 - Campus PM.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80AF91E2125B5006DBFEA /* 1 - Campus PM.txt */; };
+		44A80B0F1E2125B5006DBFEA /* 2 - DT PM Mall.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80AFA1E2125B5006DBFEA /* 2 - DT PM Mall.txt */; };
+		44A80B101E2125B5006DBFEA /* 3 - Green Line.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80AFB1E2125B5006DBFEA /* 3 - Green Line.txt */; };
+		44A80B111E2125B5006DBFEA /* 4 - Orange Line.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80AFC1E2125B5006DBFEA /* 4 - Orange Line.txt */; };
+		44A80B121E2125B5006DBFEA /* 6 - Gold Line.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80AFD1E2125B5006DBFEA /* 6 - Gold Line.txt */; };
+		44A80B131E2125B5006DBFEA /* 7 - Red Line.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80AFE1E2125B5006DBFEA /* 7 - Red Line.txt */; };
+		44A80B141E2125B5006DBFEA /* 8 - Tyrone.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80AFF1E2125B5006DBFEA /* 8 - Tyrone.txt */; };
+		44A80B151E2125B5006DBFEA /* 9 - Purple Line.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80B001E2125B5006DBFEA /* 9 - Purple Line.txt */; };
+		44A80B161E2125B5006DBFEA /* 11 - Cassville.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80B011E2125B5006DBFEA /* 11 - Cassville.txt */; };
+		44A80B171E2125B5006DBFEA /* 12 - Blue Line.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80B021E2125B5006DBFEA /* 12 - Blue Line.txt */; };
+		44A80B181E2125B5006DBFEA /* 13 - Crown.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80B031E2125B5006DBFEA /* 13 - Crown.txt */; };
+		44A80B191E2125B5006DBFEA /* 14 - Mtn. Heights.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80B041E2125B5006DBFEA /* 14 - Mtn. Heights.txt */; };
+		44A80B1A1E2125B5006DBFEA /* 15 - Grafton Rd..txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80B051E2125B5006DBFEA /* 15 - Grafton Rd..txt */; };
+		44A80B1B1E2125B5006DBFEA /* 16 - Pink Line.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80B061E2125B5006DBFEA /* 16 - Pink Line.txt */; };
+		44A80B1C1E2125B5006DBFEA /* 29 - Grey Line.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80B071E2125B5006DBFEA /* 29 - Grey Line.txt */; };
+		44A80B1D1E2125B5006DBFEA /* 30 - West Run.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80B081E2125B5006DBFEA /* 30 - West Run.txt */; };
+		44A80B1E1E2125B5006DBFEA /* 30 - WR Late.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80B091E2125B5006DBFEA /* 30 - WR Late.txt */; };
+		44A80B1F1E2125B5006DBFEA /* 38 - Blue & Gold.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80B0A1E2125B5006DBFEA /* 38 - Blue & Gold.txt */; };
+		44A80B201E2125B5006DBFEA /* 44 - Valley View.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80B0B1E2125B5006DBFEA /* 44 - Valley View.txt */; };
+		44A80B221E2125B5006DBFEA /* LineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A80B0D1E2125B5006DBFEA /* LineViewController.swift */; };
+		44A80B251E212710006DBFEA /* BusesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A80B241E212710006DBFEA /* BusesTableViewController.swift */; };
+		44A80B271E212856006DBFEA /* BusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A80B261E212856006DBFEA /* BusTableViewCell.swift */; };
+		44A80B291E212C4E006DBFEA /* BusLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A80B281E212C4E006DBFEA /* BusLine.swift */; };
 		44D097641E0D693D007476DD /* PRT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D097631E0D693D007476DD /* PRT.swift */; };
 		44D097661E0D6AF0007476DD /* PRTRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D097651E0D6AF0007476DD /* PRTRequest.swift */; };
 		44D097681E0DEB5D007476DD /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D097671E0DEB5D007476DD /* Menu.swift */; };
@@ -118,6 +141,29 @@
 		442B484D1E1CA25D0014349E /* DiningTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningTableViewController.swift; sourceTree = "<group>"; };
 		442B484F1E1CA2820014349E /* DiningInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningInfoViewController.swift; sourceTree = "<group>"; };
 		44764CBB1E1F5F310041CC26 /* DiningHallSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningHallSelectionCell.swift; sourceTree = "<group>"; };
+		44A80AF91E2125B5006DBFEA /* 1 - Campus PM.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "1 - Campus PM.txt"; sourceTree = "<group>"; };
+		44A80AFA1E2125B5006DBFEA /* 2 - DT PM Mall.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2 - DT PM Mall.txt"; sourceTree = "<group>"; };
+		44A80AFB1E2125B5006DBFEA /* 3 - Green Line.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "3 - Green Line.txt"; sourceTree = "<group>"; };
+		44A80AFC1E2125B5006DBFEA /* 4 - Orange Line.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "4 - Orange Line.txt"; sourceTree = "<group>"; };
+		44A80AFD1E2125B5006DBFEA /* 6 - Gold Line.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "6 - Gold Line.txt"; sourceTree = "<group>"; };
+		44A80AFE1E2125B5006DBFEA /* 7 - Red Line.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "7 - Red Line.txt"; sourceTree = "<group>"; };
+		44A80AFF1E2125B5006DBFEA /* 8 - Tyrone.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "8 - Tyrone.txt"; sourceTree = "<group>"; };
+		44A80B001E2125B5006DBFEA /* 9 - Purple Line.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "9 - Purple Line.txt"; sourceTree = "<group>"; };
+		44A80B011E2125B5006DBFEA /* 11 - Cassville.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "11 - Cassville.txt"; sourceTree = "<group>"; };
+		44A80B021E2125B5006DBFEA /* 12 - Blue Line.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "12 - Blue Line.txt"; sourceTree = "<group>"; };
+		44A80B031E2125B5006DBFEA /* 13 - Crown.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "13 - Crown.txt"; sourceTree = "<group>"; };
+		44A80B041E2125B5006DBFEA /* 14 - Mtn. Heights.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "14 - Mtn. Heights.txt"; sourceTree = "<group>"; };
+		44A80B051E2125B5006DBFEA /* 15 - Grafton Rd..txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "15 - Grafton Rd..txt"; sourceTree = "<group>"; };
+		44A80B061E2125B5006DBFEA /* 16 - Pink Line.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "16 - Pink Line.txt"; sourceTree = "<group>"; };
+		44A80B071E2125B5006DBFEA /* 29 - Grey Line.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "29 - Grey Line.txt"; sourceTree = "<group>"; };
+		44A80B081E2125B5006DBFEA /* 30 - West Run.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "30 - West Run.txt"; sourceTree = "<group>"; };
+		44A80B091E2125B5006DBFEA /* 30 - WR Late.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "30 - WR Late.txt"; sourceTree = "<group>"; };
+		44A80B0A1E2125B5006DBFEA /* 38 - Blue & Gold.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "38 - Blue & Gold.txt"; sourceTree = "<group>"; };
+		44A80B0B1E2125B5006DBFEA /* 44 - Valley View.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "44 - Valley View.txt"; sourceTree = "<group>"; };
+		44A80B0D1E2125B5006DBFEA /* LineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineViewController.swift; sourceTree = "<group>"; };
+		44A80B241E212710006DBFEA /* BusesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusesTableViewController.swift; sourceTree = "<group>"; };
+		44A80B261E212856006DBFEA /* BusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusTableViewCell.swift; sourceTree = "<group>"; };
+		44A80B281E212C4E006DBFEA /* BusLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLine.swift; sourceTree = "<group>"; };
 		44D097631E0D693D007476DD /* PRT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRT.swift; sourceTree = "<group>"; };
 		44D097651E0D6AF0007476DD /* PRTRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRTRequest.swift; sourceTree = "<group>"; };
 		44D097671E0DEB5D007476DD /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
@@ -215,6 +261,7 @@
 				425D1AAE1E14114800B88972 /* NewsImageCell.swift */,
 				42FE8F8E1E157EA100FFCD85 /* LargeEventsCell.swift */,
 				44764CBB1E1F5F310041CC26 /* DiningHallSelectionCell.swift */,
+				44A80B261E212856006DBFEA /* BusTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -226,6 +273,35 @@
 				4252D4871E1C46C900946774 /* MapStyles.swift */,
 			);
 			name = Map;
+			sourceTree = "<group>";
+		};
+		44A80B231E2125BB006DBFEA /* Buses */ = {
+			isa = PBXGroup;
+			children = (
+				44A80AF91E2125B5006DBFEA /* 1 - Campus PM.txt */,
+				44A80AFA1E2125B5006DBFEA /* 2 - DT PM Mall.txt */,
+				44A80AFB1E2125B5006DBFEA /* 3 - Green Line.txt */,
+				44A80AFC1E2125B5006DBFEA /* 4 - Orange Line.txt */,
+				44A80AFD1E2125B5006DBFEA /* 6 - Gold Line.txt */,
+				44A80AFE1E2125B5006DBFEA /* 7 - Red Line.txt */,
+				44A80AFF1E2125B5006DBFEA /* 8 - Tyrone.txt */,
+				44A80B001E2125B5006DBFEA /* 9 - Purple Line.txt */,
+				44A80B011E2125B5006DBFEA /* 11 - Cassville.txt */,
+				44A80B021E2125B5006DBFEA /* 12 - Blue Line.txt */,
+				44A80B031E2125B5006DBFEA /* 13 - Crown.txt */,
+				44A80B041E2125B5006DBFEA /* 14 - Mtn. Heights.txt */,
+				44A80B051E2125B5006DBFEA /* 15 - Grafton Rd..txt */,
+				44A80B061E2125B5006DBFEA /* 16 - Pink Line.txt */,
+				44A80B071E2125B5006DBFEA /* 29 - Grey Line.txt */,
+				44A80B081E2125B5006DBFEA /* 30 - West Run.txt */,
+				44A80B091E2125B5006DBFEA /* 30 - WR Late.txt */,
+				44A80B0A1E2125B5006DBFEA /* 38 - Blue & Gold.txt */,
+				44A80B0B1E2125B5006DBFEA /* 44 - Valley View.txt */,
+				44A80B0D1E2125B5006DBFEA /* LineViewController.swift */,
+				44A80B241E212710006DBFEA /* BusesTableViewController.swift */,
+				44A80B281E212C4E006DBFEA /* BusLine.swift */,
+			);
+			name = Buses;
 			sourceTree = "<group>";
 		};
 		5C99DB6204B7F91903826C92 /* Pods */ = {
@@ -282,6 +358,7 @@
 				425D1AA31E13FFFC00B88972 /* Home */,
 				425D1AA71E14007800B88972 /* View */,
 				425D1AA61E14005400B88972 /* Helper */,
+				44A80B231E2125BB006DBFEA /* Buses */,
 				9C8603581E03764600FE6531 /* Main.storyboard */,
 				9C86035D1E03764600FE6531 /* LaunchScreen.storyboard */,
 				9C8603601E03764600FE6531 /* Info.plist */,
@@ -406,9 +483,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44A80B0F1E2125B5006DBFEA /* 2 - DT PM Mall.txt in Resources */,
+				44A80B131E2125B5006DBFEA /* 7 - Red Line.txt in Resources */,
+				44A80B1B1E2125B5006DBFEA /* 16 - Pink Line.txt in Resources */,
+				44A80B181E2125B5006DBFEA /* 13 - Crown.txt in Resources */,
+				44A80B1E1E2125B5006DBFEA /* 30 - WR Late.txt in Resources */,
+				44A80B1A1E2125B5006DBFEA /* 15 - Grafton Rd..txt in Resources */,
+				44A80B161E2125B5006DBFEA /* 11 - Cassville.txt in Resources */,
 				9C86035F1E03764600FE6531 /* LaunchScreen.storyboard in Resources */,
+				44A80B141E2125B5006DBFEA /* 8 - Tyrone.txt in Resources */,
+				44A80B101E2125B5006DBFEA /* 3 - Green Line.txt in Resources */,
+				44A80B1F1E2125B5006DBFEA /* 38 - Blue & Gold.txt in Resources */,
+				44A80B0E1E2125B5006DBFEA /* 1 - Campus PM.txt in Resources */,
+				44A80B1C1E2125B5006DBFEA /* 29 - Grey Line.txt in Resources */,
+				44A80B1D1E2125B5006DBFEA /* 30 - West Run.txt in Resources */,
 				9C86035C1E03764600FE6531 /* Assets.xcassets in Resources */,
+				44A80B151E2125B5006DBFEA /* 9 - Purple Line.txt in Resources */,
+				44A80B121E2125B5006DBFEA /* 6 - Gold Line.txt in Resources */,
+				44A80B171E2125B5006DBFEA /* 12 - Blue Line.txt in Resources */,
 				9C86035A1E03764600FE6531 /* Main.storyboard in Resources */,
+				44A80B201E2125B5006DBFEA /* 44 - Valley View.txt in Resources */,
+				44A80B111E2125B5006DBFEA /* 4 - Orange Line.txt in Resources */,
+				44A80B191E2125B5006DBFEA /* 14 - Mtn. Heights.txt in Resources */,
 				42A3E75B1E1BEA3600DB8140 /* PRT.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,13 +630,16 @@
 				44022A7E1E0700FD004FC92F /* TabBarController.swift in Sources */,
 				44022A751E06DC00004FC92F /* DiningHall.swift in Sources */,
 				9C8603531E03764600FE6531 /* AppDelegate.swift in Sources */,
+				44A80B271E212856006DBFEA /* BusTableViewCell.swift in Sources */,
 				425D1AAF1E14114800B88972 /* NewsImageCell.swift in Sources */,
 				442B48501E1CA2820014349E /* DiningInfoViewController.swift in Sources */,
 				4252D4881E1C46C900946774 /* MapStyles.swift in Sources */,
 				44D097681E0DEB5D007476DD /* Menu.swift in Sources */,
 				42E1BFEE1E1D42C4004E2CA4 /* DiningHallContainerViewController.swift in Sources */,
+				44A80B251E212710006DBFEA /* BusesTableViewController.swift in Sources */,
 				427537781E0C2581007E46B1 /* RSSElement.swift in Sources */,
 				44022A801E0707A6004FC92F /* NavigationController.swift in Sources */,
+				44A80B221E2125B5006DBFEA /* LineViewController.swift in Sources */,
 				42D6472E1E14388900D0CE9F /* WebViewController.swift in Sources */,
 				4233455F1E1BE6C000630003 /* OnCampusTableViewController.swift in Sources */,
 				44022A7C1E06FF04004FC92F /* Colors.swift in Sources */,
@@ -553,6 +652,7 @@
 				42FE8F8F1E157EA100FFCD85 /* LargeEventsCell.swift in Sources */,
 				42D647301E1440E300D0CE9F /* Image.swift in Sources */,
 				4275377C1E0C2FDC007E46B1 /* PRTView.swift in Sources */,
+				44A80B291E212C4E006DBFEA /* BusLine.swift in Sources */,
 				425D1AA21E12F89600B88972 /* RoundedTable.swift in Sources */,
 				9C8603551E03764600FE6531 /* HomeViewController.swift in Sources */,
 				442B484E1E1CA25D0014349E /* DiningTableViewController.swift in Sources */,
