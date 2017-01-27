@@ -7,15 +7,15 @@
 //
 
 import UIKit
-import FSCalendar
 
-class DiningTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FSCalendarDataSource, FSCalendarDelegate {
-    @IBOutlet weak var calendar: FSCalendar!
-    @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
+class DiningTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DateSelectorViewControllerDelegate {
     @IBOutlet weak var menuTable: UITableView!
     
     var menu = Menu(diningHall: .Arnold)
     var diningHall = DiningHall.Arnold
+    
+    var dateSelector: DateSelectorViewController!
+    var gesture: UITapGestureRecognizer!
     
     var selectedDate = Date()
     
@@ -31,12 +31,15 @@ class DiningTableViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.calendar.select(Date())
-        self.calendar.scope = .week
-        self.calendar.scopeGesture.isEnabled = true
-        
         menuTable.delegate = self
         menuTable.dataSource = self
+        
+        gesture = UITapGestureRecognizer(target: self, action: #selector(EventsViewController.tap))
+        
+        dateSelector = DateSelectorViewController(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
+        dateSelector.delegate = self
+        
+        view.addSubview(dateSelector)
         
         menu.diningHall = diningHall
         
@@ -57,34 +60,6 @@ class DiningTableViewController: UIViewController, UITableViewDelegate, UITableV
                 }
             })
         }
-    }
-    
-    func minimumDate(for calendar: FSCalendar) -> Date {
-        return Date().addingTimeInterval(-calendarRange)
-    }
-    
-    func maximumDate(for calendar: FSCalendar) -> Date {
-        return Date().addingTimeInterval(calendarRange)
-    }
-    
-    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-        NSLog("change page to \(self.formatter.string(from: calendar.currentPage))")
-    }
-    
-    
-    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        NSLog("calendar did select date \(self.formatter.string(from: date))")
-        if monthPosition == .previous || monthPosition == .next {
-            calendar.setCurrentPage(date, animated: true)
-        }
-        
-        self.selectedDate = date
-        loadToday()
-    }
-    
-    func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
-        calendarHeightConstraint.constant = bounds.height
-        view.layoutIfNeeded()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -114,5 +89,25 @@ class DiningTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+    
+    func tap() {
+        self.dateSelector.dismissCalendar()
+    }
+    
+    func didSelectNewDate(date: Date) {
+        self.selectedDate = date
+        loadToday()
+
+    }
+    
+    func calendarDidAppear() {
+        self.dateSelector.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 360)
+        self.menuTable.addGestureRecognizer(gesture)
+    }
+    
+    func calendarDidDisappear() {
+        self.dateSelector.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
+        self.menuTable.removeGestureRecognizer(gesture)
     }
 }

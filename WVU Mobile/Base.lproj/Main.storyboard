@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -342,7 +342,7 @@
             </objects>
             <point key="canvasLocation" x="1688.8" y="416.94152923538235"/>
         </scene>
-        <!--Data Source-->
+        <!--Events-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="EventsViewController" customModule="WVU_Mobile" customModuleProvider="target" sceneMemberID="viewController">
@@ -354,44 +354,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vs2-Li-Php" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="64" width="375" height="300"/>
-                                <color key="backgroundColor" red="0.75676157994923854" green="0.75676157994923854" blue="0.75676157994923854" alpha="0.14150791952054795" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vs2-Li-Php">
+                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="wrZ-yK-vqK"/>
+                                    <constraint firstAttribute="height" constant="50" id="B09-eu-TMs"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitContentSize" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
-                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="useVeryShortWeekdaySymbols" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="todaySelectionColor">
-                                        <color key="value" red="0.69411764710000001" green="0.78823529410000004" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
-                                        <color key="value" red="0.69411764710000001" green="0.78823529410000004" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
-                                        <color key="value" red="0.91764705879999997" green="0.85882352939999995" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderDefaultColor">
-                                        <color key="value" red="0.92635628172588835" green="0.92635628172588835" blue="0.92635628172588835" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="3di-Wg-DcM"/>
-                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="YHa-4b-OBE"/>
-                                </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="166" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dqo-Tn-Pq4" customClass="EventsTable" customModule="WVU_Mobile" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="364" width="375" height="254"/>
+                                <rect key="frame" x="0.0" y="122" width="375" height="496"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -454,13 +424,20 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="vs2-Li-Php" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="3Jw-Xx-WcL"/>
+                            <constraint firstItem="vs2-Li-Php" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="CHu-XA-ZJa"/>
                             <constraint firstItem="vs2-Li-Php" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="JeH-Jj-rKI"/>
+                            <constraint firstItem="dqo-Tn-Pq4" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="N5x-P7-9bh"/>
                             <constraint firstItem="dqo-Tn-Pq4" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="UA4-Ge-efv"/>
                             <constraint firstAttribute="trailing" secondItem="dqo-Tn-Pq4" secondAttribute="trailing" id="W87-6Z-XuS"/>
-                            <constraint firstItem="dqo-Tn-Pq4" firstAttribute="top" secondItem="vs2-Li-Php" secondAttribute="bottom" id="ejD-4R-G4l"/>
+                            <constraint firstAttribute="trailing" secondItem="dqo-Tn-Pq4" secondAttribute="trailing" id="aKo-aZ-DnI"/>
+                            <constraint firstItem="dqo-Tn-Pq4" firstAttribute="top" secondItem="vs2-Li-Php" secondAttribute="bottom" constant="8" id="ejD-4R-G4l"/>
+                            <constraint firstItem="dqo-Tn-Pq4" firstAttribute="top" secondItem="vs2-Li-Php" secondAttribute="bottom" constant="8" id="lNU-pD-Xkc"/>
                             <constraint firstAttribute="trailing" secondItem="vs2-Li-Php" secondAttribute="trailing" id="sO5-Bx-Wfm"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="dqo-Tn-Pq4" secondAttribute="bottom" id="sQm-Dg-xo7"/>
+                            <constraint firstAttribute="trailing" secondItem="vs2-Li-Php" secondAttribute="trailing" id="tbj-Kt-7lE"/>
                             <constraint firstItem="vs2-Li-Php" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="uWk-Vb-2yy"/>
                         </constraints>
                     </view>
@@ -472,8 +449,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="calendar" destination="vs2-Li-Php" id="ci1-RE-51G"/>
-                        <outlet property="calendarHeightConstraint" destination="wrZ-yK-vqK" id="RRx-tO-S9T"/>
                         <outlet property="events" destination="dqo-Tn-Pq4" id="VCr-Po-cAV"/>
                     </connections>
                 </viewController>
@@ -1103,7 +1078,7 @@
             </objects>
             <point key="canvasLocation" x="5056.8000000000002" y="1584.5577211394304"/>
         </scene>
-        <!--Data Source-->
+        <!--Dining Table View Controller-->
         <scene sceneID="zPO-MN-v8W">
             <objects>
                 <viewController storyboardIdentifier="MenuTable" id="G6C-0t-PmD" customClass="DiningTableViewController" customModule="WVU_Mobile" customModuleProvider="target" sceneMemberID="viewController">
@@ -1116,7 +1091,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="STq-d4-shc">
-                                <rect key="frame" x="0.0" y="300" width="375" height="367"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="menu-item" textLabel="bg3-df-I0g" style="IBUITableViewCellStyleDefault" id="7W9-XS-QoN">
@@ -1138,54 +1113,29 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qtx-xf-poi" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qtx-xf-poi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                 <color key="backgroundColor" red="0.96460121870040894" green="0.96476620435714722" blue="0.96459084749221802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="xNW-bl-5Ue"/>
+                                    <constraint firstAttribute="height" constant="50" id="F91-ho-ZYJ"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
-                                        <color key="value" red="0.69411764710000001" green="0.78823529410000004" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
-                                        <color key="value" red="0.91764705879999997" green="0.85882352939999995" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="todaySelectionColor">
-                                        <color key="value" red="0.69411764710000001" green="0.78823529410000004" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderDefaultColor">
-                                        <color key="value" red="0.8659940168337168" green="0.8659940168337168" blue="0.8659940168337168" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="dataSource" destination="G6C-0t-PmD" id="JrQ-FB-7cx"/>
-                                    <outlet property="delegate" destination="G6C-0t-PmD" id="MHH-Oq-Yaa"/>
-                                </connections>
                             </view>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="STq-d4-shc" firstAttribute="top" secondItem="Qtx-xf-poi" secondAttribute="bottom" id="5GB-Us-pNJ"/>
                             <constraint firstAttribute="trailing" secondItem="STq-d4-shc" secondAttribute="trailing" id="8un-W2-hAg"/>
+                            <constraint firstItem="Qtx-xf-poi" firstAttribute="top" secondItem="ohv-uK-WpO" secondAttribute="top" id="Ckp-Ch-bfl"/>
                             <constraint firstItem="Qtx-xf-poi" firstAttribute="leading" secondItem="ohv-uK-WpO" secondAttribute="leading" id="FLe-85-bmY"/>
                             <constraint firstItem="Qtx-xf-poi" firstAttribute="top" secondItem="ohv-uK-WpO" secondAttribute="top" id="NCc-zw-iSe"/>
                             <constraint firstItem="rJE-Ge-qdI" firstAttribute="top" secondItem="STq-d4-shc" secondAttribute="bottom" id="OGl-jB-HNk"/>
                             <constraint firstItem="STq-d4-shc" firstAttribute="leading" secondItem="ohv-uK-WpO" secondAttribute="leading" id="OZl-s8-cst"/>
                             <constraint firstAttribute="trailing" secondItem="Qtx-xf-poi" secondAttribute="trailing" id="T5l-rn-2s8"/>
+                            <constraint firstItem="Qtx-xf-poi" firstAttribute="leading" secondItem="ohv-uK-WpO" secondAttribute="leading" id="VEf-Cx-IW2"/>
                             <constraint firstItem="STq-d4-shc" firstAttribute="top" secondItem="Qtx-xf-poi" secondAttribute="bottom" id="wi8-w3-9CN"/>
+                            <constraint firstAttribute="trailing" secondItem="Qtx-xf-poi" secondAttribute="trailing" id="x1l-tk-3xl"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="calendar" destination="Qtx-xf-poi" id="Ndd-9P-HtN"/>
-                        <outlet property="calendarHeightConstraint" destination="xNW-bl-5Ue" id="hEZ-bg-eUc"/>
                         <outlet property="menuTable" destination="STq-d4-shc" id="AEq-Xk-43f"/>
                     </connections>
                 </viewController>
