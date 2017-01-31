@@ -13,6 +13,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var events: EventsTable!
     var dateSelector: DateSelectorViewController!
     var gesture: UITapGestureRecognizer!
+    var progressIndicator: UIActivityIndicatorView!
     
     var eventsByDate = [String:[RSSElement]]()
     var selectedDate = Date()
@@ -40,8 +41,13 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         view.addSubview(dateSelector)
         
+        progressIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 100, width: view.frame.width, height: 50))
+        progressIndicator.color = UIColor.black
+        progressIndicator.startAnimating()
+        view.addSubview(progressIndicator)
+        
         loadToday()
-        loadOtherDaysInBackground()
+        loadOtherDaysInBackground(days: 60)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,17 +67,19 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                         self.eventsByDate[i.date.day]?.append(i)
                     }
                     self.events.reloadData()
+                    self.progressIndicator.isHidden = false
+                    self.progressIndicator.stopAnimating()
                 }
             })
         }
     }
     
-    func loadOtherDaysInBackground() {
+    func loadOtherDaysInBackground(days: Int) {
         let parser = RSSRequest()
         var eventsDate = [String:[RSSElement]]()
         
         DispatchQueue.global().async {
-            parser.getEvents(days: 60, completion: { events in
+            parser.getEvents(days: days, completion: { events in
                 DispatchQueue.main.sync {
                     for i in events {
                         if eventsDate[i.date.day] == nil {
@@ -80,16 +88,22 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                         eventsDate[i.date.day]?.append(i)
                     }
                     self.eventsByDate = eventsDate
+                    self.events.reloadData()
+                    self.progressIndicator.isHidden = true
+                    self.progressIndicator.stopAnimating()
                 }
             })
         }
     }
     
     func loadDay(date: Date) {
-        if let _ = self.eventsByDate[date.day] {
-            self.events.reloadData()
-            return
+        if self.eventsByDate[date.day] == nil {
+            let distance = date.timeIntervalSince(Date()) / 60 / 60 / 24
+            loadOtherDaysInBackground(days: Int(distance) + 5)
+            self.progressIndicator.isHidden = false
+            self.progressIndicator.startAnimating()
         }
+        self.events.reloadData()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -174,7 +188,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func didSelectNewDate(date: Date) {
         self.selectedDate = date
-        self.events.reloadData()
+        loadDay(date: date)
     }
     
     func calendarDidAppear() {

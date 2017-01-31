@@ -12,16 +12,29 @@ class DiningHallSelectionCell: UITableViewCell {
 
     @IBOutlet weak var diningHallName: UILabel!
     @IBOutlet weak var diningHallCampus: UILabel!
-    
+    @IBOutlet weak var open: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
+    
+    static func openLabel(open: Bool) -> String {
+        if open {
+            return "Open"
+        } else {
+            return "Closed"
+        }
+    }
+    
+    static func color(open: Bool) -> UIColor {
+        if open {
+            return Colors.green
+        } else {
+            return Colors.red
+        }
+    }
 }

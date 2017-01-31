@@ -14,7 +14,7 @@ class LineViewController: UIViewController, UITableViewDelegate, UITableViewData
     var map = GMSMapView()
     var tableView = UITableView()
     
-    var line: BusLine!
+    var line: BusRoute!
     var coords: Dictionary <String, CLLocationCoordinate2D>!
     var selected = -1
     var markerArray = [GMSMarker]()
@@ -26,7 +26,7 @@ class LineViewController: UIViewController, UITableViewDelegate, UITableViewData
         Set up Google Map View.
         */
         
-        map = GMSMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 285))
+        map = GMSMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: view.frame.height / 3))
         map.delegate = self
 
         let camera = GMSCameraPosition.camera(withLatitude: 39.635582, longitude: -79.954747, zoom: 12)
@@ -71,10 +71,12 @@ class LineViewController: UIViewController, UITableViewDelegate, UITableViewData
         Set up Table View.
         */
         
-        let tableView = UITableView(frame: CGRect(x: 0, y: 285, width: self.view.frame.width, height: self.view.frame.height - 285), style: .grouped)
+        let tableView = UITableView(frame: CGRect(x: 0, y: view.frame.height / 3, width: self.view.frame.width, height: view.frame.height - (view.frame.height / 3) - 103), style: .plain)
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         
         self.view.addSubview(tableView)
         
@@ -84,7 +86,7 @@ class LineViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func twitterButton() {
-        let infoImage = UIImage(named: "twitterInfo")
+        let infoImage = UIImage(named: "Twitter")
         
         let infoView = UIImageView(frame: CGRect(x: 0, y: 0, width: 27, height: 27))
         infoView.image = infoImage
@@ -127,30 +129,37 @@ class LineViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 25
     }
     
-    // Return header information for section.
-    /*func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView(frame: CGRectMake(0, 0, self.view.bounds.width, 25))
-        let label = UILabel(frame: CGRectMake(0, 0, self.view.bounds.width, 25))
-        label.textColor = colors.textColor
-        headerView.backgroundColor = colors.secondaryColor
-        label.font = UIFont(name: "HelveticaNeue-Medium", size: 14)
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 25))
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 25))
+        label.textColor = Colors.homeDarkBlue
+        headerView.backgroundColor = Colors.gray
+        label.font = UIFont.systemFont(ofSize: 13)
         label.text = line.runTime
-        label.textAlignment = .Center
-        label.lineBreakMode = .ByWordWrapping
+        label.textAlignment = .center
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
         
         headerView.addSubview(label)
         
         return headerView
-    }*/
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         
         if indexPath.row == 0 {
             cell.textLabel?.text = line.hoursString
+            cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.textAlignment = .center
+            cell.textLabel?.lineBreakMode = .byWordWrapping
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 13, weight: 0.1)
         } else {
             cell.textLabel?.text = line.stops[indexPath.row - 1]
-            cell.imageView?.image = UIImage(named: "Transportation")
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: 0.1)
+            cell.imageView?.image = UIImage(named: "Stops")?.withRenderingMode(.alwaysTemplate)
+            cell.imageView?.tintColor = UIColor.black
+            cell.imageView?.frame = CGRect(x: 0, y: 0, width: cell.frame.height, height: cell.frame.height)
         }
         return cell
     }

@@ -283,51 +283,97 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="bus" rowHeight="75" id="mta-IN-VNy" customClass="BusTableViewCell" customModule="WVU_Mobile" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="subtext" rowHeight="75" id="mta-IN-VNy" customClass="BusTableViewCell" customModule="WVU_Mobile" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="56" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mta-IN-VNy" id="iUs-L8-1kG">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Transportation" translatesAutoresizingMaskIntoConstraints="NO" id="73O-Aw-LhK">
-                                            <rect key="frame" x="8" y="8" width="58" height="58"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="58" id="25W-SJ-kPd"/>
-                                                <constraint firstAttribute="height" constant="58" id="RqN-ZX-6Oh"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spring Semester Only" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIv-nn-6lX">
-                                            <rect key="frame" x="84" y="38" width="258" height="28"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Spring Semester Only" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIv-nn-6lX">
+                                            <rect key="frame" x="84" y="37" width="258" height="29"/>
+                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bus line" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCI-zE-mpW">
-                                            <rect key="frame" x="84" y="8" width="258" height="29"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="84" y="8" width="258" height="28"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Transportation" translatesAutoresizingMaskIntoConstraints="NO" id="73O-Aw-LhK">
+                                            <rect key="frame" x="20" y="18" width="39" height="39"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="39" id="25W-SJ-kPd"/>
+                                                <constraint firstAttribute="height" constant="39" id="RqN-ZX-6Oh"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="73O-Aw-LhK" firstAttribute="top" secondItem="iUs-L8-1kG" secondAttribute="topMargin" id="BNJ-ua-tUq"/>
+                                        <constraint firstItem="XCI-zE-mpW" firstAttribute="leading" secondItem="73O-Aw-LhK" secondAttribute="trailing" constant="25" id="3xT-lD-jV1"/>
+                                        <constraint firstItem="73O-Aw-LhK" firstAttribute="top" secondItem="iUs-L8-1kG" secondAttribute="topMargin" constant="10" id="BNJ-ua-tUq"/>
+                                        <constraint firstItem="HIv-nn-6lX" firstAttribute="top" secondItem="XCI-zE-mpW" secondAttribute="bottom" constant="1" id="E9B-up-WOm"/>
                                         <constraint firstAttribute="bottom" secondItem="HIv-nn-6lX" secondAttribute="bottom" constant="8" id="J0U-tU-XPf"/>
                                         <constraint firstAttribute="trailing" secondItem="HIv-nn-6lX" secondAttribute="trailing" id="TEm-hc-Bdl"/>
-                                        <constraint firstAttribute="bottom" secondItem="XCI-zE-mpW" secondAttribute="bottom" constant="37" id="TO0-Ti-fOw"/>
                                         <constraint firstAttribute="trailing" secondItem="XCI-zE-mpW" secondAttribute="trailing" id="TYs-Hg-rCU"/>
-                                        <constraint firstItem="73O-Aw-LhK" firstAttribute="leading" secondItem="iUs-L8-1kG" secondAttribute="leadingMargin" id="Uzb-2g-oF5"/>
-                                        <constraint firstItem="HIv-nn-6lX" firstAttribute="leading" secondItem="73O-Aw-LhK" secondAttribute="trailing" constant="18" id="YvD-oh-sWC"/>
+                                        <constraint firstItem="73O-Aw-LhK" firstAttribute="leading" secondItem="iUs-L8-1kG" secondAttribute="leadingMargin" constant="12" id="Uzb-2g-oF5"/>
+                                        <constraint firstItem="HIv-nn-6lX" firstAttribute="leading" secondItem="73O-Aw-LhK" secondAttribute="trailing" constant="25" id="YvD-oh-sWC"/>
+                                        <constraint firstItem="HIv-nn-6lX" firstAttribute="leading" secondItem="73O-Aw-LhK" secondAttribute="trailing" constant="25" id="aip-Tg-OrC"/>
+                                        <constraint firstAttribute="trailing" secondItem="HIv-nn-6lX" secondAttribute="trailing" id="dJ0-hT-YyY"/>
+                                        <constraint firstItem="HIv-nn-6lX" firstAttribute="top" secondItem="XCI-zE-mpW" secondAttribute="bottom" constant="1" id="ffq-NV-j2L"/>
                                         <constraint firstItem="HIv-nn-6lX" firstAttribute="top" secondItem="XCI-zE-mpW" secondAttribute="bottom" constant="1" id="gMu-M3-yex"/>
-                                        <constraint firstItem="73O-Aw-LhK" firstAttribute="bottom" secondItem="iUs-L8-1kG" secondAttribute="bottomMargin" id="jMe-nG-XLQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="HIv-nn-6lX" secondAttribute="bottom" constant="8" id="haa-nO-Uau"/>
+                                        <constraint firstItem="HIv-nn-6lX" firstAttribute="top" secondItem="XCI-zE-mpW" secondAttribute="bottom" constant="1" id="j92-tb-AXr"/>
+                                        <constraint firstItem="73O-Aw-LhK" firstAttribute="bottom" secondItem="iUs-L8-1kG" secondAttribute="bottomMargin" constant="-9" id="jMe-nG-XLQ"/>
+                                        <constraint firstItem="HIv-nn-6lX" firstAttribute="top" secondItem="XCI-zE-mpW" secondAttribute="bottom" constant="1" id="qlg-T5-KVm"/>
+                                        <constraint firstAttribute="trailing" secondItem="XCI-zE-mpW" secondAttribute="trailing" id="suX-uz-W2t"/>
                                         <constraint firstItem="XCI-zE-mpW" firstAttribute="top" secondItem="iUs-L8-1kG" secondAttribute="top" constant="8" id="uPY-na-76S"/>
-                                        <constraint firstItem="XCI-zE-mpW" firstAttribute="leading" secondItem="73O-Aw-LhK" secondAttribute="trailing" constant="18" id="yWD-TT-kzP"/>
+                                        <constraint firstItem="XCI-zE-mpW" firstAttribute="leading" secondItem="73O-Aw-LhK" secondAttribute="trailing" constant="25" id="yWD-TT-kzP"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="icon" destination="73O-Aw-LhK" id="Gip-yj-19P"/>
                                     <outlet property="name" destination="XCI-zE-mpW" id="GD9-YX-7b5"/>
                                     <outlet property="semester" destination="HIv-nn-6lX" id="g2G-GH-rGF"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="bus" rowHeight="75" id="5go-sY-Dw1" customClass="BusTableViewCell" customModule="WVU_Mobile" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="131" width="375" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5go-sY-Dw1" id="ZIM-uQ-Fyd">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="74"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bus line" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKV-ix-dX1">
+                                            <rect key="frame" x="84" y="8" width="258" height="58"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Transportation" translatesAutoresizingMaskIntoConstraints="NO" id="wDm-Ld-69E">
+                                            <rect key="frame" x="20" y="18" width="39" height="39"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="39" id="k4q-Qq-7uz"/>
+                                                <constraint firstAttribute="height" constant="39" id="t5i-Dv-3kz"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="wDm-Ld-69E" firstAttribute="leading" secondItem="ZIM-uQ-Fyd" secondAttribute="leadingMargin" constant="12" id="Clx-Li-kSN"/>
+                                        <constraint firstItem="wDm-Ld-69E" firstAttribute="bottom" secondItem="ZIM-uQ-Fyd" secondAttribute="bottomMargin" constant="-9" id="GHW-an-QuS"/>
+                                        <constraint firstItem="TKV-ix-dX1" firstAttribute="leading" secondItem="wDm-Ld-69E" secondAttribute="trailing" constant="25" id="I4z-8x-Zfg"/>
+                                        <constraint firstAttribute="bottom" secondItem="TKV-ix-dX1" secondAttribute="bottom" constant="8" id="QPw-z7-ceL"/>
+                                        <constraint firstAttribute="trailing" secondItem="TKV-ix-dX1" secondAttribute="trailing" id="Y1I-LI-5Ev"/>
+                                        <constraint firstItem="TKV-ix-dX1" firstAttribute="top" secondItem="ZIM-uQ-Fyd" secondAttribute="top" constant="8" id="bnf-Xa-cHk"/>
+                                        <constraint firstItem="TKV-ix-dX1" firstAttribute="leading" secondItem="wDm-Ld-69E" secondAttribute="trailing" constant="25" id="dkL-Kv-83U"/>
+                                        <constraint firstAttribute="trailing" secondItem="TKV-ix-dX1" secondAttribute="trailing" id="z9e-wE-rns"/>
+                                        <constraint firstItem="wDm-Ld-69E" firstAttribute="top" secondItem="ZIM-uQ-Fyd" secondAttribute="topMargin" constant="10" id="zov-f1-krY"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="icon" destination="wDm-Ld-69E" id="iqL-2B-pHQ"/>
+                                    <outlet property="name" destination="TKV-ix-dX1" id="YTT-ja-iNZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -917,6 +963,7 @@
                                 <connections>
                                     <outlet property="diningHallCampus" destination="udz-XF-Pfy" id="H97-bk-t5d"/>
                                     <outlet property="diningHallName" destination="eOB-ku-GdF" id="pUn-si-X2C"/>
+                                    <outlet property="open" destination="fwQ-nW-RZA" id="DFK-1y-bJI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

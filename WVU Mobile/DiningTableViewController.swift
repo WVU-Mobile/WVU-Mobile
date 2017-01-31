@@ -11,6 +11,9 @@ import UIKit
 class DiningTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DateSelectorViewControllerDelegate {
     @IBOutlet weak var menuTable: UITableView!
     
+    var noInfoAvailableLabel: UILabel!
+    var progressIndicator: UIActivityIndicatorView!
+    
     var menu = Menu(diningHall: .Arnold)
     var diningHall = DiningHall.Arnold
     
@@ -36,10 +39,20 @@ class DiningTableViewController: UIViewController, UITableViewDelegate, UITableV
         
         gesture = UITapGestureRecognizer(target: self, action: #selector(EventsViewController.tap))
         
+        noInfoAvailableLabel = UILabel(frame: view.frame)
+        noInfoAvailableLabel.text = "No menu info is available."
+        noInfoAvailableLabel.backgroundColor = UIColor.white
+        noInfoAvailableLabel.textAlignment = .center
+        
         dateSelector = DateSelectorViewController(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
         dateSelector.delegate = self
         
         view.addSubview(dateSelector)
+        
+        progressIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 100, width: view.frame.width, height: 50))
+        progressIndicator.color = UIColor.black
+        progressIndicator.startAnimating()
+        view.addSubview(progressIndicator)
         
         menu.diningHall = diningHall
         
@@ -55,8 +68,16 @@ class DiningTableViewController: UIViewController, UITableViewDelegate, UITableV
                         print(r.menu)
 
                         self.menu = r
+                    
+                        if r.menu.count == 0 {
+                            self.view.insertSubview(self.noInfoAvailableLabel, belowSubview: self.dateSelector)
+                        } else {
+                            self.noInfoAvailableLabel.removeFromSuperview()
+                            self.menuTable.reloadData()
+                        }
                     }
-                    self.menuTable.reloadData()
+                    self.progressIndicator.isHidden = true
+                    self.progressIndicator.stopAnimating()
                 }
             })
         }
@@ -97,6 +118,8 @@ class DiningTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     func didSelectNewDate(date: Date) {
         self.selectedDate = date
+        progressIndicator.isHidden = false
+        progressIndicator.startAnimating()
         loadToday()
 
     }

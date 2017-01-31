@@ -246,6 +246,7 @@
 				44D097671E0DEB5D007476DD /* Menu.swift */,
 				44022A781E06DEC3004FC92F /* MenuItem.swift */,
 				44022A741E06DC00004FC92F /* DiningHall.swift */,
+				44A80B281E212C4E006DBFEA /* BusLine.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -316,9 +317,6 @@
 				44A80B091E2125B5006DBFEA /* 30 - WR Late.txt */,
 				44A80B0A1E2125B5006DBFEA /* 38 - Blue & Gold.txt */,
 				44A80B0B1E2125B5006DBFEA /* 44 - Valley View.txt */,
-				44A80B0D1E2125B5006DBFEA /* LineViewController.swift */,
-				44A80B241E212710006DBFEA /* BusesTableViewController.swift */,
-				44A80B281E212C4E006DBFEA /* BusLine.swift */,
 			);
 			name = Buses;
 			sourceTree = "<group>";
@@ -373,6 +371,8 @@
 				42E1BFED1E1D42C4004E2CA4 /* DiningHallContainerViewController.swift */,
 				442B484D1E1CA25D0014349E /* DiningTableViewController.swift */,
 				442B484F1E1CA2820014349E /* DiningInfoViewController.swift */,
+				44A80B241E212710006DBFEA /* BusesTableViewController.swift */,
+				44A80B0D1E2125B5006DBFEA /* LineViewController.swift */,
 				425D1AA51E14002F00B88972 /* Model */,
 				425D1AA41E14002100B88972 /* Web Request */,
 				425D1AA31E13FFFC00B88972 /* Home */,

@@ -44,7 +44,94 @@ enum DiningHall: Int {
     }
     
     var isOpen: Bool {
-        return true
+        // check if holiday or outside semester hours
+        
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone.init(abbreviation: "EST")!
+        
+        let date = Date()
+
+        let hour = calendar.component(.hour, from: date)
+        let minute = calendar.component(.minute, from: date)
+        let weekday = calendar.component(.weekday, from: date)
+        
+        switch self {
+        case .Arnold:
+            if calendar.isDateInWeekend(date) {
+                if hour >= 11 && hour < 15 {
+                    return true
+                }
+            } else {
+                if hour >= 9 && hour < 19 {
+                    return true
+                }
+            }
+        case .Summit:
+            if calendar.isDateInWeekend(date) {
+                if hour >= 11 && hour < 18 {
+                    if hour == 18 {
+                        if minute < 30 {
+                            return true
+                        }
+                    } else {
+                        return true
+                    }
+                }
+            } else {
+                if hour >= 7 && hour < 19 {
+                    return true
+                }
+            }
+        case .Boreman:
+            if calendar.isDateInWeekend(date) {
+                if hour >= 11 && hour < 15 {
+                    return true
+                }
+            } else {
+                if hour >= 7 && hour < 19 {
+                    return true
+                }
+            }
+        case .Hatfields:
+            if !calendar.isDateInWeekend(date) {
+                if ((hour == 7 && minute >= 15) || (hour >= 8) ) && hour < 10 {
+                    return true
+                } else if hour >= 11 && hour < 2 {
+                    return true
+                }
+            }
+        case .TerraceRoom:
+            if !calendar.isDateInWeekend(date) {
+                if weekday == 6 {
+                    if hour >= 11 && hour < 14 {
+                        return true
+                    }
+                } else {
+                    if hour >= 11 && hour < 20 {
+                        return true
+                    }
+                }
+            }
+        case .CafeEvansdale:
+            if weekday == 1 {
+                if hour >= 9 && ( hour < 19 || hour == 19 && minute <= 30 ) {
+                    return true
+                }
+            } else if weekday == 6 {
+                if hour >= 7 && ( hour < 18 || hour == 18 && minute <= 30 ) {
+                    return true
+                }
+            } else if weekday == 7 {
+                if hour >= 9 && ( hour < 18 || hour == 18 && minute <= 30 ) {
+                    return true
+                }
+            } else {
+                if hour >= 7 && hour < 20 {
+                    return true
+                }
+            }
+        }
+        return false
     }
     
     var hoursOfOperation: String {
@@ -65,6 +152,7 @@ enum DiningHall: Int {
                     "Saturday & Sunday 11:00 am - 3:00 pm"
         case .TerraceRoom:
             return  "Monday – Thursday 11:00 am - 8:00 pm\n" +
+                    "Friday 11:00 am - 2:00 pm\n" +
                     "Saturday, Sunday & Holidays Closed"
         case .Hatfields:
             return  "Breakfast: 7:15 am - 10:00 am\n" +
@@ -141,4 +229,30 @@ enum DiningHall: Int {
         Lunch/Brunch: 9.25
         Dinner: 11.25
      */
+    
+    enum Operational {
+        case open, openingSoon, closed, closingSoon
+        
+        var isOpen: Bool {
+            switch self {
+            case .open, .closingSoon:
+                return true
+            default:
+                return false
+            }
+        }
+        
+        var string: String {
+            switch self {
+            case .open:
+                return "Open"
+            case .openingSoon:
+                return "Opening soon"
+            case .closingSoon:
+                return "Closing soon"
+            case .closed:
+                return "Closed"
+            }
+        }
+    }
 }

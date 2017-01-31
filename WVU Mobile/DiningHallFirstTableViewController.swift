@@ -44,6 +44,9 @@ class DiningHallFirstTableViewController: UITableViewController {
 
         cell.diningHallName.text = items[indexPath.row].name
         cell.diningHallCampus.text = items[indexPath.row].campus
+        
+        cell.open.text = DiningHallSelectionCell.openLabel(open: items[indexPath.row].isOpen)
+        cell.open.textColor = DiningHallSelectionCell.color(open: items[indexPath.row].isOpen)
 
         return cell
     }
