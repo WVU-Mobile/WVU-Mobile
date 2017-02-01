@@ -76,17 +76,19 @@ class RSSRequest: NSObject, XMLParserDelegate {
             return
         }
         
+        let text = string.trimmingCharacters(in: .newlines)
+
         switch self.elementName {
         case "title":
-            currentElement.title = string
+            currentElement.title += text
         case "link":
-            currentElement.link = string
+            currentElement.link += text
         case "description":
-            currentElement.description = string
+            currentElement.description += text
         case "pubDate":
             currentElement.date = Date.rssDate(date: string) // todo
         case "guid":
-            currentElement.guid = string // todo
+            currentElement.guid += text // todo
         default:
             return
         }

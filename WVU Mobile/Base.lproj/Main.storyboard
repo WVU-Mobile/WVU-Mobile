@@ -277,7 +277,7 @@
             </objects>
             <point key="canvasLocation" x="1688.8" y="-957.57121439280365"/>
         </scene>
-        <!--Settings Table View Controller-->
+        <!--Settings-->
         <scene sceneID="gxG-fI-7nb">
             <objects>
                 <tableViewController id="mgo-7V-fGQ" customClass="SettingsTableViewController" customModule="WVU_Mobile" customModuleProvider="target" sceneMemberID="viewController">
@@ -295,10 +295,11 @@
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="F57-tZ-38H">
                                             <rect key="frame" x="289" y="6" width="51" height="31"/>
+                                            <color key="onTintColor" red="0.69411764710000001" green="0.78823529410000004" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
                                         </switch>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Night Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7WA-j6-mzc">
                                             <rect key="frame" x="19" y="11" width="198" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -314,18 +315,60 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="social" textLabel="7j7-6M-PUt" detailTextLabel="NSg-uJ-p6M" style="IBUITableViewCellStyleValue1" id="FTs-O4-VAK">
+                                <rect key="frame" x="0.0" y="100" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FTs-O4-VAK" id="OmP-tk-GBO">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Kate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7j7-6M-PUt">
+                                            <rect key="frame" x="15" y="11" width="36" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="@kaitinthecosmos" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NSg-uJ-p6M">
+                                            <rect key="frame" x="223" y="13" width="137" height="20"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                            <color key="textColor" red="0.6642690765728736" green="0.74265147309702451" blue="0.82350491751269039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="email" textLabel="Wp6-J8-B9f" style="IBUITableViewCellStyleDefault" id="taw-qu-NXg">
+                                <rect key="frame" x="0.0" y="144" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="taw-qu-NXg" id="vSw-sS-hho">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="email@email.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wp6-J8-B9f">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="mgo-7V-fGQ" id="2LL-yQ-yvV"/>
                             <outlet property="delegate" destination="mgo-7V-fGQ" id="YI7-em-umn"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="3Rs-Gp-EWU"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3S2-r3-JRY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2740" y="-958.4707646176912"/>
         </scene>
-        <!--Buses Table View Controller-->
+        <!--Buses-->
         <scene sceneID="wNe-SJ-yWi">
             <objects>
                 <tableViewController id="zYL-Lf-Hae" customClass="BusesTableViewController" customModule="WVU_Mobile" customModuleProvider="target" sceneMemberID="viewController">
@@ -433,7 +476,7 @@
                             <outlet property="delegate" destination="zYL-Lf-Hae" id="LFv-8S-2it"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="BnZ-QL-N6X"/>
+                    <navigationItem key="navigationItem" title="Buses" id="BnZ-QL-N6X"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQ9-Sc-46L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -637,9 +680,9 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="222" sectionHeaderHeight="28" sectionFooterHeight="28" id="LQl-uH-4eR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.91764705879999997" green="0.85882352939999995" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <color key="sectionIndexBackgroundColor" red="0.91764705879999997" green="0.85882352939999995" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="1" green="0.9703001322" blue="0.88906219750000004" alpha="0.13888591610000001" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="news" rowHeight="222" id="YS8-v9-zRd" customClass="NewsCell" customModule="WVU_Mobile" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="222"/>
@@ -648,28 +691,28 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="221"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WVU Board of Governors supports partnership to advance health, education and community wellness facility" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAH-BK-SAJ">
-                                            <rect key="frame" x="8" y="28" width="359" height="92.5"/>
-                                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WVU Board of Governors supports partnership to advance health, education and community wellness facility" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAH-BK-SAJ">
+                                            <rect key="frame" x="8" y="16" width="359" height="100.5"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="21"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sq-EL-1tn">
-                                            <rect key="frame" x="8" y="128.5" width="359" height="84.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sq-EL-1tn">
+                                            <rect key="frame" x="8" y="124.5" width="359" height="88.5"/>
                                             <string key="text">The WVU Board of Governors on Friday (Dec. 16) authorized the administration to proceed to work with community partners to construct Mountaineer Center, a $25-$30 million health, education and wellness facility at Mylan Park.</string>
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 days ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sp6-Rk-Wos">
-                                            <rect key="frame" x="192" y="8" width="175" height="12"/>
-                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="10"/>
+                                            <rect key="frame" x="192" y="8" width="175" height="13.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="11"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WVU Today" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tL-q9-4Ud">
-                                            <rect key="frame" x="28" y="8" width="156" height="12"/>
-                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="10"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="WVU Today" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tL-q9-4Ud">
+                                            <rect key="frame" x="28" y="8" width="156" height="13.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="11"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -702,7 +745,7 @@
                                         <constraint firstAttribute="trailing" secondItem="2sq-EL-1tn" secondAttribute="trailing" constant="8" id="zp1-tl-DT6"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.91764705879999997" green="0.85882352939999995" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.97030013217480493" blue="0.88906219751991999" alpha="0.44207512842465752" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="date" destination="sp6-Rk-Wos" id="G05-dJ-YvN"/>
@@ -726,24 +769,24 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="WVU Board of Governors supports partnership to advance health, education and community wellness facility" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuF-dg-CZd">
-                                            <rect key="frame" x="8" y="28" width="359" height="92.5"/>
+                                            <rect key="frame" x="8" y="28" width="359" height="88.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="359" id="OVV-De-ssD"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="21"/>
+                                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOW-N3-U42">
-                                            <rect key="frame" x="8" y="128.5" width="359" height="111.5"/>
+                                            <rect key="frame" x="8" y="124.5" width="359" height="115.5"/>
                                             <string key="text">The WVU Board of Governors on Friday (Dec. 16) authorized the administration to proceed to work with community partners to construct Mountaineer Center, a $25-$30 million health, education and wellness facility at Mylan Park.</string>
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Anthenum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ce-FG-Rtq">
-                                            <rect key="frame" x="28" y="8" width="151" height="12"/>
-                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="10"/>
+                                            <rect key="frame" x="28" y="8" width="151" height="13.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="11"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -757,11 +800,11 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 days ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PmA-Tb-iI2">
-                                            <rect key="frame" x="192" y="8" width="175" height="12"/>
+                                            <rect key="frame" x="192" y="8" width="175" height="13.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="175" id="lSI-zb-612"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="10"/>
+                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="11"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -787,7 +830,6 @@
                                         <constraint firstItem="YOW-N3-U42" firstAttribute="trailing" secondItem="BG3-et-lqG" secondAttribute="trailingMargin" id="uvf-Op-F5O"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.91764705879999997" green="0.85882352939999995" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="date" destination="PmA-Tb-iI2" id="ATf-Sm-S5a"/>
