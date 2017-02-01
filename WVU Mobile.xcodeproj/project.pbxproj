@@ -39,6 +39,8 @@
 		44022A7C1E06FF04004FC92F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A7B1E06FF04004FC92F /* Colors.swift */; };
 		44022A7E1E0700FD004FC92F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A7D1E0700FD004FC92F /* TabBarController.swift */; };
 		44022A801E0707A6004FC92F /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A7F1E0707A6004FC92F /* NavigationController.swift */; };
+		441B3BF51E417B75001304D7 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441B3BF41E417B75001304D7 /* HelpViewController.swift */; };
+		441B3BFB1E418136001304D7 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441B3BFA1E418136001304D7 /* SettingsTableViewController.swift */; };
 		442B48481E1C9E5B0014349E /* DiningHallFirstTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B48471E1C9E5B0014349E /* DiningHallFirstTableViewController.swift */; };
 		442B484E1E1CA25D0014349E /* DiningTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B484D1E1CA25D0014349E /* DiningTableViewController.swift */; };
 		442B48501E1CA2820014349E /* DiningInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B484F1E1CA2820014349E /* DiningInfoViewController.swift */; };
@@ -145,6 +147,8 @@
 		44022A7B1E06FF04004FC92F /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		44022A7D1E0700FD004FC92F /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		44022A7F1E0707A6004FC92F /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		441B3BF41E417B75001304D7 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		441B3BFA1E418136001304D7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		442B48471E1C9E5B0014349E /* DiningHallFirstTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningHallFirstTableViewController.swift; sourceTree = "<group>"; };
 		442B484D1E1CA25D0014349E /* DiningTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningTableViewController.swift; sourceTree = "<group>"; };
 		442B484F1E1CA2820014349E /* DiningInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningInfoViewController.swift; sourceTree = "<group>"; };
@@ -359,6 +363,7 @@
 				42758BEC1E3BDB06004D1DFA /* DateSelectorView */,
 				9C8603521E03764600FE6531 /* AppDelegate.swift */,
 				9C8603541E03764600FE6531 /* HomeViewController.swift */,
+				441B3BFA1E418136001304D7 /* SettingsTableViewController.swift */,
 				44022A7D1E0700FD004FC92F /* TabBarController.swift */,
 				44022A7F1E0707A6004FC92F /* NavigationController.swift */,
 				425D1AAC1E14044000B88972 /* NewsViewController.swift */,
@@ -367,6 +372,7 @@
 				42FE8F901E1ABD6700FFCD85 /* FavoriteEventsTableViewController.swift */,
 				4233455E1E1BE6C000630003 /* OnCampusTableViewController.swift */,
 				42A3E7601E1BEB2200DB8140 /* MapViewController.swift */,
+				441B3BF41E417B75001304D7 /* HelpViewController.swift */,
 				442B48471E1C9E5B0014349E /* DiningHallFirstTableViewController.swift */,
 				42E1BFED1E1D42C4004E2CA4 /* DiningHallContainerViewController.swift */,
 				442B484D1E1CA25D0014349E /* DiningTableViewController.swift */,
@@ -630,6 +636,7 @@
 				44D0976A1E0E0755007476DD /* LiteDiningMenu.swift in Sources */,
 				425D1AAB1E1402B500B88972 /* NewsCell.swift in Sources */,
 				425D1AA01E12F2C400B88972 /* ShadowView.swift in Sources */,
+				441B3BFB1E418136001304D7 /* SettingsTableViewController.swift in Sources */,
 				42AC2DE71E3BDD79005A2638 /* CalendarDayCollectionViewCell.swift in Sources */,
 				44022A7E1E0700FD004FC92F /* TabBarController.swift in Sources */,
 				44022A751E06DC00004FC92F /* DiningHall.swift in Sources */,
@@ -642,6 +649,7 @@
 				42E1BFEE1E1D42C4004E2CA4 /* DiningHallContainerViewController.swift in Sources */,
 				44A80B251E212710006DBFEA /* BusesTableViewController.swift in Sources */,
 				427537781E0C2581007E46B1 /* RSSElement.swift in Sources */,
+				441B3BF51E417B75001304D7 /* HelpViewController.swift in Sources */,
 				44022A801E0707A6004FC92F /* NavigationController.swift in Sources */,
 				44A80B221E2125B5006DBFEA /* LineViewController.swift in Sources */,
 				42D6472E1E14388900D0CE9F /* WebViewController.swift in Sources */,

@@ -48,7 +48,7 @@ class DateSelectorViewController: UIView {
         forwardButton = UIButton(frame: CGRect(x: self.frame.width - 60, y: 18, width: 13, height: 13))
         forwardButton.setImage(UIImage(named: "Forward"), for: .normal)
         forwardButton.addTarget(self, action: #selector(DateSelectorViewController.forward), for: .touchUpInside)
-
+        
         self.addSubview(dateButton)
         self.addSubview(backButton)
         self.addSubview(forwardButton)

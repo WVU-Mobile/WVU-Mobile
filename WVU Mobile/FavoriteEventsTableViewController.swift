@@ -24,12 +24,6 @@ class FavoriteEventsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,8 +45,10 @@ class FavoriteEventsTableViewController: UITableViewController {
         
         let favs = favoriteEvents[indexPath.row].components(separatedBy: "%%&")
         
-        cell.details.text = favs.last
-            
+        if favs.count > 1 {
+            cell.details.text = favs[1]
+        }
+        
         cell.time.text = Date.rssDate(date: favs.first!).prettyPrint.replacingOccurrences(of: "at 12:00 AM", with: "- All Day")
         
         let image = UIImage(named: "Star-Filled")!
@@ -65,6 +61,14 @@ class FavoriteEventsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let favs = favoriteEvents[indexPath.row].components(separatedBy: "%%&")
+
+        if favs.count > 2 {
+            let webView = WebViewController()
+            webView.url = favs[2]
+                
+            self.navigationController?.pushViewController(webView, animated: true)
+        }
     }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -72,10 +76,8 @@ class FavoriteEventsTableViewController: UITableViewController {
     }
     
     @IBAction func didSelectStar(_ sender: UIButton) {
-
-            favoriteEvents.remove(at: sender.tag)
-        
-            self.tableView.reloadData()
+        favoriteEvents.remove(at: sender.tag)
+        self.tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

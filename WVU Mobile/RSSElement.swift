@@ -24,7 +24,7 @@ struct RSSElement {
     }
     
     var identifier: String {
-        return "\(date.rssDate) %%& \(title) %%& \(description)"
+        return "\(date.rssDate)%%&\(title)%%&\(link)"
     }
     
     init(title: String, description: String, link: String, guid: String, date: Date) {

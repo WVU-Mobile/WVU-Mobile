@@ -83,6 +83,7 @@ class NewsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let webView = WebViewController()
         webView.url = news[indexPath.row].link
+        webView.article = news[indexPath.row].title
         
         self.navigationController?.pushViewController(webView, animated: true)
         

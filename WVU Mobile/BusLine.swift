@@ -527,15 +527,30 @@ enum BusRoute {
                 return true
             }
         case .grey:
-            return true //"Trip 1: Southbound 6:15 AM to Northbound 7:55 AM \n Trip 2: Southbound 12:30 PM to Northbound 5:20 PM"
+            if hour > 6 && hour < 8 {
+                return true
+            }
+            if  (hour > 12 || ( hour == 12 && minute >= 30 )) && (hour < 17 || ( hour == 17 && minute <= 20 )){
+                return true
+            }
         case .westRun:
-            return true //"Mon. - Fri. 7:10 AM to 4:50 PM (Summer & Winter Breaks)\nMon. - Wed. 7:10 AM to 8:40 PM (Fall & Spring Sem.)"
+            if weekday == 2 || weekday == 3 || weekday == 4 {
+                if (hour > 7 || ( hour == 7 && minute >= 10 )) && (hour < 20 || ( hour == 20 && minute <= 40 )){
+                    return true
+                }
+            } //"Mon. - Fri. 7:10 AM to 4:50 PM (Summer & Winter Breaks)
         case .westRunLate:
             if weekday != 1 && ((hour > 7 || ( hour == 7 && minute >= 10 )) || (hour < 2 || ( hour == 2 && minute <= 30 ))){
                 return true
             }
         case .blueAndGold:
-            return true //"Mon. - Fri. 6:40 AM to 8:40 PM (Fall & Spring) \n Mon. - Fri. 6:40 AM to 6:20 PM (Summer) \n Sat. 3:20 PM to 7:20 PM \n Sun. 12:00 PM to 8:40 PM"
+            if weekday == 7 && (hour > 15 || ( hour == 15 && minute >= 20 )) && (hour < 19 || ( hour == 19 && minute <= 20 )){
+                return true
+            } else if weekday == 1 && hour >= 12 && (hour < 20 || ( hour == 20 && minute <= 40 )){
+                return true
+            } else if (hour > 6 || ( hour == 6 && minute >= 40 )) && (hour < 20 || ( hour == 20 && minute <= 40 )){
+                return true
+            } // Mon. - Fri. 6:40 AM to 6:20 PM (Summer)
         case .valleyView:
             if !calendar.isDateInWeekend(date) && (hour > 7 || ( hour == 7 && minute >= 30 )) && (hour < 14 || ( hour == 14 && minute <= 15 )){
                 return true
