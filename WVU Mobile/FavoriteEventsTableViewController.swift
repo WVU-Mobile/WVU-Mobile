@@ -22,13 +22,12 @@ class FavoriteEventsTableViewController: UITableViewController {
         }
     }
     
+    var currentEvents = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        currentEvents = favoriteEvents
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -36,14 +35,14 @@ class FavoriteEventsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favoriteEvents.count
+        return currentEvents.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "event", for: indexPath) as! LargeEventsCell
         
-        let favs = favoriteEvents[indexPath.row].components(separatedBy: "%%&")
+        let favs = currentEvents[indexPath.row].components(separatedBy: "%%&")
         
         if favs.count > 1 {
             cell.details.text = favs[1]
@@ -51,7 +50,7 @@ class FavoriteEventsTableViewController: UITableViewController {
         
         cell.time.text = Date.rssDate(date: favs.first!).prettyPrint.replacingOccurrences(of: "at 12:00 AM", with: "- All Day")
         
-        let image = UIImage(named: "Star-Filled")!
+        let image = UIImage(named: "Star-Large-Filled")!
         let tinted = image.withRenderingMode(.alwaysTemplate)
             
         cell.star.setImage(tinted, for: .normal)
@@ -61,7 +60,7 @@ class FavoriteEventsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let favs = favoriteEvents[indexPath.row].components(separatedBy: "%%&")
+        let favs = currentEvents[indexPath.row].components(separatedBy: "%%&")
 
         if favs.count > 2 {
             let webView = WebViewController()
@@ -76,8 +75,15 @@ class FavoriteEventsTableViewController: UITableViewController {
     }
     
     @IBAction func didSelectStar(_ sender: UIButton) {
-        favoriteEvents.remove(at: sender.tag)
-        self.tableView.reloadData()
+        if favoriteEvents.contains(currentEvents[sender.tag]) {
+            let image = UIImage(named: "Star")?.withRenderingMode(.alwaysTemplate)
+            (tableView.cellForRow(at: IndexPath(row: sender.tag, section: 0)) as! LargeEventsCell).star.setImage(image, for: .normal)
+            favoriteEvents.remove(at: sender.tag)
+        } else {
+            let image = UIImage(named: "Star-Large-Filled")?.withRenderingMode(.alwaysTemplate)
+            (tableView.cellForRow(at: IndexPath(row: sender.tag, section: 0)) as! LargeEventsCell).star.setImage(image, for: .normal)
+            favoriteEvents.append(currentEvents[sender.tag])
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
