@@ -39,6 +39,7 @@
 		44022A7C1E06FF04004FC92F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A7B1E06FF04004FC92F /* Colors.swift */; };
 		44022A7E1E0700FD004FC92F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A7D1E0700FD004FC92F /* TabBarController.swift */; };
 		44022A801E0707A6004FC92F /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A7F1E0707A6004FC92F /* NavigationController.swift */; };
+		440CE5241E42C11800C34B53 /* OnCampusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CE5231E42C11800C34B53 /* OnCampusTableViewCell.swift */; };
 		441B3BF51E417B75001304D7 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441B3BF41E417B75001304D7 /* HelpViewController.swift */; };
 		441B3BFB1E418136001304D7 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441B3BFA1E418136001304D7 /* SettingsTableViewController.swift */; };
 		442B48481E1C9E5B0014349E /* DiningHallFirstTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B48471E1C9E5B0014349E /* DiningHallFirstTableViewController.swift */; };
@@ -147,6 +148,7 @@
 		44022A7B1E06FF04004FC92F /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		44022A7D1E0700FD004FC92F /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		44022A7F1E0707A6004FC92F /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		440CE5231E42C11800C34B53 /* OnCampusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnCampusTableViewCell.swift; sourceTree = "<group>"; };
 		441B3BF41E417B75001304D7 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		441B3BFA1E418136001304D7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		442B48471E1C9E5B0014349E /* DiningHallFirstTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningHallFirstTableViewController.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				42FE8F8E1E157EA100FFCD85 /* LargeEventsCell.swift */,
 				44764CBB1E1F5F310041CC26 /* DiningHallSelectionCell.swift */,
 				44A80B261E212856006DBFEA /* BusTableViewCell.swift */,
+				440CE5231E42C11800C34B53 /* OnCampusTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -674,6 +677,7 @@
 				44D097661E0D6AF0007476DD /* PRTRequest.swift in Sources */,
 				42AC2DE81E3BDD79005A2638 /* CalendarView.swift in Sources */,
 				44022A771E06DE3F004FC92F /* MenuRequest.swift in Sources */,
+				440CE5241E42C11800C34B53 /* OnCampusTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

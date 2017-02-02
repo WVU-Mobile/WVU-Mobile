@@ -12,7 +12,7 @@ protocol CalendarViewDelegate {
     func didSelectDate(date: Date)
 }
 
-class CalendarView: UIView, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+class CalendarView: ShadowView, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     var delegate: CalendarViewDelegate?
     var pageView: UIPageViewController!
     var selectedDate = Date()
@@ -27,7 +27,7 @@ class CalendarView: UIView, UIPageViewControllerDelegate, UIPageViewControllerDa
         pageView = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: [UIPageViewControllerOptionSpineLocationKey:UIPageViewControllerSpineLocation.min])
         pageView.delegate = self
         pageView.dataSource = self
-        pageView.view.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 340)
+        pageView.view.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 270)
                 
         self.addSubview(pageView.view)
     }

@@ -123,7 +123,8 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if let e = eventsByDate[selectedDate.day] {
             cell.details.text = e[indexPath.row].description
-            
+            cell.title.text = e[indexPath.row].title
+
             if e[indexPath.row].date.hourPrint == "12:00 AM" {
                 cell.time.text = "All Day"
             } else {
@@ -131,7 +132,6 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
             
             cell.star.tag = indexPath.row
-            
             let image: UIImage
             
             if favoriteEvents.contains(e[indexPath.row].identifier) {

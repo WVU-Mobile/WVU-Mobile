@@ -9,7 +9,7 @@
 import UIKit
 
 class OnCampusTableViewController: UITableViewController {
-    var items = ["Campus Map","Dining Halls", "Help"]
+    var items = ["Map","Dining Halls", "Help"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +32,11 @@ class OnCampusTableViewController: UITableViewController {
 
  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "campus-item", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "campus-item", for: indexPath) as! OnCampusTableViewCell
+        let icon = ["Mountain","Sub","Heart"]
+        cell.title.text = items[indexPath.row]
+        cell.icon.image = UIImage(named: icon[indexPath.row])
 
-        cell.textLabel?.text = items[indexPath.row]
-        
         return cell
     }
 

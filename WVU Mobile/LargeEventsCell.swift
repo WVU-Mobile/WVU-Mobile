@@ -13,6 +13,7 @@ class LargeEventsCell: UITableViewCell {
     @IBOutlet weak var details: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var star: UIButton!
+    @IBOutlet weak var title: UILabel!
         
     override func awakeFromNib() {
         super.awakeFromNib()

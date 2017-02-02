@@ -40,7 +40,7 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
         layout.minimumInteritemSpacing = 15
         layout.minimumLineSpacing = 10
         
-        collectionView = UICollectionView(frame: CGRect(x: 0, y: 40, width: view.frame.width, height: 300), collectionViewLayout: layout)
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: 40, width: view.frame.width, height: 230), collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.clear
         collectionView.register(CalendarDayCollectionViewCell.self, forCellWithReuseIdentifier: genericCell)
         collectionView.register(CalendarDayCollectionViewCell.self, forCellWithReuseIdentifier: todayCell)

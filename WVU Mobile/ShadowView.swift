@@ -13,7 +13,7 @@ import UIKit
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-    @IBInspectable var cornerRadius: CGFloat = 5.0
+    @IBInspectable var cornerRadius: CGFloat = 0.0
     
     private var customBackgroundColor = UIColor.white
     
@@ -31,7 +31,7 @@ import UIKit
     
     func setup() {
         layer.shadowOffset = CGSize.zero
-        layer.shadowRadius = 5.0
+        layer.shadowRadius = 3.0
         layer.shadowOpacity = 0.2
     }
     
