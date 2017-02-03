@@ -66,7 +66,6 @@ class NewsViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
             let cell = tableView.dequeueReusableCell(withIdentifier: "news", for: indexPath) as! NewsCell
             cell.details.text = news[indexPath.row].description
             cell.title.text = news[indexPath.row].title

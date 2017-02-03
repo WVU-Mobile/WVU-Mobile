@@ -20,6 +20,8 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
                    "You can also like and follow WVU Mobile on Facebook and Twitter!",
                    "Please send questions, suggestions, or bug reports to our email address."]
 
+    var favorite:DiningHall = .Boreman
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -31,7 +33,7 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 || section == 3 {
+        if section == 3 {
             return 1
         } else {
             return 2
@@ -43,7 +45,11 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
         
         switch indexPath.section {
         case 0:
-            cell = tableView.dequeueReusableCell(withIdentifier: "nightMode", for: indexPath)
+            if indexPath.row == 0 {
+                cell = tableView.dequeueReusableCell(withIdentifier: "nightMode", for: indexPath)
+            } else {
+                cell = tableView.dequeueReusableCell(withIdentifier: "favoriteDining", for: indexPath)
+            }
         case 1:
             cell = tableView.dequeueReusableCell(withIdentifier: "social", for: indexPath)
             if indexPath.row == 0 {
@@ -82,7 +88,8 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            // toggle night mode
+            if indexPath.row == 1 {
+            }
         } else if indexPath.section == 1 {
             let twitter = ["kaitinthecosmos", "rickydeal11"]
             

@@ -43,4 +43,19 @@ class LiteMenuTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 25))
+        view.backgroundColor = Colors.lightGray
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 25))
+        label.text = menu.diningHall.meals[section].name
+        label.font = UIFont.systemFont(ofSize: 15)
+        label.textColor = UIColor.black
+        label.textAlignment = .center
+        
+        view.addSubview(label)
+        
+        return view
+    }
 }

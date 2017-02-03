@@ -57,7 +57,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         self.prtView.detailLabel.text = prt.status.statusWith(time: prt.time)
                         self.prtView.spinner.stopAnimating()
                         self.prtView.spinner.isHidden = true
-                        self.prtView.icon.image = UIImage(named: "PRT-Borked")
+                        self.prtView.icon.image = UIImage(named: "PRT")
                     }
                 }
             })
