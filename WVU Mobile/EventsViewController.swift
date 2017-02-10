@@ -135,7 +135,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let image: UIImage
             
             if favoriteEvents.contains(e[indexPath.row].identifier) {
-                image = UIImage(named: "Star-Filled")!
+                image = UIImage(named: "Star-Large-Filled")!
             } else {
                 image = UIImage(named: "Star")!
             }

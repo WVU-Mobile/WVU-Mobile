@@ -17,7 +17,6 @@ class RoundedTable: UITableView {
         
         self.clipsToBounds = true
         
-        self.layer.cornerRadius = 5
     }
 
 }

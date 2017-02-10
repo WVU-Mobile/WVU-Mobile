@@ -163,9 +163,9 @@ enum DiningHall: Int {
     
     var meals: [Menu.Meal] {
         switch self {
-        case .Arnold,  .CafeEvansdale, .Summit:
+        case .Arnold,  .CafeEvansdale, .Summit, .Boreman :
             return  [.breakfast, .lunch, .dinner]
-        case .Boreman,  .TerraceRoom:
+        case .TerraceRoom:
             return   [.lunch, .dinner]
         case .Hatfields:
             return  [.breakfast, .lunch]

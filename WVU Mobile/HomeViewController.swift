@@ -13,6 +13,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var eventsView: LiteEventsView!
     @IBOutlet weak var diningMenu: LiteDiningMenu!
     
+    var diningTableViewSource = LiteMenuTableViewController()
+    
     var events = [RSSElement]()
     
     override func viewDidLoad() {
@@ -20,6 +22,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         self.eventsView.eventsTable.dataSource = self
         self.eventsView.eventsTable.delegate = self
+
+        self.diningMenu.menuTable.dataSource = self.diningTableViewSource
+        self.diningMenu.menuTable.delegate = self.diningTableViewSource
         
         let parser = RSSRequest()
         
@@ -52,7 +57,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         self.prtView.detailLabel.text = prt.status.statusWith(time: prt.time)
                         self.prtView.spinner.stopAnimating()
                         self.prtView.spinner.isHidden = true
-                        self.prtView.icon.image = UIImage(named: "PRT-Borked")
+                        self.prtView.icon.image = UIImage(named: "PRT")
                     }
                 }
             })
@@ -60,10 +65,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         self.diningMenu.spinner.startAnimating()
         DispatchQueue.global().async {
-            MenuRequest.getMenu(on: Date(), at: DiningHall.Boreman, completion: { result in
+            MenuRequest.getMenu(on: Date(), at: DiningHall.Arnold, completion: { result in
                 DispatchQueue.main.sync {
                     if let r = result {
-                        self.diningMenu.setMenu(menu: r, meal: Menu.Meal.breakfast)
+                        self.diningTableViewSource.menu = r
+                        self.diningMenu.menuTable.reloadData()
                     }
                     self.diningMenu.spinner.stopAnimating()
                     self.diningMenu.spinner.isHidden = true

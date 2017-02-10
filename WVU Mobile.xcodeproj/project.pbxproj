@@ -27,6 +27,7 @@
 		42AC2DE81E3BDD79005A2638 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2DE41E3BDD79005A2638 /* CalendarView.swift */; };
 		42AC2DE91E3BDD79005A2638 /* DateSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2DE51E3BDD79005A2638 /* DateSelectorViewController.swift */; };
 		42AC2DEA1E3BDD79005A2638 /* MonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2DE61E3BDD79005A2638 /* MonthViewController.swift */; };
+		42B60F241E437B97001639DA /* LiteMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B60F231E437B97001639DA /* LiteMenuTableViewController.swift */; };
 		42D6472E1E14388900D0CE9F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D6472D1E14388900D0CE9F /* WebViewController.swift */; };
 		42D647301E1440E300D0CE9F /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D6472F1E1440E300D0CE9F /* Image.swift */; };
 		42E1BFEE1E1D42C4004E2CA4 /* DiningHallContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E1BFED1E1D42C4004E2CA4 /* DiningHallContainerViewController.swift */; };
@@ -136,6 +137,7 @@
 		42AC2DE41E3BDD79005A2638 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		42AC2DE51E3BDD79005A2638 /* DateSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSelectorViewController.swift; sourceTree = "<group>"; };
 		42AC2DE61E3BDD79005A2638 /* MonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthViewController.swift; sourceTree = "<group>"; };
+		42B60F231E437B97001639DA /* LiteMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiteMenuTableViewController.swift; sourceTree = "<group>"; };
 		42D6472D1E14388900D0CE9F /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		42D6472F1E1440E300D0CE9F /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		42E1BFED1E1D42C4004E2CA4 /* DiningHallContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningHallContainerViewController.swift; sourceTree = "<group>"; };
@@ -223,7 +225,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		425D1AA31E13FFFC00B88972 /* Home */ = {
+		425D1AA31E13FFFC00B88972 /* Today */ = {
 			isa = PBXGroup;
 			children = (
 				4275377D1E0C352A007E46B1 /* LiteEventCell.swift */,
@@ -231,7 +233,7 @@
 				44D097691E0E0755007476DD /* LiteDiningMenu.swift */,
 				4275377B1E0C2FDC007E46B1 /* PRTView.swift */,
 			);
-			name = Home;
+			name = Today;
 			sourceTree = "<group>";
 		};
 		425D1AA41E14002100B88972 /* Web Request */ = {
@@ -366,6 +368,7 @@
 				42758BEC1E3BDB06004D1DFA /* DateSelectorView */,
 				9C8603521E03764600FE6531 /* AppDelegate.swift */,
 				9C8603541E03764600FE6531 /* HomeViewController.swift */,
+				42B60F231E437B97001639DA /* LiteMenuTableViewController.swift */,
 				441B3BFA1E418136001304D7 /* SettingsTableViewController.swift */,
 				44022A7D1E0700FD004FC92F /* TabBarController.swift */,
 				44022A7F1E0707A6004FC92F /* NavigationController.swift */,
@@ -384,7 +387,7 @@
 				44A80B0D1E2125B5006DBFEA /* LineViewController.swift */,
 				425D1AA51E14002F00B88972 /* Model */,
 				425D1AA41E14002100B88972 /* Web Request */,
-				425D1AA31E13FFFC00B88972 /* Home */,
+				425D1AA31E13FFFC00B88972 /* Today */,
 				425D1AA71E14007800B88972 /* View */,
 				425D1AA61E14005400B88972 /* Helper */,
 				44A80B231E2125BB006DBFEA /* Buses */,
@@ -638,6 +641,7 @@
 				427537801E0C3775007E46B1 /* LiteEventsView.swift in Sources */,
 				44D0976A1E0E0755007476DD /* LiteDiningMenu.swift in Sources */,
 				425D1AAB1E1402B500B88972 /* NewsCell.swift in Sources */,
+				42B60F241E437B97001639DA /* LiteMenuTableViewController.swift in Sources */,
 				425D1AA01E12F2C400B88972 /* ShadowView.swift in Sources */,
 				441B3BFB1E418136001304D7 /* SettingsTableViewController.swift in Sources */,
 				42AC2DE71E3BDD79005A2638 /* CalendarDayCollectionViewCell.swift in Sources */,
