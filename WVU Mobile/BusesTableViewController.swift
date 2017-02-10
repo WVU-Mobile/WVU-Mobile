@@ -10,16 +10,14 @@ import UIKit
 import MapKit
 
 class BusesTableViewController: UITableViewController {
-    var routes: [BusRoute]!
+    var routes: [BusRoute] = [.campusPM, .downtownPM, .green, .orange, .gold, .red, .tyrone, .purple, .cassville, .blue, .crown, .mountainHeights, .graftonRoad, .pink, .grey, .westRun, .westRunLate, .blueAndGold, .valleyView]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        routes = [.campusPM, .downtownPM, .green, .orange, .gold, .red, .tyrone, .purple, .cassville, .blue, .crown, .mountainHeights, .graftonRoad, .pink, .grey, .westRun, .westRunLate, .blueAndGold, .valleyView]
         
         routes.sort(by: { $0.isOpen && !$1.isOpen })
         
-        self.title = "Buses"
+        self.title = "Transportation"
         
         self.tableView.reloadData()
     }
@@ -43,14 +41,20 @@ class BusesTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: BusTableViewCell
+        
+        if indexPath.row == 0 {
+            return tableView.dequeueReusableCell(withIdentifier: "prt", for: indexPath) as! BusTableViewCell
+        }
+        
+        let row = indexPath.row - 1
 
-        if let _ = self.routes[indexPath.row].semester {
+        if let _ = self.routes[row].semester {
             cell = tableView.dequeueReusableCell(withIdentifier: "subtext", for: indexPath) as! BusTableViewCell
-            cell.semester.text = self.routes[indexPath.row].semester
+            cell.semester.text = self.routes[row].semester
         } else {
             cell = tableView.dequeueReusableCell(withIdentifier: "bus", for: indexPath) as! BusTableViewCell
         }
-        cell.name.text = self.routes[indexPath.row].name
+        cell.name.text = self.routes[row].name
         
         if routes[indexPath.row].isOpen {
             cell.icon.image = UIImage(named: "Bus")
@@ -62,8 +66,12 @@ class BusesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            return
+        }
+        
         let c = cell as! BusTableViewCell
-        if routes[indexPath.row].isOpen {
+        if routes[indexPath.row - 1].isOpen {
             c.icon.image = UIImage(named: "Bus")
         } else {
             c.icon.image = UIImage(named: "Bus-Closed")
@@ -75,8 +83,12 @@ class BusesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            return
+        }
+        
         let vc = LineViewController()
-        vc.line = routes[indexPath.row]
+        vc.line = routes[indexPath.row - 1]
         vc.coords = BusRoute.coords
         
         self.navigationController?.pushViewController(vc, animated: true)
