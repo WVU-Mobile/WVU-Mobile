@@ -47,9 +47,12 @@ class Colors {
     static let homeYellow  = UIColor(red: 238/255,   green: 219/255,  blue: 174/255, alpha: 0.85) //#eadbae
 
     //PRT Colors
-    static let green        = UIColor(red: 179/255, green: 214/255, blue: 148/255, alpha: 1.0) //#b3d694
-    static let orange       = UIColor(red: 223/255, green: 148/255, blue: 3/255,   alpha: 1.0) //#df9403
-    static let red          = UIColor(red: 192/255, green: 25/155,  blue: 25/155,  alpha: 1.0)
+    static let green        = UIColor(red: 40/255, green: 162/255, blue: 108/255, alpha: 1.0) /* #28a26c */
+    static let orange       = UIColor(red: 233/255, green: 166/255, blue: 87/255, alpha: 1.0) /* #e9a657 */
+    static let red          = UIColor(red: 234/255, green: 96/255, blue: 69/255, alpha: 1.0) /* #ea6045 */
+    static let almostWhite  = UIColor(red: 247/255, green: 250/255, blue: 250/255, alpha: 1.0) /* #f7fafa */
+    
+    
     static let prtGray1     = UIColor(red: 87/255,  green: 87/255,  blue: 87/255,  alpha: 1.0) //#575757
     static let prtGray2     = UIColor(red: 203/255, green: 203/255, blue: 203/255, alpha: 1.0) //#cbcbcb
     static let prtGray3     = UIColor(red: 203/255, green: 203/255, blue: 203/255, alpha: 1.0) //#cbcbcb

@@ -74,6 +74,7 @@
 		44D097661E0D6AF0007476DD /* PRTRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D097651E0D6AF0007476DD /* PRTRequest.swift */; };
 		44D097681E0DEB5D007476DD /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D097671E0DEB5D007476DD /* Menu.swift */; };
 		44D0976A1E0E0755007476DD /* LiteDiningMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D097691E0E0755007476DD /* LiteDiningMenu.swift */; };
+		44FBEEF21E4F746A0067E661 /* PRTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FBEEF11E4F746A0067E661 /* PRTTableViewController.swift */; };
 		73497A515B69D2B0FF6DE443 /* Pods_PRT_Status_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B273B0E33D7BFB6819C6606E /* Pods_PRT_Status_Widget.framework */; };
 		9C8603531E03764600FE6531 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8603521E03764600FE6531 /* AppDelegate.swift */; };
 		9C8603551E03764600FE6531 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8603541E03764600FE6531 /* HomeViewController.swift */; };
@@ -184,6 +185,7 @@
 		44D097651E0D6AF0007476DD /* PRTRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRTRequest.swift; sourceTree = "<group>"; };
 		44D097671E0DEB5D007476DD /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		44D097691E0E0755007476DD /* LiteDiningMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiteDiningMenu.swift; sourceTree = "<group>"; };
+		44FBEEF11E4F746A0067E661 /* PRTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRTTableViewController.swift; sourceTree = "<group>"; };
 		4D33691FFEDCFF585CEACD1C /* Pods-PRT Status Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PRT Status Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-PRT Status Widget/Pods-PRT Status Widget.release.xcconfig"; sourceTree = "<group>"; };
 		942477C8A4B6B62F1DB1B436 /* Pods_WVU_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WVU_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C86034F1E03764600FE6531 /* WVU Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WVU Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -385,6 +387,7 @@
 				442B484F1E1CA2820014349E /* DiningInfoViewController.swift */,
 				44A80B241E212710006DBFEA /* BusesTableViewController.swift */,
 				44A80B0D1E2125B5006DBFEA /* LineViewController.swift */,
+				44FBEEF11E4F746A0067E661 /* PRTTableViewController.swift */,
 				425D1AA51E14002F00B88972 /* Model */,
 				425D1AA41E14002100B88972 /* Web Request */,
 				425D1AA31E13FFFC00B88972 /* Today */,
@@ -655,6 +658,7 @@
 				44D097681E0DEB5D007476DD /* Menu.swift in Sources */,
 				42E1BFEE1E1D42C4004E2CA4 /* DiningHallContainerViewController.swift in Sources */,
 				44A80B251E212710006DBFEA /* BusesTableViewController.swift in Sources */,
+				44FBEEF21E4F746A0067E661 /* PRTTableViewController.swift in Sources */,
 				427537781E0C2581007E46B1 /* RSSElement.swift in Sources */,
 				441B3BF51E417B75001304D7 /* HelpViewController.swift in Sources */,
 				44022A801E0707A6004FC92F /* NavigationController.swift in Sources */,
