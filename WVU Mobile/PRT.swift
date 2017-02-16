@@ -77,6 +77,8 @@ class PRT {
             switch self.rawValue {
             case 1, 6, 7, 2, 5, 8, 10:
                 return UIImage(named: "PRT")!
+            case 6, 7:
+                return UIImage(named: "PRT-Dark")!
             default:
                 return UIImage(named: "PRT-Borked")!
             }
