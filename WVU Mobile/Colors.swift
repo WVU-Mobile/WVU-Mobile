@@ -11,10 +11,7 @@ import UIKit
 
 class Colors {    
     static var housingColor = UIColor(red: 0/255, green: 137/255, blue: 250/255, alpha: 1.0)
-    var prtColor = UIColor(red: 108/255, green: 59/255, blue: 255/255, alpha: 1.0)
-    var academicColor = UIColor(red: 75/255, green: 150/255, blue: 54/255, alpha: 1.0) // rgb(164, 231, 134)
     var parkingColor = UIColor(red: 62/255, green: 48/255, blue: 140/255, alpha: 1.0) // rgba(82, 237, 199, 1)
-    var prtShapeColor = UIColor(red: 128/255, green: 153/255, blue: 255/255, alpha: 1.0) // rgba(82, 237, 199, 1)
 
     //Night mode colors 
     /*
@@ -41,6 +38,8 @@ class Colors {
     static let gray         = UIColor(red: 213/255,   green: 213/255,  blue: 213/255, alpha: 1.0) //#d5d5d5
     static let lightGray    = UIColor(red: 231/255,   green: 231/255,  blue: 231/255, alpha: 1.0) //#e7e7e7
     static let alphaGray    = UIColor(red: 231/255,   green: 231/255,  blue: 231/255, alpha: 0.4) //#e7e7e7
+    static let alphaGray2         = UIColor(red: 45/255,   green: 45/255,  blue: 45/255, alpha: 0.8) //#d5d5d5
+
 
     //Day -- home screen alpha
     static let homeBlue    = UIColor(red: 147/255,   green: 171/255,  blue: 198/255, alpha: 0.8)
@@ -62,4 +61,13 @@ class Colors {
 
     //Bus Stop Marker Color
     static let mountainLineGreen = UIColor(red: 0/255, green: 158/255, blue: 88/255, alpha: 1.0) //#009e58
+    static let mountainLineBlue = UIColor(red: 98/255, green: 181/255, blue: 167/255, alpha: 1.0) /* #62b5a7 */
+    static let heartPink = UIColor(red: 224/255, green: 121/255, blue: 186/255, alpha: 1.0) /* #e079ba */
+    static let mountainGreen = UIColor(red: 13/255, green: 100/255, blue: 51/255, alpha: 1.0) /* #0d6433 */
+    static let biscuitYellow = UIColor(red: 242/255, green: 219/255, blue: 138/255, alpha: 1.0) /* #f2db8a */
+
+    static let purple = UIColor(red: 131/255, green: 127/255, blue: 255/255, alpha: 1.0) /* #837fff */
+    static let blue = UIColor(red: 63/255, green: 194/255, blue: 255/255, alpha: 1.0) /* #3fc2ff */
+
+
 }

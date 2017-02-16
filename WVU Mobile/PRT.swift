@@ -26,7 +26,7 @@ class PRT {
     }
     
     enum Status: Int {
-        case Normal = 1, DownBetween = 2, DownAll = 4, Free = 5, DownOne = 8, ClosedSunday = 6, Closed = 7, DownMultiple = 10, Unknown
+        case Normal = 1, DownBetween = 2, Down = 3, DownAll = 4, Free = 5, DownOne = 8, ClosedSunday = 6, Closed = 7, DownMultiple = 10, Unknown
         
         var overall: String {
             switch self.rawValue {
@@ -34,7 +34,7 @@ class PRT {
                 return "Running"
             case 2, 5, 8, 10:
                 return "Warning"
-            case 4:
+            case 4, 3:
                 return "Down"
             case 6, 7:
                 return "Closed"
@@ -49,7 +49,7 @@ class PRT {
                 return Colors.green
             case 2, 5, 8, 10:
                 return Colors.orange
-            case 4:
+            case 4, 3:
                 return Colors.red
             case 6, 7:
                 return Colors.homeDarkBlue
@@ -64,12 +64,21 @@ class PRT {
                 return UIImage(named: "Check")!
             case 2, 5, 8, 10:
                 return UIImage(named: "Yield")!
-            case 4:
+            case 4, 3:
                 return UIImage(named: "Stop")!
             case 6, 7:
                 return UIImage(named: "ZZZ")!
             default:
                 return UIImage(named: "IDK")!
+            }
+        }
+        
+        var prtImage: UIImage {
+            switch self.rawValue {
+            case 1, 6, 7, 2, 5, 8, 10:
+                return UIImage(named: "PRT")!
+            default:
+                return UIImage(named: "PRT-Borked")!
             }
         }
         
@@ -79,7 +88,7 @@ class PRT {
                 return "The PRT was confirmed to be running on a normal schedule at \(time.hourPrint)."
             case 2, 5, 8, 10:
                 return "The PRT was reported to partially down at \(time.hourPrint)."
-            case 4:
+            case 4, 3:
                 return "The PRT was reported to be down at \(time.hourPrint)."
             case 6, 7:
                 return "The PRT is closed."
@@ -87,7 +96,5 @@ class PRT {
                 return "An unknown status was reported."
             }
         }
-        
-        
     }
 }

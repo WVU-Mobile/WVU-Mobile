@@ -147,10 +147,16 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
     // MARK: UICollectionViewDelegate
 
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        if indexPath.section == 0 {
+            return false
+        }
         return true
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            return
+        }
         if let date = getDate(for: indexPath) {
             self.delegate?.didSelectDate(date: date)
         }

@@ -18,39 +18,26 @@
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Online" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6z-7E-18n">
-                                <rect key="frame" x="16" y="8" width="272" height="31"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="ONLINE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6z-7E-18n">
+                                <rect key="frame" x="16" y="14" width="288" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="zQM-9H-VFt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
+                                <color key="textColor" red="0.00080628428001965069" green="0.029469826412274015" blue="0.17619765228426398" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value=""/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Updated: 12:00pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFB-ct-9Mv">
-                                <rect key="frame" x="16" y="41" width="288" height="18"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value=""/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The PRT is currently running on normal schedule " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
-                                <rect key="frame" x="16" y="57" width="284" height="35"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value=""/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIO-YY-F4f">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIO-YY-F4f">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="g4a-aB-eUl"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value=""/>
                                 </userDefinedRuntimeAttributes>
@@ -58,19 +45,39 @@
                                     <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="38P-9A-ank"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="55Y-Ut-t1l">
+                                <rect key="frame" x="16" y="108" width="288" height="284"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last status was reported 10 minutes ago." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFB-ct-9Mv">
+                                <rect key="frame" x="16" y="51" width="288" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="RoN-fm-Ear"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value=""/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="GcN-lo-r42" secondAttribute="bottom" constant="8" symbolic="YES" id="0Q0-KW-PJ6"/>
-                            <constraint firstItem="sFB-ct-9Mv" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="4f0-VX-m3d"/>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="16" id="6Vq-gs-PHe"/>
-                            <constraint firstAttribute="trailing" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="20" symbolic="YES" id="L8K-9R-egU"/>
-                            <constraint firstItem="V6z-7E-18n" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="ROa-h0-iLL"/>
-                            <constraint firstItem="sFB-ct-9Mv" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" id="Ymk-3o-L6M"/>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="V6z-7E-18n" secondAttribute="bottom" constant="18" id="Zyh-rM-wH7"/>
-                            <constraint firstItem="V6z-7E-18n" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="aBc-gj-fq0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="V6z-7E-18n" secondAttribute="trailing" constant="16" id="foy-WX-EXw"/>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="57" id="mYS-Cv-VNx"/>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="sFB-ct-9Mv" secondAttribute="bottom" constant="-2" id="pfe-Yb-zIt"/>
+                            <constraint firstItem="sFB-ct-9Mv" firstAttribute="top" secondItem="V6z-7E-18n" secondAttribute="bottom" constant="3" id="2yg-xU-CFh"/>
+                            <constraint firstItem="55Y-Ut-t1l" firstAttribute="top" secondItem="LIO-YY-F4f" secondAttribute="bottom" constant="8" id="DWY-b7-Nbc"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="55Y-Ut-t1l" secondAttribute="bottom" constant="8" id="GtI-j8-QFF"/>
+                            <constraint firstItem="LIO-YY-F4f" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="PUH-Xw-a8h"/>
+                            <constraint firstItem="55Y-Ut-t1l" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" id="PdN-nC-whg"/>
+                            <constraint firstItem="sFB-ct-9Mv" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="R2X-YF-fwl"/>
+                            <constraint firstItem="V6z-7E-18n" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="14" id="Wg2-41-K7E"/>
+                            <constraint firstItem="V6z-7E-18n" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="X1q-Dj-8uc"/>
+                            <constraint firstAttribute="trailing" secondItem="LIO-YY-F4f" secondAttribute="trailing" id="bAK-kR-C4x"/>
+                            <constraint firstItem="LIO-YY-F4f" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="lMU-aC-LnU"/>
+                            <constraint firstItem="V6z-7E-18n" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" id="qIB-OU-Her"/>
+                            <constraint firstItem="sFB-ct-9Mv" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" id="tn3-d1-0OT"/>
+                            <constraint firstItem="55Y-Ut-t1l" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="wza-Q3-ZGR"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -78,9 +85,9 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="100"/>
+                    <size key="freeformSize" width="320" height="400"/>
                     <connections>
-                        <outlet property="messageLabel" destination="GcN-lo-r42" id="as0-qh-aBW"/>
+                        <outlet property="messageLabel" destination="55Y-Ut-t1l" id="9Xj-FD-b5K"/>
                         <outlet property="statusLabel" destination="V6z-7E-18n" id="lRp-5c-9UB"/>
                         <outlet property="time" destination="sFB-ct-9Mv" id="R74-i6-nIe"/>
                     </connections>

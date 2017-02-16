@@ -7,9 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
 class PRT {
-
     var status: Status
     var message: String
     var time: Date
@@ -26,22 +26,62 @@ class PRT {
     }
     
     enum Status: Int {
-        case Normal = 1, DownBetween = 2, DownAll = 4, Free = 5, DownOne = 6, ClosedSunday = 8, Closed = 7, DownMultiple = 10, Unknown
+        case Normal = 1, DownBetween = 2, Down = 3, DownAll = 4, Free = 5, DownOne = 8, ClosedSunday = 6, Closed = 7, DownMultiple = 10, Unknown
         
         var overall: String {
             switch self.rawValue {
             case 1:
                 return "Running"
-            case 2, 5, 6, 10:
+            case 2, 5, 8, 10:
                 return "Warning"
-            case 4:
+            case 4, 3:
                 return "Down"
-            case 8, 7:
+            case 6, 7:
                 return "Closed"
             default:
                 return "Unknown"
             }
         }
+        
+        var image: UIImage {
+            switch self.rawValue {
+            case 1:
+                return UIImage(named: "Check")!
+            case 2, 5, 8, 10:
+                return UIImage(named: "Yield")!
+            case 4, 3:
+                return UIImage(named: "Stop")!
+            case 6, 7:
+                return UIImage(named: "ZZZ")!
+            default:
+                return UIImage(named: "IDK")!
+            }
+        }
+        
+        var prtImage: UIImage {
+            switch self.rawValue {
+            case 1, 6, 7, 2, 5, 8, 10:
+                return UIImage(named: "PRT")!
+            default:
+                return UIImage(named: "PRT-Borked")!
+            }
+        }
+        
+        func statusWith(time: Date) -> String {
+            switch self.rawValue {
+            case 1:
+                return "The PRT was confirmed to be running on a normal schedule at \(time.hourPrint)."
+            case 2, 5, 8, 10:
+                return "The PRT was reported to partially down at \(time.hourPrint)."
+            case 4, 3:
+                return "The PRT was reported to be down at \(time.hourPrint)."
+            case 6, 7:
+                return "The PRT is closed."
+            default:
+                return "An unknown status was reported."
+            }
+        }
     }
 }
+
 

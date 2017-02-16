@@ -15,15 +15,19 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
                   "WVU Mobile",
                   "Send Feedback"]
     
-    var footers = ["You can toggle Night Mode from any view by triple tapping the Navigation Bar.",
+    //You can toggle Night Mode from any view by triple tapping the Navigation Bar.
+    var footers = ["",
                    "If you would like to see more from us, please follow us on Twitter!",
                    "You can also like and follow WVU Mobile on Facebook and Twitter!",
                    "Please send questions, suggestions, or bug reports to our email address."]
 
-    var favorite:DiningHall = .Boreman
-
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
     }
     
     // MARK: - Table view data source
@@ -33,7 +37,7 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 3 {
+        if section == 3 || section == 0 {
             return 1
         } else {
             return 2
@@ -45,11 +49,12 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
         
         switch indexPath.section {
         case 0:
-            if indexPath.row == 0 {
+            /*if indexPath.row == 0 {
                 cell = tableView.dequeueReusableCell(withIdentifier: "nightMode", for: indexPath)
-            } else {
+            } else {*/
                 cell = tableView.dequeueReusableCell(withIdentifier: "favoriteDining", for: indexPath)
-            }
+                cell.detailTextLabel?.text = Global.favoriteDiningHall.name
+            
         case 1:
             cell = tableView.dequeueReusableCell(withIdentifier: "social", for: indexPath)
             if indexPath.row == 0 {
@@ -87,10 +92,7 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 {
-            if indexPath.row == 1 {
-            }
-        } else if indexPath.section == 1 {
+        if indexPath.section == 1 {
             let twitter = ["kaitinthecosmos", "rickydeal11"]
             
             if UIApplication.shared.canOpenURL(URL(string: "twitter://user?screen_name=\(twitter[indexPath.row])")!) {
@@ -107,7 +109,7 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
             } else {
                 UIApplication.shared.openURL(URL(string: socialURL[indexPath.row])!)
             }
-        } else {
+        } else if indexPath.section == 3{
             sendEmailButtonTapped()
         }
         self.tableView.cellForRow(at: indexPath)?.isSelected = false

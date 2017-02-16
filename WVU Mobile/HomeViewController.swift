@@ -12,6 +12,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var prtView: PRTView!
     @IBOutlet weak var eventsView: LiteEventsView!
     @IBOutlet weak var diningMenu: LiteDiningMenu!
+    @IBOutlet weak var favoriteDiningHallLabel: UILabel!
     
     var diningTableViewSource = LiteMenuTableViewController()
     
@@ -55,17 +56,38 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 DispatchQueue.main.sync {
                     if let prt = result {
                         self.prtView.detailLabel.text = prt.status.statusWith(time: prt.time)
-                        self.prtView.spinner.stopAnimating()
-                        self.prtView.spinner.isHidden = true
-                        self.prtView.icon.image = UIImage(named: "PRT")
+                        self.prtView.icon.image = prt.status.prtImage
                     }
+                    self.prtView.spinner.stopAnimating()
+                    self.prtView.spinner.isHidden = true
                 }
             })
         }
         
+        loadDiningHall()
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if diningTableViewSource.menu?.diningHall != Global.favoriteDiningHall {
+            loadDiningHall()
+        }
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func loadDiningHall() {
+        self.favoriteDiningHallLabel.text = "\(Global.favoriteDiningHall.name)'s Menu".uppercased()
+        self.diningTableViewSource.menu = nil
+        self.diningMenu.menuTable.reloadData()
+        self.diningMenu.spinner.isHidden = false
         self.diningMenu.spinner.startAnimating()
         DispatchQueue.global().async {
-            MenuRequest.getMenu(on: Date(), at: DiningHall.Arnold, completion: { result in
+            MenuRequest.getMenu(on: Date(), at: Global.favoriteDiningHall, completion: { result in
                 DispatchQueue.main.sync {
                     if let r = result {
                         self.diningTableViewSource.menu = r
@@ -76,10 +98,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 }
             })
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 
     @IBAction func prtTapped(_ sender: Any) {
@@ -107,6 +125,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.title.text = events[indexPath.row].title
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let webView = WebViewController()
+        webView.url = events[indexPath.row].link
+            
+        self.navigationController?.pushViewController(webView, animated: true)
+            
+        self.eventsView.eventsTable.cellForRow(at: indexPath)?.isSelected = false
     }
 }
 

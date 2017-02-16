@@ -52,6 +52,11 @@ class RSSRequest: NSObject, XMLParserDelegate {
     }
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
+        if elementName == "item" {
+            self.currentElement = RSSElement()
+            self.currentElement.source = source
+        }
+        
         self.elementName = elementName
         
         if elementName == "enclosure" {
@@ -64,10 +69,8 @@ class RSSRequest: NSObject, XMLParserDelegate {
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        if elementName == "item" {
-            self.currentElement.source = source
+        if elementName == "item" && !currentElement.description.isEmpty {
             self.elements.append(currentElement)
-            self.currentElement = RSSElement()
         }
     }
     
@@ -75,8 +78,10 @@ class RSSRequest: NSObject, XMLParserDelegate {
         if string.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             return
         }
-        
-        let text = string.trimmingCharacters(in: .newlines)
+
+        let string = string.replacingOccurrences(of: "<[^>]+>", with: " ", options: .regularExpression, range: nil)
+        let t = string.trimmingCharacters(in: .whitespacesAndNewlines)
+        let text = t.replacingOccurrences(of: "\n", with: " ")
 
         switch self.elementName {
         case "title":
@@ -86,9 +91,9 @@ class RSSRequest: NSObject, XMLParserDelegate {
         case "description":
             currentElement.description += text
         case "pubDate":
-            currentElement.date = Date.rssDate(date: string) // todo
+            currentElement.date = Date.rssDate(date: string)
         case "guid":
-            currentElement.guid += text // todo
+            currentElement.guid += text
         default:
             return
         }
@@ -112,14 +117,12 @@ class RSSRequest: NSObject, XMLParserDelegate {
             }
         }
         
-        //<link rel="alternate" type="application/rss+xml" title="University | thedaonline.com" href="http://www.thedaonline.com/search/?f=rss&amp;t=article&amp;c=news/university&amp;l=50&amp;s=start_time&amp;sd=desc">
-        
         var url: String {
             switch self {
             case .da:
                 return "https://www.thedaonline.com/search/?f=rss"
             case .wvutoday:
-                return "https://wvutoday.wvu.edu/n/rss"
+                return "https://wvutoday.wvu.edu/stories.rss"
             case .events:
                 return "Events"
             }

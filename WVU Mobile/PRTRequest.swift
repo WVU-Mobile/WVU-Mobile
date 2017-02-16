@@ -13,7 +13,6 @@ class PRTRequest {
         
         let timestamp = Int(Date().timeIntervalSince1970)
         let urlPath: String = "https://prtstatus.wvu.edu/api/\(timestamp)/?format=json"
-        print(urlPath)
         
         guard let url = URL(string: urlPath) else {
             completion(nil)

@@ -47,6 +47,9 @@
 		442B484E1E1CA25D0014349E /* DiningTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B484D1E1CA25D0014349E /* DiningTableViewController.swift */; };
 		442B48501E1CA2820014349E /* DiningInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B484F1E1CA2820014349E /* DiningInfoViewController.swift */; };
 		44764CBC1E1F5F310041CC26 /* DiningHallSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44764CBB1E1F5F310041CC26 /* DiningHallSelectionCell.swift */; };
+		44A6A5661E53483500468E44 /* FavoriteDiningHallTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A6A5651E53483500468E44 /* FavoriteDiningHallTableViewController.swift */; };
+		44A6A5681E534BC700468E44 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A6A5671E534BC700468E44 /* Global.swift */; };
+		44A6A56A1E536D5500468E44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44A6A5691E536D5500468E44 /* Assets.xcassets */; };
 		44A80B0E1E2125B5006DBFEA /* 1 - Campus PM.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80AF91E2125B5006DBFEA /* 1 - Campus PM.txt */; };
 		44A80B0F1E2125B5006DBFEA /* 2 - DT PM Mall.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80AFA1E2125B5006DBFEA /* 2 - DT PM Mall.txt */; };
 		44A80B101E2125B5006DBFEA /* 3 - Green Line.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80AFB1E2125B5006DBFEA /* 3 - Green Line.txt */; };
@@ -158,6 +161,9 @@
 		442B484D1E1CA25D0014349E /* DiningTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningTableViewController.swift; sourceTree = "<group>"; };
 		442B484F1E1CA2820014349E /* DiningInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningInfoViewController.swift; sourceTree = "<group>"; };
 		44764CBB1E1F5F310041CC26 /* DiningHallSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningHallSelectionCell.swift; sourceTree = "<group>"; };
+		44A6A5651E53483500468E44 /* FavoriteDiningHallTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteDiningHallTableViewController.swift; sourceTree = "<group>"; };
+		44A6A5671E534BC700468E44 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		44A6A5691E536D5500468E44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44A80AF91E2125B5006DBFEA /* 1 - Campus PM.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "1 - Campus PM.txt"; sourceTree = "<group>"; };
 		44A80AFA1E2125B5006DBFEA /* 2 - DT PM Mall.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2 - DT PM Mall.txt"; sourceTree = "<group>"; };
 		44A80AFB1E2125B5006DBFEA /* 3 - Green Line.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "3 - Green Line.txt"; sourceTree = "<group>"; };
@@ -267,6 +273,7 @@
 				44022A7B1E06FF04004FC92F /* Colors.swift */,
 				427537791E0C25F3007E46B1 /* Date.swift */,
 				42D6472F1E1440E300D0CE9F /* Image.swift */,
+				44A6A5671E534BC700468E44 /* Global.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -372,6 +379,7 @@
 				9C8603541E03764600FE6531 /* HomeViewController.swift */,
 				42B60F231E437B97001639DA /* LiteMenuTableViewController.swift */,
 				441B3BFA1E418136001304D7 /* SettingsTableViewController.swift */,
+				44A6A5651E53483500468E44 /* FavoriteDiningHallTableViewController.swift */,
 				44022A7D1E0700FD004FC92F /* TabBarController.swift */,
 				44022A7F1E0707A6004FC92F /* NavigationController.swift */,
 				425D1AAC1E14044000B88972 /* NewsViewController.swift */,
@@ -417,6 +425,7 @@
 		9C86036E1E037FDB00FE6531 /* PRT Status Widget */ = {
 			isa = PBXGroup;
 			children = (
+				44A6A5691E536D5500468E44 /* Assets.xcassets */,
 				9C86036F1E037FDB00FE6531 /* TodayViewController.swift */,
 				9CECBA9D1E060463001D8854 /* PRT.swift */,
 				9C8603711E037FDB00FE6531 /* MainInterface.storyboard */,
@@ -547,6 +556,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44A6A56A1E536D5500468E44 /* Assets.xcassets in Resources */,
 				9C8603731E037FDB00FE6531 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -655,6 +665,7 @@
 				425D1AAF1E14114800B88972 /* NewsImageCell.swift in Sources */,
 				442B48501E1CA2820014349E /* DiningInfoViewController.swift in Sources */,
 				4252D4881E1C46C900946774 /* MapStyles.swift in Sources */,
+				44A6A5661E53483500468E44 /* FavoriteDiningHallTableViewController.swift in Sources */,
 				44D097681E0DEB5D007476DD /* Menu.swift in Sources */,
 				42E1BFEE1E1D42C4004E2CA4 /* DiningHallContainerViewController.swift in Sources */,
 				44A80B251E212710006DBFEA /* BusesTableViewController.swift in Sources */,
@@ -679,6 +690,7 @@
 				4275377C1E0C2FDC007E46B1 /* PRTView.swift in Sources */,
 				44A80B291E212C4E006DBFEA /* BusLine.swift in Sources */,
 				425D1AA21E12F89600B88972 /* RoundedTable.swift in Sources */,
+				44A6A5681E534BC700468E44 /* Global.swift in Sources */,
 				9C8603551E03764600FE6531 /* HomeViewController.swift in Sources */,
 				442B484E1E1CA25D0014349E /* DiningTableViewController.swift in Sources */,
 				4275377E1E0C352A007E46B1 /* LiteEventCell.swift in Sources */,
@@ -841,7 +853,7 @@
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "wvumobile.WVU-Mobile";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wvu.WVU-Mobile";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WVU Mobile-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -861,7 +873,7 @@
 				INFOPLIST_FILE = "WVU Mobile/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "wvumobile.WVU-Mobile";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wvu.WVU-Mobile";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WVU Mobile-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -877,7 +889,7 @@
 				INFOPLIST_FILE = "PRT Status Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "wvumobile.WVU-Mobile.PRT-Status-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wvu.WVU-Mobile.PRT-Status-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -892,7 +904,7 @@
 				INFOPLIST_FILE = "PRT Status Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "wvumobile.WVU-Mobile.PRT-Status-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wvu.WVU-Mobile.PRT-Status-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;

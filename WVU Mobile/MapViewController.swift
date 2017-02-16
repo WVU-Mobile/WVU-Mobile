@@ -89,7 +89,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDelega
             }
             let polyline = GMSPolyline(path: shape)
             polyline.strokeWidth = 5.0
-            polyline.strokeColor = Colors.homeBlue
+            polyline.strokeColor = Colors.homeDarkBlue
             polyline.map = mapView
 
         } catch {
@@ -174,7 +174,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-        cell.backgroundColor = Colors.homeBlue
+        cell.backgroundColor = Colors.alphaGray2
         cell.textLabel?.textColor = UIColor.white
         cell.detailTextLabel?.textColor = UIColor.white
         
@@ -311,7 +311,12 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDelega
         MapCoordinate(code: "PRT",   type: .prt, name: "PRT Station - Engineering", latitude: 39.646907, longitude: -79.973238),
         MapCoordinate(code: "PRT",   type: .prt, name: "PRT Station - Evansdale Residential Complex", latitude: 39.64756555, longitude: -79.9693054),
         MapCoordinate(code: "PRT",   type: .prt, name: "PRT Station - Health Sciences Center", latitude: 39.65508791, longitude: -79.9601993),
-        MapCoordinate(code: "SRC-E", type: .recreation, name: "Student Recreation Center", latitude: 39.648185, longitude: -79.970821)]
+        MapCoordinate(code: "SRC-E", type: .recreation, name: "Student Recreation Center", latitude: 39.648185, longitude: -79.970821),
+        MapCoordinate(code: "Arnold", type: .dining, name: "Arnold Dining Hall", latitude: DiningHall.Arnold.latitude, longitude: DiningHall.Arnold.longitude),
+        MapCoordinate(code: "Boreman", type: .dining, name: "Boreman Dining Hall", latitude: DiningHall.Boreman.latitude, longitude: DiningHall.Boreman.longitude),
+        MapCoordinate(code: "Cafe Evansdale", type: .dining, name: "CafeEvansdale", latitude: DiningHall.CafeEvansdale.latitude, longitude: DiningHall.CafeEvansdale.longitude), MapCoordinate(code: "Hatfields", type: .dining, name: "Hatfields Dining Hall", latitude: DiningHall.Hatfields.latitude, longitude: DiningHall.Hatfields.longitude),
+        MapCoordinate(code: "Summit", type: .dining, name: "Summit Dining Hall", latitude: DiningHall.Summit.latitude, longitude: DiningHall.Summit.longitude),
+        MapCoordinate(code: "Terrace Room", type: .dining, name: "Terrace Room Dining Hall", latitude: DiningHall.TerraceRoom.latitude, longitude: DiningHall.TerraceRoom.longitude)]
     
     enum CoordinateType {
         case recreation, prt, parking, dining, housing, academic
@@ -319,17 +324,17 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDelega
         var color: UIColor {
             switch self {
             case .prt:
-                return UIColor.brown
+                return Colors.biscuitYellow
             case .parking:
-                return UIColor.blue
+                return Colors.purple
             case .recreation:
-                return UIColor.green
+                return Colors.heartPink
             case .dining:
-                return UIColor.red
+                return Colors.blue
             case .housing:
-                return UIColor.yellow
+                return Colors.heartPink
             case .academic:
-                return UIColor.purple
+                return Colors.mountainGreen
             }
         }
     }

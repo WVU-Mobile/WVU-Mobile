@@ -16,9 +16,8 @@ class PRTTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.separatorStyle = .singleLine
-        tableView.separatorColor = UIColor.clear
-        tableView.backgroundColor = UIColor.white
-        
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
         pullStatus()
     }
 
@@ -31,9 +30,7 @@ class PRTTableViewController: UITableViewController {
             PRTRequest.getPRTStatus(completion: { result in
                 DispatchQueue.main.sync {
                     if let prt = result {
-                        self.prt = PRT(status: 4, message: "Test", time: 1486913969)
-                        //self.prt = prt
-                        print(prt.status.rawValue)
+                        self.prt = prt
                         self.tableView.reloadData()
                     }
                 }

@@ -12,8 +12,8 @@ import NotificationCenter
 class TodayViewController: UIViewController, NCWidgetProviding {
     
     @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,7 +91,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                     if let prt = result {
                         self.statusLabel.text = prt.status.overall
                         self.messageLabel.text = prt.message
-                        self.time.text = "\(prt.time.prettyPrint) ~ \(prt.time.timeAgo)"
+                        self.time.text = "Last staus was reported \(prt.time.timeAgo)."
                     }
                 }
             })

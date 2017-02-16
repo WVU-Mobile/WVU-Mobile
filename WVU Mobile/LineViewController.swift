@@ -14,13 +14,13 @@ class LineViewController: UIViewController, UITableViewDelegate, UITableViewData
     var map = GMSMapView()
     var tableView = UITableView()
     
-    var line: BusRoute!
+    var line: BusRoute?
     var coords: Dictionary <String, CLLocationCoordinate2D>!
     var selected = -1
     var markerArray = [GMSMarker]()
     
     override func viewDidLoad() {
-        self.title = line.name
+        self.title = line?.name
         
         /*
         Set up Google Map View.
@@ -36,17 +36,19 @@ class LineViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         // Add each stop as Marker
-        for stop in line.stops {
-            let marker = GMSMarker()
-            marker.position = coords[stop]!
-            marker.title = stop
-            marker.map = map
-            marker.icon = GMSMarker.markerImage(with: Colors.homeYellow)
-            markerArray.append(marker)
+        if let l = line {
+            for stop in l.stops {
+                let marker = GMSMarker()
+                marker.position = coords[stop]!
+                marker.title = stop
+                marker.map = map
+                marker.icon = GMSMarker.markerImage(with: Colors.mountainLineBlue)
+                markerArray.append(marker)
+            }
         }
         
         // Parse
-        let path = Bundle.main.path(forResource: line.name, ofType: "txt")
+        let path = Bundle.main.path(forResource: line?.name, ofType: "txt")
         var text = ""
         
         do {
@@ -63,6 +65,7 @@ class LineViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         let polyline = GMSPolyline(path: shape)
         polyline.strokeWidth = 5.0
+        polyline.strokeColor = Colors.homeDarkBlue
         polyline.map = map
         
         self.view.addSubview(map)
@@ -103,12 +106,14 @@ class LineViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func loadTwitter() {
         let feedPage = WebViewController()
-        feedPage.url = "https://twitter.com/\(line.twitter)"
+        if let l = line {
+            feedPage.url = "https://twitter.com/\(l.twitter)"
+        }
         self.navigationController?.pushViewController(feedPage, animated: true)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return line.stops.count + 1
+        return line!.stops.count + 1
     }
     
     // Return number of sections in table view.
@@ -135,7 +140,7 @@ class LineViewController: UIViewController, UITableViewDelegate, UITableViewData
         label.textColor = Colors.homeDarkBlue
         headerView.backgroundColor = Colors.gray
         label.font = UIFont.systemFont(ofSize: 13)
-        label.text = line.runTime
+        label.text = line?.runTime
         label.textAlignment = .center
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
@@ -149,16 +154,16 @@ class LineViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         
         if indexPath.row == 0 {
-            cell.textLabel?.text = line.hoursString
+            cell.textLabel?.text = line?.hoursString
             cell.textLabel?.numberOfLines = 0
             cell.textLabel?.textAlignment = .center
             cell.textLabel?.lineBreakMode = .byWordWrapping
             cell.textLabel?.font = UIFont.systemFont(ofSize: 13, weight: 0.1)
         } else {
-            cell.textLabel?.text = line.stops[indexPath.row - 1]
+            cell.textLabel?.text = line?.stops[indexPath.row - 1]
             cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: 0.1)
             cell.imageView?.image = UIImage(named: "Stops")?.withRenderingMode(.alwaysTemplate)
-            cell.imageView?.tintColor = UIColor.black
+            cell.imageView?.tintColor = Colors.homeDarkBlue
             cell.imageView?.frame = CGRect(x: 0, y: 0, width: cell.frame.height, height: cell.frame.height)
         }
         return cell
@@ -168,10 +173,12 @@ class LineViewController: UIViewController, UITableViewDelegate, UITableViewData
         if indexPath.row > 0 {
             if selected != indexPath.row - 1 {
                 selected = indexPath.row - 1
-                let name = line.stops[selected]
-                let camera = GMSCameraPosition(target: coords[name]!, zoom: 16, bearing: 0, viewingAngle: 0)
-                map.animate(to: camera)
-                map.selectedMarker = markerArray[indexPath.row - 1]
+                if let l = line {
+                    let name = l.stops[selected]
+                    let camera = GMSCameraPosition(target: coords[name]!, zoom: 16, bearing: 0, viewingAngle: 0)
+                    map.animate(to: camera)
+                    map.selectedMarker = markerArray[indexPath.row - 1]
+                }
             }
             else {
                 map.selectedMarker = nil
