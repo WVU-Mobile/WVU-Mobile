@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,9 +21,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WVU Mobile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuE-I9-0yE">
-                                <rect key="frame" x="67" y="307" width="241" height="53"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MTNeer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuE-I9-0yE">
+                                <rect key="frame" x="106" y="307" width="162" height="53"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="44"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Kaitlyn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aan-Lq-xBM">
+                                <rect key="frame" x="193" y="368" width="75" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="hCh-O0-bmO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -30,7 +40,9 @@
                         <color key="backgroundColor" red="0.69411764710000001" green="0.78823529410000004" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="AuE-I9-0yE" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="0hL-QD-Gdb"/>
+                            <constraint firstItem="aan-Lq-xBM" firstAttribute="top" secondItem="AuE-I9-0yE" secondAttribute="bottom" constant="8" id="bKl-SN-tff"/>
                             <constraint firstItem="AuE-I9-0yE" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="gHF-WH-oIl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aan-Lq-xBM" secondAttribute="trailing" constant="91" id="qw6-yi-351"/>
                         </constraints>
                     </view>
                 </viewController>
