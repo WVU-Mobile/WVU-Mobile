@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,18 +21,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="ONLINE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6z-7E-18n">
-                                <rect key="frame" x="16" y="14" width="288" height="34"/>
+                            <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Running" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6z-7E-18n">
+                                <rect key="frame" x="115" y="16" width="189" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="zQM-9H-VFt"/>
+                                    <constraint firstAttribute="height" constant="44" id="zQM-9H-VFt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
-                                <color key="textColor" red="0.00080628428001965069" green="0.029469826412274015" blue="0.17619765228426398" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="37"/>
+                                <color key="textColor" red="0.0" green="0.031372549019607843" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value=""/>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="55Y-Ut-t1l">
+                                <rect key="frame" x="16" y="108" width="288" height="284"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reported 10 minutes ago." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFB-ct-9Mv">
+                                <rect key="frame" x="115" y="64" width="189" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="RoN-fm-Ear"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value=""/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Check" translatesAutoresizingMaskIntoConstraints="NO" id="Dlg-BD-ffL">
+                                <rect key="frame" x="22" y="16" width="72" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="hWj-Pa-vwu"/>
+                                    <constraint firstAttribute="height" constant="72" id="rz0-Ky-zLF"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIO-YY-F4f">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                 <constraints>
@@ -45,34 +70,18 @@
                                     <action selector="openApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="38P-9A-ank"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="55Y-Ut-t1l">
-                                <rect key="frame" x="16" y="108" width="288" height="284"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last status was reported 10 minutes ago." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFB-ct-9Mv">
-                                <rect key="frame" x="16" y="51" width="288" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="RoN-fm-Ear"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value=""/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="sFB-ct-9Mv" firstAttribute="top" secondItem="V6z-7E-18n" secondAttribute="bottom" constant="3" id="2yg-xU-CFh"/>
+                            <constraint firstItem="sFB-ct-9Mv" firstAttribute="top" secondItem="V6z-7E-18n" secondAttribute="bottom" constant="4" id="2yg-xU-CFh"/>
                             <constraint firstItem="55Y-Ut-t1l" firstAttribute="top" secondItem="LIO-YY-F4f" secondAttribute="bottom" constant="8" id="DWY-b7-Nbc"/>
                             <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="55Y-Ut-t1l" secondAttribute="bottom" constant="8" id="GtI-j8-QFF"/>
+                            <constraint firstItem="Dlg-BD-ffL" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="6" id="I5d-pI-ZFc"/>
+                            <constraint firstItem="Dlg-BD-ffL" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="16" id="JHh-bz-Xyd"/>
                             <constraint firstItem="LIO-YY-F4f" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="PUH-Xw-a8h"/>
                             <constraint firstItem="55Y-Ut-t1l" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" id="PdN-nC-whg"/>
-                            <constraint firstItem="sFB-ct-9Mv" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="R2X-YF-fwl"/>
-                            <constraint firstItem="V6z-7E-18n" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="14" id="Wg2-41-K7E"/>
-                            <constraint firstItem="V6z-7E-18n" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="X1q-Dj-8uc"/>
+                            <constraint firstItem="sFB-ct-9Mv" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="99" id="R2X-YF-fwl"/>
+                            <constraint firstItem="V6z-7E-18n" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="16" id="Wg2-41-K7E"/>
+                            <constraint firstItem="V6z-7E-18n" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="99" id="X1q-Dj-8uc"/>
                             <constraint firstAttribute="trailing" secondItem="LIO-YY-F4f" secondAttribute="trailing" id="bAK-kR-C4x"/>
                             <constraint firstItem="LIO-YY-F4f" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="lMU-aC-LnU"/>
                             <constraint firstItem="V6z-7E-18n" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" id="qIB-OU-Her"/>
@@ -87,6 +96,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="400"/>
                     <connections>
+                        <outlet property="icon" destination="Dlg-BD-ffL" id="8s9-ll-yV2"/>
                         <outlet property="messageLabel" destination="55Y-Ut-t1l" id="9Xj-FD-b5K"/>
                         <outlet property="statusLabel" destination="V6z-7E-18n" id="lRp-5c-9UB"/>
                         <outlet property="time" destination="sFB-ct-9Mv" id="R74-i6-nIe"/>
@@ -97,4 +107,7 @@
             <point key="canvasLocation" x="-92.799999999999997" y="158.32083958020991"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Check" width="16" height="16"/>
+    </resources>
 </document>

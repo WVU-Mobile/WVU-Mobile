@@ -15,6 +15,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     
+    @IBOutlet weak var icon: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -91,7 +92,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                     if let prt = result {
                         self.statusLabel.text = prt.status.overall
                         self.messageLabel.text = prt.message
-                        self.time.text = "Last staus was reported \(prt.time.timeAgo)."
+                        self.time.text = "Reported \(prt.time.timeAgo)."
+                        self.icon.image = prt.status.image.withRenderingMode(.alwaysTemplate)
+                        self.icon.tintColor = UIColor(red: 0/255, green: 8/255, blue: 45/255, alpha: 0.5) /* #00082d */
                     }
                 }
             })

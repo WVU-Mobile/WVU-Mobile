@@ -27,45 +27,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.diningMenu.menuTable.dataSource = self.diningTableViewSource
         self.diningMenu.menuTable.delegate = self.diningTableViewSource
         
-        let parser = RSSRequest()
-        
-        self.eventsView.spinner.startAnimating()
-        DispatchQueue.global().async {
-            parser.getEvents(days: 1, completion: { events in
-                DispatchQueue.main.sync {
-                    let cal = Calendar.autoupdatingCurrent
-                    var today = [RSSElement]()
-                    
-                    for e in events {
-                        if cal.isDateInToday(e.date) {
-                            today.append(e)
-                        }
-                    }
-                    
-                    self.events = today
-                    self.eventsView.eventsTable.reloadData()
-                    self.eventsView.spinner.stopAnimating()
-                    self.eventsView.spinner.isHidden = true
-                }
-            })
-        }
-        
-        self.prtView.spinner.startAnimating()
-        DispatchQueue.global().async {
-            PRTRequest.getPRTStatus(completion: { result in
-                DispatchQueue.main.sync {
-                    if let prt = result {
-                        self.prtView.detailLabel.text = prt.status.statusWith(time: prt.time)
-                        self.prtView.icon.image = prt.status.prtImage
-                    }
-                    self.prtView.spinner.stopAnimating()
-                    self.prtView.spinner.isHidden = true
-                }
-            })
-        }
-        
         loadDiningHall()
-
+        loadEvents()
+        loadPRT()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -74,6 +38,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if diningTableViewSource.menu?.diningHall != Global.favoriteDiningHall {
             loadDiningHall()
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -99,9 +64,54 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             })
         }
     }
+    
+    func loadPRT() {
+        self.prtView.spinner.isHidden = false
+        self.prtView.detailLabel.text = ""
+        self.prtView.icon.image = nil
+        
+        self.prtView.spinner.startAnimating()
+        DispatchQueue.global().async {
+            PRTRequest.getPRTStatus(completion: { result in
+                DispatchQueue.main.sync {
+                    if let prt = result {
+                        self.prtView.detailLabel.text = prt.status.statusWith(time: prt.time)
+                        self.prtView.icon.image = prt.status.prtImage
+                    }
+                    self.prtView.spinner.stopAnimating()
+                    self.prtView.spinner.isHidden = true
+                }
+            })
+        }
+    }
+    
+    func loadEvents() {
+        let parser = RSSRequest()
+
+        self.eventsView.spinner.startAnimating()
+        DispatchQueue.global().async {
+            parser.getEvents(days: 1, completion: { events in
+                DispatchQueue.main.sync {
+                    let cal = Calendar.autoupdatingCurrent
+                    var today = [RSSElement]()
+                    
+                    for e in events {
+                        if cal.isDateInToday(e.date) {
+                            today.append(e)
+                        }
+                    }
+                    
+                    self.events = today
+                    self.eventsView.eventsTable.reloadData()
+                    self.eventsView.spinner.stopAnimating()
+                    self.eventsView.spinner.isHidden = true
+                }
+            })
+        }
+    }
 
     @IBAction func prtTapped(_ sender: Any) {
-        print("pressed")
+        loadPRT()
     }
     
     // MARK: - Table view data source

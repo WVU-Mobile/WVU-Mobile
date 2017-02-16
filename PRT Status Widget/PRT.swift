@@ -43,6 +43,27 @@ class PRT {
             }
         }
         
+        var color: UIColor {
+            let green        = UIColor(red: 40/255, green: 162/255, blue: 108/255, alpha: 1.0) /* #28a26c */
+            let orange       = UIColor(red: 233/255, green: 166/255, blue: 87/255, alpha: 1.0) /* #e9a657 */
+            let red          = UIColor(red: 234/255, green: 96/255, blue: 69/255, alpha: 1.0) /* #ea6045 */
+            let pink         = UIColor(red: 255/255, green: 200/255, blue: 200/255, alpha: 1.0) //#fea094
+            let homeDarkBlue = UIColor(red: 25/255,  green: 50/255,  blue: 75/255,  alpha: 0.9)
+
+            switch self.rawValue {
+            case 1:
+                return green
+            case 2, 5, 8, 10:
+                return orange
+            case 4, 3:
+                return red
+            case 6, 7:
+                return homeDarkBlue
+            default:
+                return pink
+            }
+        }
+        
         var image: UIImage {
             switch self.rawValue {
             case 1:
