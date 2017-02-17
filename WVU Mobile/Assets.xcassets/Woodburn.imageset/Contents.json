@@ -2,17 +2,15 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "prt dark.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "prt dark 2.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "prt dark 3.png",
+      "filename" : "20661.42673.jpg",
       "scale" : "3x"
     }
   ],
