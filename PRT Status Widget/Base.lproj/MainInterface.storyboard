@@ -33,11 +33,14 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value=""/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="55Y-Ut-t1l">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="55Y-Ut-t1l">
                                 <rect key="frame" x="16" y="108" width="288" height="284"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value=""/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reported 10 minutes ago." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFB-ct-9Mv">
                                 <rect key="frame" x="115" y="64" width="189" height="20"/>
@@ -57,6 +60,9 @@
                                     <constraint firstAttribute="width" constant="72" id="hWj-Pa-vwu"/>
                                     <constraint firstAttribute="height" constant="72" id="rz0-Ky-zLF"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value=" "/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIO-YY-F4f">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
@@ -108,6 +114,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name=" " width="16" height="16"/>
         <image name="Check" width="16" height="16"/>
     </resources>
 </document>

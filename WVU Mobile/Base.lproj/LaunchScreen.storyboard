@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,16 +27,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5S-n4-lo9">
-                                        <rect key="frame" x="132" y="287" width="199" height="92"/>
+                                        <rect key="frame" x="106" y="287" width="235" height="92"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="199" id="6DA-6b-JIE"/>
+                                            <constraint firstAttribute="width" constant="235" id="6DA-6b-JIE"/>
                                             <constraint firstAttribute="height" constant="92" id="9uF-j2-J6M"/>
                                         </constraints>
                                         <attributedString key="attributedText">
-                                            <fragment content="MTNeer">
+                                            <fragment content="WVU Mobile">
                                                 <attributes>
                                                     <color key="NSColor" red="0.93158650399999998" green="0.81073599870000002" blue="0.47895098580000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="57" name="HelveticaNeue-Thin"/>
+                                                    <font key="NSFont" size="45" name="HelveticaNeue-Thin"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -44,18 +44,18 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beard" translatesAutoresizingMaskIntoConstraints="NO" id="MLh-4E-MCq">
-                                        <rect key="frame" x="44" y="300" width="68" height="68"/>
+                                        <rect key="frame" x="34" y="306" width="55" height="55"/>
                                         <color key="tintColor" red="0.93158650399999998" green="0.81073599870000002" blue="0.47895098580000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="68" id="HKK-5F-yG4"/>
-                                            <constraint firstAttribute="width" constant="68" id="sHf-ag-zfw"/>
+                                            <constraint firstAttribute="height" constant="55" id="HKK-5F-yG4"/>
+                                            <constraint firstAttribute="width" constant="55" id="sHf-ag-zfw"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.56862745100000001" blue="0.74117647060000003" alpha="0.94632919520547942" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="W5S-n4-lo9" firstAttribute="centerX" secondItem="94A-kO-Ah4" secondAttribute="centerX" constant="44" id="08j-xl-i6A"/>
-                                    <constraint firstItem="W5S-n4-lo9" firstAttribute="leading" secondItem="MLh-4E-MCq" secondAttribute="trailing" constant="20" id="Eoc-bi-jvt"/>
+                                    <constraint firstItem="W5S-n4-lo9" firstAttribute="centerX" secondItem="94A-kO-Ah4" secondAttribute="centerX" constant="36" id="08j-xl-i6A"/>
+                                    <constraint firstItem="W5S-n4-lo9" firstAttribute="leading" secondItem="MLh-4E-MCq" secondAttribute="trailing" constant="17" id="Eoc-bi-jvt"/>
                                     <constraint firstItem="MLh-4E-MCq" firstAttribute="centerY" secondItem="W5S-n4-lo9" secondAttribute="centerY" constant="1" id="PGP-Y6-pXB"/>
                                     <constraint firstItem="W5S-n4-lo9" firstAttribute="centerY" secondItem="94A-kO-Ah4" secondAttribute="centerY" id="eVT-Sa-CHP"/>
                                 </constraints>
