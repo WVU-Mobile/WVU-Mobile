@@ -84,6 +84,7 @@ class CalendarView: ShadowView, UIPageViewControllerDelegate, UIPageViewControll
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         return 0
     }
+    
 }
 
 extension CalendarView: MonthViewControllerDelegate {
@@ -91,4 +92,5 @@ extension CalendarView: MonthViewControllerDelegate {
         selectedDate = date
         self.delegate?.didSelectDate(date: date)
     }
+    
 }

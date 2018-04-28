@@ -3,7 +3,7 @@
 //  DateView
 //
 //  Created by Kaitlyn Landmesser on 1/10/17.
-//  Copyright © 2017 Industrial Scientific. All rights reserved.
+//  Copyright © 2017 WVU Mobile. All rights reserved.
 //
 
 import UIKit
@@ -91,6 +91,7 @@ class DateSelectorViewController: UIView {
             self.calendar.removeFromSuperview()
         })
     }
+    
 }
 
 extension DateSelectorViewController: CalendarViewDelegate {
@@ -100,5 +101,5 @@ extension DateSelectorViewController: CalendarViewDelegate {
         self.dismissCalendar()
         delegate?.didSelectNewDate(date: selectedDate)
     }
+    
 }
-

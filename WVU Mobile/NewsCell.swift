@@ -9,7 +9,6 @@
 import UIKit
 
 class NewsCell: UITableViewCell {
-
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var details: UILabel!
     @IBOutlet weak var date: UILabel!
@@ -21,11 +20,6 @@ class NewsCell: UITableViewCell {
         
         self.layoutMargins = UIEdgeInsets.zero
         self.preservesSuperviewLayoutMargins = false
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
     }
 
 }

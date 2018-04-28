@@ -14,8 +14,9 @@ class DiningTableViewController: UIViewController, UITableViewDelegate, UITableV
     var noInfoAvailableLabel: UILabel!
     var progressIndicator: UIActivityIndicatorView!
     
-    var menu = Menu(diningHall: .Arnold)
-    var diningHall = DiningHall.Arnold
+    var menu = Menu(diningHall: .boreman)
+    var diningHall = DiningHall.boreman
+    
     
     var dateSelector: DateSelectorViewController!
     var gesture: UITapGestureRecognizer!
@@ -57,7 +58,6 @@ class DiningTableViewController: UIViewController, UITableViewDelegate, UITableV
         menu.diningHall = diningHall
         
         loadToday()
-
     }
     
     func loadToday() {
@@ -81,10 +81,6 @@ class DiningTableViewController: UIViewController, UITableViewDelegate, UITableV
                 }
             })
         }
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return menu.diningHall.meals.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -133,4 +129,5 @@ class DiningTableViewController: UIViewController, UITableViewDelegate, UITableV
         self.dateSelector.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
         self.menuTable.removeGestureRecognizer(gesture)
     }
+    
 }

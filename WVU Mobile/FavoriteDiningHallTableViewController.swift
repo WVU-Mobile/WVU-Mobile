@@ -9,23 +9,10 @@
 import UIKit
 
 class FavoriteDiningHallTableViewController: UITableViewController {
-    let diningHalls: [DiningHall] = [.Arnold, .Boreman, .CafeEvansdale, .Hatfields, .Summit, .TerraceRoom]
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    let diningHalls: [DiningHall] = [.boreman, .cafeEvansdale, .hatfields, .summit, .terraceRoom]
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return diningHalls.count
     }
@@ -46,4 +33,5 @@ class FavoriteDiningHallTableViewController: UITableViewController {
         Global.favoriteDiningHall = diningHalls[indexPath.row]
         let _ = self.navigationController?.popViewController(animated: true)
     }
+    
 }

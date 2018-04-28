@@ -16,6 +16,7 @@ private let otherMonthCell = "otherMonth"
 protocol MonthViewControllerDelegate {
     func didSelectDate(date: Date)
 }
+
 class MonthViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     var delegate: MonthViewControllerDelegate?
     
@@ -161,4 +162,5 @@ class MonthViewController: UIViewController, UICollectionViewDelegate, UICollect
             self.delegate?.didSelectDate(date: date)
         }
     }
+    
 }

@@ -10,7 +10,6 @@ import UIKit
 import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding {
-    
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
@@ -77,11 +76,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         }
         
         completion(nil)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {

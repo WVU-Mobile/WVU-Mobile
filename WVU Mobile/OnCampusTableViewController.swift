@@ -10,27 +10,11 @@ import UIKit
 
 class OnCampusTableViewController: UITableViewController {
     var items = ["Map","Dining Halls", "Help"]
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
 
- 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "campus-item", for: indexPath) as! OnCampusTableViewCell
         let icon = ["Mountain","Sub","Heart"]
@@ -44,7 +28,6 @@ class OnCampusTableViewController: UITableViewController {
         return 80
     }
 
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let view = MapViewController()
@@ -57,4 +40,5 @@ class OnCampusTableViewController: UITableViewController {
             self.navigationController?.pushViewController(view, animated: true)
         }
     }
+    
 }

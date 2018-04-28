@@ -10,7 +10,7 @@ import UIKit
 import GoogleMaps
 
 class DiningInfoViewController: UIViewController {
-    var diningHall = DiningHall.Arnold
+    var diningHall = DiningHall.boreman
     
     @IBOutlet weak var info: UILabel!
     @IBOutlet weak var hours: UILabel!
@@ -30,7 +30,4 @@ class DiningInfoViewController: UIViewController {
         marker.map = map
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 }

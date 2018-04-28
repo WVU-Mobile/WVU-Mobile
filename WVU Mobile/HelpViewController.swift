@@ -96,7 +96,6 @@ class HelpViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.dismiss(animated: true, completion: nil)
         }
     }
-    // END FUNCTIONALLITY OF TEXT MESSAGE BUTTON
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 5
@@ -235,4 +234,5 @@ class HelpViewController: UIViewController, UITableViewDelegate, UITableViewData
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }

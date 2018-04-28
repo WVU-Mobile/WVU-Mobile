@@ -34,4 +34,5 @@ class WebViewController: UIViewController {
         let activityViewController = UIActivityViewController(activityItems: [content, URL(string: url)!], applicationActivities: nil)
         present(activityViewController, animated: true, completion: {})
     }
+    
 }

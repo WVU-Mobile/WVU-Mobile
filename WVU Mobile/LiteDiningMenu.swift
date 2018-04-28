@@ -10,4 +10,5 @@ import UIKit
 
 class LiteDiningMenu: ShadowView {
     @IBOutlet weak var menuTable: RoundedTable!
+    
 }

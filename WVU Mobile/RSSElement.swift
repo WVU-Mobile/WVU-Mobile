@@ -6,7 +6,6 @@
 //  Copyright © 2016 WVU Mobile. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 struct RSSElement {
@@ -51,6 +50,5 @@ struct RSSElement {
             self.url = url
         }
     }
-    
     
 }

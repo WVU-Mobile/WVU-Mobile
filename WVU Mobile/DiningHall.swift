@@ -9,11 +9,15 @@
 import Foundation
 
 enum DiningHall: Int {
-    case CafeEvansdale = 1, Summit = 2, Arnold = 3, Boreman = 4, TerraceRoom = 5, Hatfields = 6
+    case cafeEvansdale = 1
+    case summit = 2
+    case boreman = 4
+    case terraceRoom = 5
+    case hatfields = 6
     
     var campus: String {
         switch self {
-        case .CafeEvansdale:
+        case .cafeEvansdale:
             return "Evansdale"
         default:
             return "Downtown"
@@ -28,17 +32,15 @@ enum DiningHall: Int {
     
     var name: String {
         switch self {
-        case .CafeEvansdale:
+        case .cafeEvansdale:
             return "Cafe Evansdale"
-        case .Summit:
+        case .summit:
             return "Summit"
-        case .Arnold:
-            return "Arnold"
-        case .Boreman:
+        case .boreman:
             return "Boreman"
-        case .TerraceRoom:
+        case .terraceRoom:
             return "Terrace Room"
-        case .Hatfields:
+        case .hatfields:
             return "Hatfields"
         }
     }
@@ -56,17 +58,7 @@ enum DiningHall: Int {
         let weekday = calendar.component(.weekday, from: date)
         
         switch self {
-        case .Arnold:
-            if calendar.isDateInWeekend(date) {
-                if hour >= 11 && hour < 15 {
-                    return true
-                }
-            } else {
-                if hour >= 9 && hour < 19 {
-                    return true
-                }
-            }
-        case .Summit:
+        case .summit:
             if calendar.isDateInWeekend(date) {
                 if hour >= 11 && hour < 18 {
                     if hour == 18 {
@@ -82,7 +74,7 @@ enum DiningHall: Int {
                     return true
                 }
             }
-        case .Boreman:
+        case .boreman:
             if calendar.isDateInWeekend(date) {
                 if hour >= 11 && hour < 15 {
                     return true
@@ -92,7 +84,7 @@ enum DiningHall: Int {
                     return true
                 }
             }
-        case .Hatfields:
+        case .hatfields:
             if !calendar.isDateInWeekend(date) {
                 if ((hour == 7 && minute >= 15) || (hour >= 8) ) && hour < 10 {
                     return true
@@ -100,7 +92,7 @@ enum DiningHall: Int {
                     return true
                 }
             }
-        case .TerraceRoom:
+        case .terraceRoom:
             if !calendar.isDateInWeekend(date) {
                 if weekday == 6 {
                     if hour >= 11 && hour < 14 {
@@ -112,7 +104,7 @@ enum DiningHall: Int {
                     }
                 }
             }
-        case .CafeEvansdale:
+        case .cafeEvansdale:
             if weekday == 1 {
                 if hour >= 9 && ( hour < 19 || hour == 19 && minute <= 30 ) {
                     return true
@@ -136,25 +128,22 @@ enum DiningHall: Int {
     
     var hoursOfOperation: String {
         switch self {
-        case .Arnold:
-            return  "Monday – Friday 9:00am to 7:00pm\n" +
-                    "Saturday & Sunday 11:00 am - 3:00 pm"
-        case .CafeEvansdale:
+        case .cafeEvansdale:
             return  "Monday - Thursday 7:00 am – 8:00 pm\n" +
                     "Friday 7:00 am – 6:30 pm\n" +
                     "Saturday & Holidays 9:00 am – 6:30 pm\n" +
                     "Sunday 9:00 am – 7:30 pm"
-        case .Summit:
+        case .summit:
             return  "Monday – Friday 7:00 am - 7:00 pm\n" +
                     "Saturday, Sunday & Holidays 11:00 am - 6:30 pm"
-        case .Boreman:
+        case .boreman:
             return  "Monday - Friday 11:00 am - 7:00 pm\n" +
                     "Saturday & Sunday 11:00 am - 3:00 pm"
-        case .TerraceRoom:
+        case .terraceRoom:
             return  "Monday – Thursday 11:00 am - 8:00 pm\n" +
                     "Friday 11:00 am - 2:00 pm\n" +
                     "Saturday, Sunday & Holidays Closed"
-        case .Hatfields:
+        case .hatfields:
             return  "Breakfast: 7:15 am - 10:00 am\n" +
                     "Lunch: 11:00 am - 2:00 pm\n" +
                     "Saturday, Sunday & Holidays Closed"
@@ -163,67 +152,60 @@ enum DiningHall: Int {
     
     var meals: [Menu.Meal] {
         switch self {
-        case .Arnold,  .CafeEvansdale, .Summit, .Boreman :
+        case .cafeEvansdale, .summit, .boreman :
             return  [.breakfast, .lunch, .dinner]
-        case .TerraceRoom:
+        case .terraceRoom:
             return   [.lunch, .dinner]
-        case .Hatfields:
+        case .hatfields:
             return  [.breakfast, .lunch]
         }
     }
     
     var description: String {
         switch self {
-        case .Arnold:
+        case .cafeEvansdale:
             return  "Cafe Evansdale is located in Brooke Tower and serves breakfast, lunch, and dinner."
-        case .CafeEvansdale:
-            return  "Cafe Evansdale is located in Brooke Tower and serves breakfast, lunch, and dinner."
-        case .Summit:
+        case .summit:
             return  "Summit Cafe is located in Summit Hall and serves breakfast, lunch, and dinner"
-        case .Boreman:
+        case .boreman:
             return  "Boreman is located in Boreman Hall and serves lunch and dinner."
-        case .TerraceRoom:
+        case .terraceRoom:
             return  "The Terrace Room is located in Stalnaker Hall and serves lunch and dinner."
-        case .Hatfields:
+        case .hatfields:
             return  "Hatfields is located in the Mountainlair and serves breakfast and lunch. They only accept dining plans for breakfast."
         }
     }
     
     var latitude: Double {
         switch self {
-        case .Arnold:
-            return 39.632444
-        case .CafeEvansdale:
+        case .cafeEvansdale:
             return 39.648935
-        case .Summit:
+        case .summit:
             return 39.638829
-        case .Boreman:
+        case .boreman:
             return 39.633060
-        case .TerraceRoom:
+        case .terraceRoom:
             return 39.635357
-        case .Hatfields:
+        case .hatfields:
             return 39.634752
         }
     }
     
     var longitude: Double {
         switch self {
-        case .Arnold:
-            return -79.950319
-        case .CafeEvansdale:
+        case .cafeEvansdale:
             return -79.966303
-        case .Summit:
+        case .summit:
             return -79.956533
-        case .Boreman:
+        case .boreman:
             return -79.952642
-        case .TerraceRoom:
+        case .terraceRoom:
             return -79.952755
-        case .Hatfields:
+        case .hatfields:
             return -79.953916
         }
     }
 
-    
     // price Pay at the Door (prices include sales tax):
     /*  Breakfast: 8.35
         Lunch/Brunch: 9.25
@@ -254,5 +236,7 @@ enum DiningHall: Int {
                 return "Closed"
             }
         }
+        
     }
+    
 }

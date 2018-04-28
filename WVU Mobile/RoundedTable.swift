@@ -9,7 +9,6 @@
 import UIKit
 
 class RoundedTable: UITableView {
-
     override func draw(_ rect: CGRect) {
         self.layer.shadowOpacity = 0.3
         self.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)

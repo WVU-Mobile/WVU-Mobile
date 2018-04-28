@@ -17,20 +17,11 @@ class BusesTableViewController: UITableViewController {
         
         routes.sort(by: { $0.isOpen && !$1.isOpen })
         
-        self.title = "Transportation"
-        
-        self.tableView.reloadData()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        title = "Transportation"
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return routes.count
@@ -39,6 +30,7 @@ class BusesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.1
     }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: BusTableViewCell
         
@@ -48,13 +40,13 @@ class BusesTableViewController: UITableViewController {
         
         let row = indexPath.row - 1
 
-        if let _ = self.routes[row].semester {
+        if let _ = routes[row].semester {
             cell = tableView.dequeueReusableCell(withIdentifier: "subtext", for: indexPath) as! BusTableViewCell
-            cell.semester.text = self.routes[row].semester
+            cell.semester.text = routes[row].semester
         } else {
             cell = tableView.dequeueReusableCell(withIdentifier: "bus", for: indexPath) as! BusTableViewCell
         }
-        cell.name.text = self.routes[row].name
+        cell.name.text = routes[row].name
         
         if routes[indexPath.row].isOpen {
             cell.icon.image = UIImage(named: "Bus")
@@ -93,4 +85,5 @@ class BusesTableViewController: UITableViewController {
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
 }

@@ -10,4 +10,5 @@ import UIKit
 
 class LiteEventsView: ShadowView {
     @IBOutlet weak var eventsTable: RoundedTable!
+    
 }

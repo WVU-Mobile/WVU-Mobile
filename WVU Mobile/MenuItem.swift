@@ -28,4 +28,5 @@ class MenuItem {
     var string: String {
         return "meal is \(meal) \(name)"
     }
+    
 }

@@ -29,7 +29,6 @@
 		42AC2DEA1E3BDD79005A2638 /* MonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC2DE61E3BDD79005A2638 /* MonthViewController.swift */; };
 		42B60F241E437B97001639DA /* LiteMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B60F231E437B97001639DA /* LiteMenuTableViewController.swift */; };
 		42D6472E1E14388900D0CE9F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D6472D1E14388900D0CE9F /* WebViewController.swift */; };
-		42D647301E1440E300D0CE9F /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D6472F1E1440E300D0CE9F /* Image.swift */; };
 		42E1BFEE1E1D42C4004E2CA4 /* DiningHallContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E1BFED1E1D42C4004E2CA4 /* DiningHallContainerViewController.swift */; };
 		42FE8F8F1E157EA100FFCD85 /* LargeEventsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE8F8E1E157EA100FFCD85 /* LargeEventsCell.swift */; };
 		42FE8F911E1ABD6700FFCD85 /* FavoriteEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE8F901E1ABD6700FFCD85 /* FavoriteEventsTableViewController.swift */; };
@@ -143,7 +142,6 @@
 		42AC2DE61E3BDD79005A2638 /* MonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthViewController.swift; sourceTree = "<group>"; };
 		42B60F231E437B97001639DA /* LiteMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiteMenuTableViewController.swift; sourceTree = "<group>"; };
 		42D6472D1E14388900D0CE9F /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		42D6472F1E1440E300D0CE9F /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		42E1BFED1E1D42C4004E2CA4 /* DiningHallContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningHallContainerViewController.swift; sourceTree = "<group>"; };
 		42FE8F8E1E157EA100FFCD85 /* LargeEventsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeEventsCell.swift; sourceTree = "<group>"; };
 		42FE8F901E1ABD6700FFCD85 /* FavoriteEventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteEventsTableViewController.swift; sourceTree = "<group>"; };
@@ -272,7 +270,6 @@
 			children = (
 				44022A7B1E06FF04004FC92F /* Colors.swift */,
 				427537791E0C25F3007E46B1 /* Date.swift */,
-				42D6472F1E1440E300D0CE9F /* Image.swift */,
 				44A6A5671E534BC700468E44 /* Global.swift */,
 			);
 			name = Helper;
@@ -695,7 +692,6 @@
 				44764CBC1E1F5F310041CC26 /* DiningHallSelectionCell.swift in Sources */,
 				4275377A1E0C25F3007E46B1 /* Date.swift in Sources */,
 				42FE8F8F1E157EA100FFCD85 /* LargeEventsCell.swift in Sources */,
-				42D647301E1440E300D0CE9F /* Image.swift in Sources */,
 				4275377C1E0C2FDC007E46B1 /* PRTView.swift in Sources */,
 				44A80B291E212C4E006DBFEA /* BusLine.swift in Sources */,
 				425D1AA21E12F89600B88972 /* RoundedTable.swift in Sources */,

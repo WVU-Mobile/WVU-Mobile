@@ -40,7 +40,6 @@ class Colors {
     static let alphaGray    = UIColor(red: 231/255,   green: 231/255,  blue: 231/255, alpha: 0.4) //#e7e7e7
     static let alphaGray2         = UIColor(red: 45/255,   green: 45/255,  blue: 45/255, alpha: 0.8) //#d5d5d5
 
-
     //Day -- home screen alpha
     static let homeBlue    = UIColor(red: 147/255,   green: 171/255,  blue: 198/255, alpha: 0.8)
     static let homeYellow  = UIColor(red: 238/255,   green: 219/255,  blue: 174/255, alpha: 0.85) //#eadbae
@@ -50,7 +49,6 @@ class Colors {
     static let orange       = UIColor(red: 233/255, green: 166/255, blue: 87/255, alpha: 1.0) /* #e9a657 */
     static let red          = UIColor(red: 234/255, green: 96/255, blue: 69/255, alpha: 1.0) /* #ea6045 */
     static let almostWhite  = UIColor(red: 247/255, green: 250/255, blue: 250/255, alpha: 1.0) /* #f7fafa */
-    
     
     static let prtGray1     = UIColor(red: 87/255,  green: 87/255,  blue: 87/255,  alpha: 1.0) //#575757
     static let prtGray2     = UIColor(red: 203/255, green: 203/255, blue: 203/255, alpha: 1.0) //#cbcbcb
@@ -68,6 +66,5 @@ class Colors {
 
     static let purple = UIColor(red: 131/255, green: 127/255, blue: 255/255, alpha: 1.0) /* #837fff */
     static let blue = UIColor(red: 63/255, green: 194/255, blue: 255/255, alpha: 1.0) /* #3fc2ff */
-
 
 }

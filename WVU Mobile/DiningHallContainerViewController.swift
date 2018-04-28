@@ -16,7 +16,7 @@ class DiningHallContainerViewController: UIViewController, UIPageViewControllerD
     var pager: UIPageViewController!
     var pages = [UIViewController]()
     
-    var diningHall = DiningHall.Arnold // idk what to do if this is empty for some reason?
+    var diningHall = DiningHall.boreman
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +48,6 @@ class DiningHallContainerViewController: UIViewController, UIPageViewControllerD
         }
         
        self.title = diningHall.name
-        
     }
 
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
@@ -84,7 +83,7 @@ class DiningHallContainerViewController: UIViewController, UIPageViewControllerD
         if previous >= 0 {
             return pages[previous]
         }
-        
+
         return nil
     }
     

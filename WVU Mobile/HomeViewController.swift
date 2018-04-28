@@ -38,11 +38,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if diningTableViewSource.menu?.diningHall != Global.favoriteDiningHall {
             loadDiningHall()
         }
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     func loadDiningHall() {
@@ -116,10 +111,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: - Table view data source
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.count
     }
@@ -145,5 +136,5 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
         self.eventsView.eventsTable.cellForRow(at: indexPath)?.isSelected = false
     }
+    
 }
-

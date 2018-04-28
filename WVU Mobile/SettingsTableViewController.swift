@@ -20,10 +20,6 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
                    "If you would like to see more from us, please follow us on Twitter!",
                    "You can also like and follow WVU Mobile on Facebook and Twitter!",
                    "Please send questions, suggestions, or bug reports to our email address."]
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -135,4 +131,5 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
     }
+
 }

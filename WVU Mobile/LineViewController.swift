@@ -20,19 +20,19 @@ class LineViewController: UIViewController, UITableViewDelegate, UITableViewData
     var markerArray = [GMSMarker]()
     
     override func viewDidLoad() {
-        self.title = line?.name
+        title = line?.name
         
         /*
         Set up Google Map View.
         */
         
-        map = GMSMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: view.frame.height / 3))
+        map = GMSMapView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height / 3))
         map.delegate = self
 
         let camera = GMSCameraPosition.camera(withLatitude: 39.635582, longitude: -79.954747, zoom: 12)
         map.animate(to: camera)
         
-        self.view.addSubview(map)
+        view.addSubview(map)
         
         
         // Add each stop as Marker
@@ -68,13 +68,9 @@ class LineViewController: UIViewController, UITableViewDelegate, UITableViewData
         polyline.strokeColor = Colors.homeDarkBlue
         polyline.map = map
         
-        self.view.addSubview(map)
+        view.addSubview(map)
         
-        /*
-        Set up Table View.
-        */
-        
-        let tableView = UITableView(frame: CGRect(x: 0, y: view.frame.height / 3, width: self.view.frame.width, height: view.frame.height - (view.frame.height / 3) - 103), style: .plain)
+        let tableView = UITableView(frame: CGRect(x: 0, y: view.frame.height / 3, width: view.frame.width, height: view.frame.height - (view.frame.height / 3) - 103), style: .plain)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -101,7 +97,7 @@ class LineViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let infoButtonItem = UIBarButtonItem(customView: infoButton)
         
-        self.navigationItem.rightBarButtonItem = infoButtonItem
+        navigationItem.rightBarButtonItem = infoButtonItem
     }
     
     func loadTwitter() {
@@ -109,16 +105,11 @@ class LineViewController: UIViewController, UITableViewDelegate, UITableViewData
         if let l = line {
             feedPage.url = "https://twitter.com/\(l.twitter)"
         }
-        self.navigationController?.pushViewController(feedPage, animated: true)
+        navigationController?.pushViewController(feedPage, animated: true)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return line!.stops.count + 1
-    }
-    
-    // Return number of sections in table view.
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -189,4 +180,5 @@ class LineViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
+    
 }

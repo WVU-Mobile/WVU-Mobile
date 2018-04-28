@@ -10,9 +10,7 @@ import Foundation
 import UIKit
 
 @IBDesignable class ShadowView: UIView {
-    
     @IBOutlet weak var spinner: UIActivityIndicatorView!
-    
     @IBInspectable var cornerRadius: CGFloat = 0.0
     
     private var customBackgroundColor = UIColor.white
@@ -44,4 +42,5 @@ import UIKit
         super.init(coder: aDecoder)
         self.setup()
     }
+    
 }

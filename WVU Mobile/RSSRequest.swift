@@ -31,7 +31,6 @@ class RSSRequest: NSObject, XMLParserDelegate {
         parser.parse()
         
         completion(elements)
-
     }
     
     func getNews(source: NewsSource, completion: ([RSSElement]) -> Void) {
@@ -48,7 +47,6 @@ class RSSRequest: NSObject, XMLParserDelegate {
         parser.parse()
 
         completion(elements)
-        
     }
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {

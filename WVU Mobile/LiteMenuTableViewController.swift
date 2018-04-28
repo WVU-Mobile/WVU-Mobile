@@ -6,16 +6,10 @@
 //  Copyright © 2017 WVU Mobile. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class LiteMenuTableViewController: UITableViewController {
     var menu: Menu?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         if let m = menu {
@@ -34,7 +28,6 @@ class LiteMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return menu?.diningHall.meals[section].name
     }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "food", for: indexPath)
@@ -64,4 +57,5 @@ class LiteMenuTableViewController: UITableViewController {
         
         return view
     }
+    
 }

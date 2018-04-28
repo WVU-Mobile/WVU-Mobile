@@ -20,10 +20,6 @@ class PRTTableViewController: UITableViewController {
 
         pullStatus()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     func pullStatus() {
         DispatchQueue.global().async {
@@ -39,11 +35,7 @@ class PRTTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let _ = prt {
             return dimensions.count
@@ -74,7 +66,7 @@ class PRTTableViewController: UITableViewController {
         case 0:
             cell.backgroundColor = prt?.status.color
             
-            let imageView = UIImageView(frame: CGRect(x: self.view.bounds.width/2 - (((self.view.bounds.height - 64) * 0.31)/2) , y: ((self.view.bounds.height - 64) * 0.02) , width: (self.view.bounds.height - 64) * 0.31, height: (self.view.bounds.height - 64) * 0.31))
+            let imageView = UIImageView(frame: CGRect(x: view.bounds.width/2 - (((view.bounds.height - 64) * 0.31)/2) , y: ((view.bounds.height - 64) * 0.02) , width: (view.bounds.height - 64) * 0.31, height: (view.bounds.height - 64) * 0.31))
             
             imageView.image = prt?.status.image
             cell.addSubview(imageView)
@@ -106,4 +98,5 @@ class PRTTableViewController: UITableViewController {
             UIApplication.shared.openURL(URL(string: "http://transportation.wvu.edu/prt/schedule")!)
         }
     }
+    
 }

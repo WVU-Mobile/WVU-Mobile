@@ -21,7 +21,6 @@ class MapStyles {
     "  } " +
     " ]"
     
-    
     static let nightMode = "[" +
         "  {" +
         "    \"featureType\": \"all\"," +

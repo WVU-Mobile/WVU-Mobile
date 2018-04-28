@@ -6,7 +6,6 @@
 //  Copyright © 2016 WVU Mobile. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class PRT {
@@ -15,30 +14,35 @@ class PRT {
     var time: Date
     
     init(status: Int, message: String, time: Int) {
-        if let s = Status(rawValue: status) {
-            self.status = s
-        } else {
-            self.status = .Unknown
-        }
+        self.status = Status(rawValue: status) ?? .unknown
         
         self.message = message
         self.time = Date(timeIntervalSince1970: TimeInterval(time))
     }
     
     enum Status: Int {
-        case Normal = 1, DownBetween = 2, Down = 3, DownAll = 4, Free = 5, DownOne = 8, ClosedSunday = 6, Closed = 7, DownMultiple = 10, Unknown
+        case normal = 1
+        case downBetween = 2
+        case down = 3
+        case downAll = 4
+        case free = 5
+        case downOne = 8
+        case closedSunday = 6
+        case closed = 7
+        case downMultiple = 10
+        case unknown
         
         var overall: String {
-            switch self.rawValue {
-            case 1:
+            switch self {
+            case .normal:
                 return "Running"
-            case 2, 5, 8, 10:
+            case .downBetween, .free, .downOne, .downMultiple:
                 return "Warning"
-            case 4, 3:
+            case .downAll, .down:
                 return "Down"
-            case 6, 7:
+            case .closedSunday, .closed:
                 return "Closed"
-            default:
+            case .unknown:
                 return "Unknown"
             }
         }
@@ -50,59 +54,62 @@ class PRT {
             let pink         = UIColor(red: 255/255, green: 200/255, blue: 200/255, alpha: 1.0) //#fea094
             let homeDarkBlue = UIColor(red: 25/255,  green: 50/255,  blue: 75/255,  alpha: 0.9)
 
-            switch self.rawValue {
-            case 1:
+            switch self {
+            case .normal:
                 return green
-            case 2, 5, 8, 10:
+            case .downBetween, .free, .downOne, .downMultiple:
                 return orange
-            case 4, 3:
+            case .downAll, .down:
                 return red
-            case 6, 7:
+            case .closedSunday, .closed:
                 return homeDarkBlue
-            default:
+            case .unknown:
                 return pink
             }
         }
         
         var image: UIImage {
-            switch self.rawValue {
-            case 1:
-                return UIImage(named: "Check")!
-            case 2, 5, 8, 10:
-                return UIImage(named: "Yield")!
-            case 4, 3:
-                return UIImage(named: "Stop")!
-            case 6, 7:
-                return UIImage(named: "ZZZ")!
-            default:
-                return UIImage(named: "IDK")!
+            switch self {
+            case .normal:
+                return #imageLiteral(resourceName: "Check")
+            case .downBetween, .free, .downOne, .downMultiple:
+                return #imageLiteral(resourceName: "Yield")
+            case .downAll, .down:
+                return #imageLiteral(resourceName: "Stop")
+            case .closedSunday, .closed:
+                return #imageLiteral(resourceName: "ZZZ")
+            case .unknown:
+                return #imageLiteral(resourceName: "IDK")
             }
         }
         
         var prtImage: UIImage {
-            switch self.rawValue {
-            case 1, 6, 7, 2, 5, 8, 10:
-                return UIImage(named: "PRT")!
-            default:
-                return UIImage(named: "PRT-Borked")!
+            switch self {
+            case .normal, .free, .unknown:
+                return #imageLiteral(resourceName: "PRT")
+            case .closedSunday, .closed:
+                return #imageLiteral(resourceName: "PRT-Dark")
+            case .downAll, .down, .downBetween, .downOne, .downMultiple:
+                return #imageLiteral(resourceName: "PRT-Borked")
             }
         }
         
         func statusWith(time: Date) -> String {
-            switch self.rawValue {
-            case 1:
+            switch self {
+            case .normal:
                 return "The PRT was confirmed to be running on a normal schedule at \(time.hourPrint)."
-            case 2, 5, 8, 10:
+            case .downBetween, .free, .downOne, .downMultiple:
                 return "The PRT was reported to partially down at \(time.hourPrint)."
-            case 4, 3:
+            case .downAll, .down:
                 return "The PRT was reported to be down at \(time.hourPrint)."
-            case 6, 7:
+            case .closedSunday, .closed:
                 return "The PRT is closed."
-            default:
+            case .unknown:
                 return "An unknown status was reported."
             }
         }
     }
+    
 }
 
 

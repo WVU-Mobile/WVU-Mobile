@@ -9,19 +9,10 @@
 import UIKit
 
 class DiningHallSelectionCell: UITableViewCell {
-
     @IBOutlet weak var diningHallName: UILabel!
     @IBOutlet weak var diningHallCampus: UILabel!
     @IBOutlet weak var open: UILabel!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
     static func openLabel(open: Bool) -> String {
         if open {
             return "Open"
@@ -37,4 +28,5 @@ class DiningHallSelectionCell: UITableViewCell {
             return Colors.red
         }
     }
+    
 }

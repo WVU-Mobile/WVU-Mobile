@@ -9,7 +9,6 @@
 import UIKit
 
 @IBDesignable class PRTView: ShadowView {
-
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var icon: UIImageView!
 

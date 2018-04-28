@@ -9,7 +9,6 @@
 import UIKit
 
 class LargeEventsCell: UITableViewCell {
-
     @IBOutlet weak var details: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var star: UIButton!
@@ -23,13 +22,6 @@ class LargeEventsCell: UITableViewCell {
         
         self.layoutMargins = UIEdgeInsets.zero
         self.preservesSuperviewLayoutMargins = false
-
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
 }

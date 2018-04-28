@@ -14,7 +14,7 @@ class Global {
             if let f = DiningHall(rawValue: UserDefaults.standard.integer(forKey: "favDiningHall")) {
                 return f
             }
-            return DiningHall.Boreman
+            return DiningHall.boreman
         }
         
         set(value) {
