@@ -119,7 +119,6 @@
 /* Begin PBXFileReference section */
 		17589BFFC7BC6CDEDF138938 /* Pods-PRT Status Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PRT Status Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PRT Status Widget/Pods-PRT Status Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		27C4A3E2EF693647B2218A0D /* Pods-WVU Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WVU Mobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WVU Mobile/Pods-WVU Mobile.debug.xcconfig"; sourceTree = "<group>"; };
-		42173E3F1E15704500CD1B4A /* WVU Mobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WVU Mobile-Bridging-Header.h"; sourceTree = "<group>"; };
 		42173E421E1572C300CD1B4A /* EventsTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTable.swift; sourceTree = "<group>"; };
 		4233455E1E1BE6C000630003 /* OnCampusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnCampusTableViewController.swift; sourceTree = "<group>"; };
 		4252D4871E1C46C900946774 /* MapStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapStyles.swift; sourceTree = "<group>"; };
@@ -355,7 +354,6 @@
 				9C86036B1E037FDB00FE6531 /* Frameworks */,
 				9C8603501E03764600FE6531 /* Products */,
 				5C99DB6204B7F91903826C92 /* Pods */,
-				42173E3F1E15704500CD1B4A /* WVU Mobile-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -489,12 +487,13 @@
 					9C86034E1E03764500FE6531 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = 4P5LM6HTJ7;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 					9C8603691E037FDB00FE6531 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = 4P5LM6HTJ7;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -864,6 +863,7 @@
 			baseConfigurationReference = 27C4A3E2EF693647B2218A0D /* Pods-WVU Mobile.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -875,9 +875,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wvu.WVU-Mobile";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "WVU Mobile-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -886,6 +886,7 @@
 			baseConfigurationReference = D5A2270D727D6FC39C15AE66 /* Pods-WVU Mobile.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -897,8 +898,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wvu.WVU-Mobile";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "WVU Mobile-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -906,6 +907,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 17589BFFC7BC6CDEDF138938 /* Pods-PRT Status Widget.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEVELOPMENT_TEAM = 4P5LM6HTJ7;
 				INFOPLIST_FILE = "PRT Status Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -913,7 +915,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wvu.WVU-Mobile.PRT-Status-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -921,6 +924,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4D33691FFEDCFF585CEACD1C /* Pods-PRT Status Widget.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEVELOPMENT_TEAM = 4P5LM6HTJ7;
 				INFOPLIST_FILE = "PRT Status Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -928,7 +932,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wvu.WVU-Mobile.PRT-Status-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

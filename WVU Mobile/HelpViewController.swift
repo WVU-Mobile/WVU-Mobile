@@ -66,13 +66,11 @@ class HelpViewController: UIViewController, UITableViewDelegate, UITableViewData
         alertController.addAction(cancelAction)
         let OKAction = UIAlertAction(title: "Call", style: .default) { (action) in
             if let url = URL(string: "tel://\(phoneNumber)") {
-                UIApplication.shared.openURL(url)
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         }
         alertController.addAction(OKAction)
-        self.present(alertController, animated: true) {
-            
-        }
+        present(alertController, animated: true)
     }
     
     // Functionality of Text Message Button
@@ -83,17 +81,17 @@ class HelpViewController: UIViewController, UITableViewDelegate, UITableViewData
         messageVC.recipients = ["741-741"]
         messageVC.messageComposeDelegate = self;
         
-        self.present(messageVC, animated: false, completion: nil)
+        present(messageVC, animated: false, completion: nil)
     }
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         switch (result) {
         case MessageComposeResult.cancelled:
-            self.dismiss(animated: true, completion: nil)
+            dismiss(animated: true, completion: nil)
         case .failed:
-            self.dismiss(animated: true, completion: nil)
+            dismiss(animated: true, completion: nil)
         case .sent:
-            self.dismiss(animated: true, completion: nil)
+            dismiss(animated: true, completion: nil)
         }
     }
     

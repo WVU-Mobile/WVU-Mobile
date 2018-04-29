@@ -58,21 +58,21 @@ class DateSelectorViewController: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func forward() {
+    @objc func forward() {
         selectedDate = calendar.selectedDate.nextDay()
         calendar.selectedDate = selectedDate
         dateButton.setTitle(calendar.selectedDate.full, for: .normal)
         delegate?.didSelectNewDate(date: selectedDate)
     }
     
-    func backward() {
+    @objc func backward() {
         selectedDate = calendar.selectedDate.previousDay()
         calendar.selectedDate = selectedDate
         dateButton.setTitle(calendar.selectedDate.full, for: .normal)
         delegate?.didSelectNewDate(date: selectedDate)
     }
     
-    func animateShowCalendar() {
+    @objc func animateShowCalendar() {
         calendar.setCenter()
 
         self.addSubview(calendar)

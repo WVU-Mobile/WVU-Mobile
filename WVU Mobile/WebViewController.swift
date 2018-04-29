@@ -26,7 +26,7 @@ class WebViewController: UIViewController {
         self.view.addSubview(webView)
     }
         
-    func open () {
+    @objc func open () {
         displayShareSheet(content: "[WVU Mobile] \(article)")
     }
     

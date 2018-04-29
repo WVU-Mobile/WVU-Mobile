@@ -20,7 +20,7 @@ class NewsViewController: UITableViewController {
         self.refreshControl?.addTarget(self, action: #selector(pullNews), for: UIControlEvents.valueChanged)
     }
     
-    func pullNews() {
+    @objc func pullNews() {
         news = []
         let group = DispatchGroup()
         

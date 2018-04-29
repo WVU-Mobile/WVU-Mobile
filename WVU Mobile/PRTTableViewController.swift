@@ -94,8 +94,8 @@ class PRTTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.isSelected = false
-        if indexPath.row == 4 {
-            UIApplication.shared.openURL(URL(string: "http://transportation.wvu.edu/prt/schedule")!)
+        if indexPath.row == 4, let url = URL(string: "http://transportation.wvu.edu/prt/schedule") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
     

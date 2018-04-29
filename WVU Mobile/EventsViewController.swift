@@ -178,7 +178,7 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return UITableViewAutomaticDimension
     }
     
-    func tap() {
+    @objc func tap() {
         self.dateSelector.dismissCalendar()
     }
     

@@ -19,7 +19,7 @@ class TabBarController: UITabBarController {
             self.tabBar.unselectedItemTintColor = UIColor.white
         }
         
-        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: 12)], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12)], for: .normal)
     }
 
 }

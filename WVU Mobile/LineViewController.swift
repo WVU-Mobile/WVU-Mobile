@@ -100,7 +100,7 @@ class LineViewController: UIViewController, UITableViewDelegate, UITableViewData
         navigationItem.rightBarButtonItem = infoButtonItem
     }
     
-    func loadTwitter() {
+    @objc func loadTwitter() {
         let feedPage = WebViewController()
         if let l = line {
             feedPage.url = "https://twitter.com/\(l.twitter)"
@@ -149,10 +149,10 @@ class LineViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.textLabel?.numberOfLines = 0
             cell.textLabel?.textAlignment = .center
             cell.textLabel?.lineBreakMode = .byWordWrapping
-            cell.textLabel?.font = UIFont.systemFont(ofSize: 13, weight: 0.1)
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 13, weight: UIFont.Weight(rawValue: 0.1))
         } else {
             cell.textLabel?.text = line?.stops[indexPath.row - 1]
-            cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: 0.1)
+            cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight(rawValue: 0.1))
             cell.imageView?.image = UIImage(named: "Stops")?.withRenderingMode(.alwaysTemplate)
             cell.imageView?.tintColor = Colors.homeDarkBlue
             cell.imageView?.frame = CGRect(x: 0, y: 0, width: cell.frame.height, height: cell.frame.height)

@@ -91,30 +91,30 @@ class SettingsTableViewController: UITableViewController, MFMailComposeViewContr
         if indexPath.section == 1 {
             let twitter = ["kaitinthecosmos", "rickydeal11"]
             
-            if UIApplication.shared.canOpenURL(URL(string: "twitter://user?screen_name=\(twitter[indexPath.row])")!) {
-                UIApplication.shared.openURL(URL(string: "twitter://user?screen_name=\(twitter[indexPath.row])")!)
-            } else {
-                UIApplication.shared.openURL(URL(string: "https://twitter.com/\(twitter[indexPath.row])")!)
+            if let url = URL(string: "twitter://user?screen_name=\(twitter[indexPath.row])"), UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else if let url = URL(string: "https://twitter.com/\(twitter[indexPath.row])") {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         } else if indexPath.section == 2 {
             let socialDeepLink = ["twitter://user?screen_name=WVUMobile", "fb://profile/1532449943665741"]
             let socialURL = ["https://twitter.com/wvumobile", "https://facebook.com/wvumobile"]
 
-            if UIApplication.shared.canOpenURL(URL(string: socialDeepLink[indexPath.row])!) {
-                UIApplication.shared.openURL(URL(string: socialDeepLink[indexPath.row])!)
-            } else {
-                UIApplication.shared.openURL(URL(string: socialURL[indexPath.row])!)
+            if let url = URL(string: socialDeepLink[indexPath.row]), UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else if let url = URL(string: socialURL[indexPath.row]) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         } else if indexPath.section == 3{
             sendEmailButtonTapped()
         }
-        self.tableView.cellForRow(at: indexPath)?.isSelected = false
+        tableView.cellForRow(at: indexPath)?.isSelected = false
     }
 
     func sendEmailButtonTapped() {
         let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
-            self.present(mailComposeViewController, animated: true, completion: nil)
+            present(mailComposeViewController, animated: true, completion: nil)
         }
     }
     

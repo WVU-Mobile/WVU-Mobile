@@ -18,7 +18,7 @@ class NavigationController: UINavigationController {
 
         self.navigationBar.isOpaque = false
         self.navigationBar.isTranslucent = false
-        self.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 24)!]
+        self.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "HelveticaNeue", size: 24)!]
         self.navigationBar.shadowImage = UIImage()
         self.navigationBar.setBackgroundImage(UIImage(), for: .default)
     }
