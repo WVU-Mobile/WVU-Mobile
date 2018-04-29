@@ -8,31 +8,52 @@
 
 import UIKit
 
+struct WebViewData {
+    var urlString: String
+    var article: String?
+    
+    var url: URL? {
+        return URL(string: urlString)
+    }
+    
+    init(urlString: String, article: String? = nil) {
+        self.urlString = urlString
+        self.article = article
+    }
+    
+}
+
 class WebViewController: UIViewController {
-    var webView: UIWebView!
-        
-    var url = ""
-    var article = ""
-        
+    var webView: UIWebView?
+    
+    var data: WebViewData?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        webView = UIWebView(frame: self.view.frame)
-        webView.loadRequest(URLRequest(url: URL(string: url)!))
+        let webView = UIWebView(frame: self.view.frame)
+        
+        if let url = data?.url {
+            webView.loadRequest(URLRequest(url: url) )
+        }
 
-        let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(WebViewController.open))
-        navigationItem.rightBarButtonItem = shareButton
-            
-        self.view.addSubview(webView)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(WebViewController.open))
+        
+        self.webView = webView
+        view.addSubview(webView)
     }
         
     @objc func open () {
-        displayShareSheet(content: "[WVU Mobile] \(article)")
+        if let article = data?.article {
+            displayShareSheet(content: "[WVU Mobile] \(article)")
+        }
     }
     
     func displayShareSheet(content: String) {
-        let activityViewController = UIActivityViewController(activityItems: [content, URL(string: url)!], applicationActivities: nil)
-        present(activityViewController, animated: true, completion: {})
+        if let url = data?.url {
+            let activityViewController = UIActivityViewController(activityItems: [content, url], applicationActivities: nil)
+            present(activityViewController, animated: true, completion: {})
+        }
     }
     
 }

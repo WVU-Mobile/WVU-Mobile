@@ -59,8 +59,8 @@ class FavoriteEventsTableViewController: UITableViewController {
 
         if favs.count > 2 {
             let webView = WebViewController()
-            webView.url = favs[2]
-                
+            webView.data = WebViewData(urlString: favs[2])
+            
             self.navigationController?.pushViewController(webView, animated: true)
         }
     }

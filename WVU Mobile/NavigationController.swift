@@ -13,14 +13,13 @@ class NavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationBar.barTintColor = Colors.lightYellow
-        self.navigationBar.tintColor = UIColor.black
-
-        self.navigationBar.isOpaque = false
-        self.navigationBar.isTranslucent = false
-        self.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "HelveticaNeue", size: 24)!]
-        self.navigationBar.shadowImage = UIImage()
-        self.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBar.barTintColor = Colors.lightYellow
+        navigationBar.tintColor = .black
+        navigationBar.isOpaque = false
+        navigationBar.isTranslucent = false
+        navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "HelveticaNeue", size: 24) ?? UIFont.systemFont(ofSize: 24)]
+        navigationBar.shadowImage = UIImage()
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
     }
 
 }

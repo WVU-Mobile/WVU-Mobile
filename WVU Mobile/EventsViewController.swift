@@ -147,11 +147,10 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let e = eventsByDate[selectedDate.day] {
             let webView = WebViewController()
-            webView.url = e[indexPath.row].link
+            webView.data = WebViewData(urlString: e[indexPath.row].link)
             
-            self.navigationController?.pushViewController(webView, animated: true)
-            
-            self.events.cellForRow(at: indexPath)?.isSelected = false
+            navigationController?.pushViewController(webView, animated: true)
+            events.cellForRow(at: indexPath)?.isSelected = false
         }
     }
     

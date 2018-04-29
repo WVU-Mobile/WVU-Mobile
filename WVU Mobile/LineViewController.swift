@@ -103,7 +103,7 @@ class LineViewController: UIViewController, UITableViewDelegate, UITableViewData
     @objc func loadTwitter() {
         let feedPage = WebViewController()
         if let l = line {
-            feedPage.url = "https://twitter.com/\(l.twitter)"
+            feedPage.data = WebViewData(urlString: "https://twitter.com/\(l.twitter)") 
         }
         navigationController?.pushViewController(feedPage, animated: true)
     }

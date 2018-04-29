@@ -9,10 +9,10 @@
 import UIKit
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet weak var prtView: PRTView!
-    @IBOutlet weak var eventsView: LiteEventsView!
-    @IBOutlet weak var diningMenu: LiteDiningMenu!
-    @IBOutlet weak var favoriteDiningHallLabel: UILabel!
+    @IBOutlet var prtView: PRTView!
+    @IBOutlet var eventsView: LiteEventsView!
+    @IBOutlet var diningMenu: LiteDiningMenu!
+    @IBOutlet var favoriteDiningHallLabel: UILabel!
     
     var diningTableViewSource = LiteMenuTableViewController()
     
@@ -21,11 +21,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.eventsView.eventsTable.dataSource = self
-        self.eventsView.eventsTable.delegate = self
+        eventsView.eventsTable.dataSource = self
+        eventsView.eventsTable.delegate = self
 
-        self.diningMenu.menuTable.dataSource = self.diningTableViewSource
-        self.diningMenu.menuTable.delegate = self.diningTableViewSource
+        diningMenu.menuTable.dataSource = diningTableViewSource
+        diningMenu.menuTable.delegate = diningTableViewSource
         
         loadDiningHall()
         loadEvents()
@@ -41,40 +41,41 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func loadDiningHall() {
-        self.favoriteDiningHallLabel.text = "\(Global.favoriteDiningHall.name)'s Menu".uppercased()
-        self.diningTableViewSource.menu = nil
-        self.diningMenu.menuTable.reloadData()
-        self.diningMenu.spinner.isHidden = false
-        self.diningMenu.spinner.startAnimating()
+        favoriteDiningHallLabel.text = "\(Global.favoriteDiningHall.name)'s Menu".uppercased()
+        diningTableViewSource.menu = nil
+        diningMenu.menuTable.reloadData()
+        diningMenu.spinner.isHidden = false
+        diningMenu.spinner.startAnimating()
+        
         DispatchQueue.global().async {
-            MenuRequest.getMenu(on: Date(), at: Global.favoriteDiningHall, completion: { result in
+            MenuRequest.getMenu(on: Date(), at: Global.favoriteDiningHall, completion: { [weak self] result in
                 DispatchQueue.main.sync {
                     if let r = result {
-                        self.diningTableViewSource.menu = r
-                        self.diningMenu.menuTable.reloadData()
+                        self?.diningTableViewSource.menu = r
+                        self?.diningMenu.menuTable.reloadData()
                     }
-                    self.diningMenu.spinner.stopAnimating()
-                    self.diningMenu.spinner.isHidden = true
+                    self?.diningMenu.spinner.stopAnimating()
+                    self?.diningMenu.spinner.isHidden = true
                 }
             })
         }
     }
     
     func loadPRT() {
-        self.prtView.spinner.isHidden = false
-        self.prtView.detailLabel.text = ""
-        self.prtView.icon.image = nil
+        prtView.spinner.isHidden = false
+        prtView.detailLabel.text = ""
+        prtView.icon.image = nil
+        prtView.spinner.startAnimating()
         
-        self.prtView.spinner.startAnimating()
         DispatchQueue.global().async {
-            PRTRequest.getPRTStatus(completion: { result in
+            PRTRequest.getPRTStatus(completion: { [weak self] result in
                 DispatchQueue.main.sync {
                     if let prt = result {
-                        self.prtView.detailLabel.text = prt.status.statusWith(time: prt.time)
-                        self.prtView.icon.image = prt.status.prtImage
+                        self?.prtView.detailLabel.text = prt.status.statusWith(time: prt.time)
+                        self?.prtView.icon.image = prt.status.prtImage
                     }
-                    self.prtView.spinner.stopAnimating()
-                    self.prtView.spinner.isHidden = true
+                    self?.prtView.spinner.stopAnimating()
+                    self?.prtView.spinner.isHidden = true
                 }
             })
         }
@@ -82,24 +83,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func loadEvents() {
         let parser = RSSRequest()
-
-        self.eventsView.spinner.startAnimating()
+        eventsView.spinner.startAnimating()
+        
         DispatchQueue.global().async {
-            parser.getEvents(days: 1, completion: { events in
+            parser.getEvents(days: 1, completion: { [weak self] events in
                 DispatchQueue.main.sync {
-                    let cal = Calendar.autoupdatingCurrent
-                    var today = [RSSElement]()
-                    
-                    for e in events {
-                        if cal.isDateInToday(e.date) {
-                            today.append(e)
-                        }
-                    }
-                    
-                    self.events = today
-                    self.eventsView.eventsTable.reloadData()
-                    self.eventsView.spinner.stopAnimating()
-                    self.eventsView.spinner.isHidden = true
+                    self?.events = events.compactMap({ Calendar.autoupdatingCurrent.isDateInToday($0.date) ? $0 : nil })
+
+                    self?.eventsView.eventsTable.reloadData()
+                    self?.eventsView.spinner.stopAnimating()
+                    self?.eventsView.spinner.isHidden = true
                 }
             })
         }
@@ -116,13 +109,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = eventsView.eventsTable.dequeueReusableCell(withIdentifier: "eventLite", for: indexPath) as! LiteEventCell
-        
-        if events[indexPath.row].date.hourPrint == "12:00 AM" {
-            cell.time.text = "All Day"
-        } else {
-            cell.time.text = events[indexPath.row].date.hourPrint
+        guard let cell = eventsView.eventsTable.dequeueReusableCell(withIdentifier: "eventLite", for: indexPath) as? LiteEventCell else {
+            return UITableViewCell()
         }
+        
+        cell.time.text = events[indexPath.row].date.hourPrint == "12:00 AM" ? "All Day" : events[indexPath.row].date.hourPrint
         cell.title.text = events[indexPath.row].title
         
         return cell
@@ -130,11 +121,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let webView = WebViewController()
-        webView.url = events[indexPath.row].link
+        webView.data = WebViewData(urlString: events[indexPath.row].link)
             
-        self.navigationController?.pushViewController(webView, animated: true)
-            
-        self.eventsView.eventsTable.cellForRow(at: indexPath)?.isSelected = false
+        navigationController?.pushViewController(webView, animated: true)
+        eventsView.eventsTable.cellForRow(at: indexPath)?.isSelected = false
     }
     
 }

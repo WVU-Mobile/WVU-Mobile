@@ -32,7 +32,9 @@ class LiteMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "food", for: indexPath)
         
-        cell.textLabel?.text = menu?.getMeal(meal: (menu?.diningHall.meals[indexPath.section])!)[indexPath.row].name
+        if let meal = menu?.diningHall.meals[indexPath.section] {
+            cell.textLabel?.text = menu?.getMeal(meal: meal)[indexPath.row].name
+        }
         
         return cell
     }

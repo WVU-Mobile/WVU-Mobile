@@ -14,10 +14,10 @@ class NewsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.refreshControl?.beginRefreshing()
+        refreshControl?.beginRefreshing()
+        refreshControl?.addTarget(self, action: #selector(pullNews), for: .valueChanged)
+
         pullNews()
-        
-        self.refreshControl?.addTarget(self, action: #selector(pullNews), for: UIControlEvents.valueChanged)
     }
     
     @objc func pullNews() {
@@ -26,26 +26,26 @@ class NewsViewController: UITableViewController {
         
         let request = RSSRequest()
         DispatchQueue.global().async(group: group) {
-            request.getNews(source: .wvutoday, completion: { news in
+            request.getNews(source: .wvutoday, completion: { [weak self] news in
                 DispatchQueue.main.sync {
-                    self.news += news
+                    self?.news += news
                 }
             })
         }
         
         let request2 = RSSRequest()
         DispatchQueue.global().async(group: group) {
-            request2.getNews(source: .da, completion: { news in
+            request2.getNews(source: .da, completion: { [weak self] news in
                 DispatchQueue.main.sync {
-                    self.news += news
+                    self?.news += news
                 }
             })
         }
         
-        group.notify(queue: DispatchQueue.main) {
-            self.news.sort(by: {$0.date.timeIntervalSince1970 > $1.date.timeIntervalSince1970})
-            self.tableView.reloadData()
-            self.refreshControl?.endRefreshing()
+        group.notify(queue: DispatchQueue.main) { [weak self] in
+            self?.news.sort(by: { $0.date.timeIntervalSince1970 > $1.date.timeIntervalSince1970 })
+            self?.tableView.reloadData()
+            self?.refreshControl?.endRefreshing()
         }
     }
     
@@ -55,29 +55,29 @@ class NewsViewController: UITableViewController {
         return news.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "news", for: indexPath) as! NewsCell
-            cell.details.text = news[indexPath.row].description
-            cell.title.text = news[indexPath.row].title
-            cell.date.text = news[indexPath.row].date.timeAgo
-            
-            if let s = news[indexPath.row].source {
-                cell.source.image = UIImage(named: s.image)
-                cell.sourceName.text = s.name
-            }
-            
-            return cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "news", for: indexPath) as? NewsCell else {
+            return UITableViewCell()
+        }
+        
+        cell.details.text = news[indexPath.row].description
+        cell.title.text = news[indexPath.row].title
+        cell.date.text = news[indexPath.row].date.timeAgo
+        
+        if let s = news[indexPath.row].source {
+            cell.source.image = UIImage(named: s.image)
+            cell.sourceName.text = s.name
+        }
+        
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let webView = WebViewController()
-        webView.url = news[indexPath.row].link
-        webView.article = news[indexPath.row].title
+        webView.data = WebViewData(urlString: news[indexPath.row].link, article: news[indexPath.row].title)
         
-        self.navigationController?.pushViewController(webView, animated: true)
-        
-        self.tableView.cellForRow(at: indexPath)?.isSelected = false
+        navigationController?.pushViewController(webView, animated: true)
+        tableView.cellForRow(at: indexPath)?.isSelected = false
     }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
