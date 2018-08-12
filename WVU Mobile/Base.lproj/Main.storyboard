@@ -395,7 +395,7 @@
             </objects>
             <point key="canvasLocation" x="3545" y="-964"/>
         </scene>
-        <!--Transportation-->
+        <!--Transit-->
         <scene sceneID="wNe-SJ-yWi">
             <objects>
                 <tableViewController id="zYL-Lf-Hae" customClass="BusesTableViewController" customModule="WVU_Mobile" customModuleProvider="target" sceneMemberID="viewController">
@@ -542,7 +542,7 @@
                             <outlet property="delegate" destination="zYL-Lf-Hae" id="LFv-8S-2it"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Transportation" id="BnZ-QL-N6X"/>
+                    <navigationItem key="navigationItem" title="Transit" id="BnZ-QL-N6X"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQ9-Sc-46L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -613,14 +613,14 @@
                                                     <color key="highlightedColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUC-7U-M5a">
-                                                    <rect key="frame" x="15" y="136" width="345" height="76.5"/>
-                                                    <string key="text">Testing this event is going on today. It's going to be kewl. Testing this event is going on today. It's going to be kewl. Testing this event is going on today. It's going to be kewl.</string>
+                                                    <rect key="frame" x="15" y="104" width="345" height="109"/>
+                                                    <string key="text">Event details. For new undergraduate students. Join your RA and other students on your floor to learn your way around campus. You'll find where your classes will be held (and other key locations) so you'll be prepared for the first day of class. Times will vary by hall.</string>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Title of this super kewl event brah" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OyU-wO-U1j">
-                                                    <rect key="frame" x="15" y="67" width="345" height="68"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Event title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OyU-wO-U1j">
+                                                    <rect key="frame" x="15" y="67" width="345" height="36"/>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="26"/>
                                                     <color key="textColor" red="0.0013380945180000001" green="0.048907580309999997" blue="0.2924143736" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -725,7 +725,7 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eX2-ea-mR5">
                                             <rect key="frame" x="16" y="64" width="343" height="76"/>
-                                            <string key="text">Testing this event is going on today. It's going to be kewl. Testing this event is going on today. It's going to be kewl. Testing this event is going on today. It's going to be kewl.</string>
+                                            <string key="text">For new undergraduate students. Join your RA and other students on your floor to learn your way around campus. You'll find where your classes will be held (and other key locations) so you'll be prepared for the first day of class. Times will vary by hall.</string>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -797,20 +797,20 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="WVU Board of Governors supports partnership to advance health, education and community" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAH-BK-SAJ">
-                                            <rect key="frame" x="8" y="30" width="359" height="102.5"/>
+                                            <rect key="frame" x="12" y="21" width="351" height="102.5"/>
                                             <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="25"/>
                                             <color key="textColor" red="0.0" green="0.13071615527335381" blue="0.23111512243445154" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sq-EL-1tn">
-                                            <rect key="frame" x="8" y="140.5" width="359" height="98.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sq-EL-1tn">
+                                            <rect key="frame" x="12" y="123.5" width="351" height="95.5"/>
                                             <string key="text">The WVU Board of Governors on Friday (Dec. 16) authorized the administration to proceed to work with community partners to construct Mountaineer Center, a $25-$30 million health, education and wellness facility at Mylan Park.</string>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" text="WVU Today" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tL-q9-4Ud">
-                                            <rect key="frame" x="36" y="11" width="148" height="14"/>
+                                            <rect key="frame" x="36" y="11" width="148" height="5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -823,7 +823,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 days ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sp6-Rk-Wos">
-                                            <rect key="frame" x="192" y="12" width="175" height="14"/>
+                                            <rect key="frame" x="192" y="12" width="171" height="14"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -835,19 +835,19 @@
                                         <constraint firstItem="2sq-EL-1tn" firstAttribute="trailing" secondItem="rpt-ot-oWB" secondAttribute="trailingMargin" id="4wN-tc-pgW"/>
                                         <constraint firstItem="8tL-q9-4Ud" firstAttribute="top" secondItem="rpt-ot-oWB" secondAttribute="topMargin" id="52F-FW-BtR"/>
                                         <constraint firstItem="TLk-zg-neK" firstAttribute="top" secondItem="rpt-ot-oWB" secondAttribute="topMargin" id="71l-Ed-pDL"/>
-                                        <constraint firstItem="2sq-EL-1tn" firstAttribute="leading" secondItem="rpt-ot-oWB" secondAttribute="leading" constant="8" id="9l2-DE-eFg"/>
-                                        <constraint firstItem="2sq-EL-1tn" firstAttribute="top" secondItem="CAH-BK-SAJ" secondAttribute="bottom" constant="8" id="Fti-7G-ZMb"/>
-                                        <constraint firstAttribute="trailing" secondItem="CAH-BK-SAJ" secondAttribute="trailing" constant="8" id="Iy5-1V-nHF"/>
+                                        <constraint firstItem="2sq-EL-1tn" firstAttribute="leading" secondItem="rpt-ot-oWB" secondAttribute="leading" constant="12" id="9l2-DE-eFg"/>
+                                        <constraint firstItem="2sq-EL-1tn" firstAttribute="top" secondItem="CAH-BK-SAJ" secondAttribute="bottom" id="Fti-7G-ZMb"/>
+                                        <constraint firstAttribute="trailing" secondItem="CAH-BK-SAJ" secondAttribute="trailing" constant="12" id="Iy5-1V-nHF"/>
                                         <constraint firstItem="CAH-BK-SAJ" firstAttribute="top" secondItem="8tL-q9-4Ud" secondAttribute="bottom" constant="5" id="OdF-YF-3pM"/>
                                         <constraint firstItem="8tL-q9-4Ud" firstAttribute="leading" secondItem="TLk-zg-neK" secondAttribute="trailing" constant="8" id="PD5-j4-82x"/>
-                                        <constraint firstAttribute="trailing" secondItem="sp6-Rk-Wos" secondAttribute="trailing" constant="8" id="TDO-Bg-pN3"/>
+                                        <constraint firstAttribute="trailing" secondItem="sp6-Rk-Wos" secondAttribute="trailing" constant="12" id="TDO-Bg-pN3"/>
                                         <constraint firstItem="2sq-EL-1tn" firstAttribute="leading" secondItem="rpt-ot-oWB" secondAttribute="leadingMargin" id="TMs-ua-paa"/>
                                         <constraint firstItem="TLk-zg-neK" firstAttribute="leading" secondItem="rpt-ot-oWB" secondAttribute="leadingMargin" id="mWY-3i-rud"/>
-                                        <constraint firstItem="CAH-BK-SAJ" firstAttribute="leading" secondItem="rpt-ot-oWB" secondAttribute="leading" constant="8" id="qbk-Hr-yeL"/>
+                                        <constraint firstItem="CAH-BK-SAJ" firstAttribute="leading" secondItem="rpt-ot-oWB" secondAttribute="leading" constant="12" id="qbk-Hr-yeL"/>
                                         <constraint firstItem="sp6-Rk-Wos" firstAttribute="leading" secondItem="rpt-ot-oWB" secondAttribute="leading" constant="192" id="s8D-Lk-2gA"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="2sq-EL-1tn" secondAttribute="bottom" id="uhp-ba-I8D"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="2sq-EL-1tn" secondAttribute="bottom" constant="20" id="uhp-ba-I8D"/>
                                         <constraint firstItem="sp6-Rk-Wos" firstAttribute="top" secondItem="rpt-ot-oWB" secondAttribute="topMargin" constant="1" id="yt3-Hv-OkX"/>
-                                        <constraint firstAttribute="trailing" secondItem="2sq-EL-1tn" secondAttribute="trailing" constant="8" id="zp1-tl-DT6"/>
+                                        <constraint firstAttribute="trailing" secondItem="2sq-EL-1tn" secondAttribute="trailing" constant="12" id="zp1-tl-DT6"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1025,11 +1025,11 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-271.21439280359823"/>
         </scene>
-        <!--Transportation-->
+        <!--Transit-->
         <scene sceneID="Pc5-0G-6SG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rSd-5U-QLv" customClass="NavigationController" customModule="WVU_Mobile" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Transportation" image="Transportation" selectedImage="Transportation" id="1L8-kV-dLm">
+                    <tabBarItem key="tabBarItem" title="Transit" image="Transportation" selectedImage="Transportation" id="1L8-kV-dLm">
                         <inset key="imageInsets" minX="0.0" minY="-1" maxX="0.0" maxY="1"/>
                     </tabBarItem>
                     <toolbarItems/>

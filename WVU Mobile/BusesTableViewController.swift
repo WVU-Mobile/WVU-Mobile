@@ -17,7 +17,7 @@ class BusesTableViewController: UITableViewController {
         
         routes.sort(by: { $0.isOpen && !$1.isOpen })
         
-        title = "Transportation"
+        title = "Transit"
         tableView.reloadData()
     }
 
