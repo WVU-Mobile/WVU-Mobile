@@ -51,8 +51,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             MenuRequest.getMenu(on: Date(), at: Global.favoriteDiningHall, completion: { [weak self] result in
                 DispatchQueue.main.sync {
                     if let r = result {
+                        self?.diningMenu.errorLabel.isHidden = true
                         self?.diningTableViewSource.menu = r
                         self?.diningMenu.menuTable.reloadData()
+                    } else {
+                        self?.diningMenu.errorLabel.isHidden = false
                     }
                     self?.diningMenu.spinner.stopAnimating()
                     self?.diningMenu.spinner.isHidden = true

@@ -8,37 +8,36 @@
 
 import Foundation
 
-enum DiningHall: Int {
-    case cafeEvansdale = 1
-    case summit = 2
-    case boreman = 4
-    case terraceRoom = 5
-    case hatfields = 6
+enum DiningHall: String {
+    case evansdale
+    case summit
+    case boreman
+    case terrace
+    case hatfields
     
     var campus: String {
         switch self {
-        case .cafeEvansdale:
+        case .evansdale:
             return "Evansdale"
-        default:
+        case .summit, .boreman, .terrace, .hatfields:
             return "Downtown"
         }
     }
     
     func url(on date: Date) -> String {
-        let components = NSCalendar.current.dateComponents([.day, .month, .year], from: date)
-        
-        return "https://diningmenuservice.wvu.edu/\(self.rawValue)/\(components.month!)/\(components.day!)/\(components.year!)/1410376600000/?callback="
+        return "https://f09bec8ldd.execute-api.us-east-1.amazonaws.com/stable/dining-menus/\(self.rawValue)\(date.apiFormat ?? "")"
+        //return "https://f09bec8ldd.execute-api.us-east-1.amazonaws.com/stable/dining-menus/boreman20180423"
     }
     
     var name: String {
         switch self {
-        case .cafeEvansdale:
+        case .evansdale:
             return "Cafe Evansdale"
         case .summit:
             return "Summit"
         case .boreman:
             return "Boreman"
-        case .terraceRoom:
+        case .terrace:
             return "Terrace Room"
         case .hatfields:
             return "Hatfields"
@@ -46,89 +45,37 @@ enum DiningHall: Int {
     }
     
     var isOpen: Bool {
-        // check if holiday or outside semester hours
-        
+        // TODO: check if holiday or outside semester hours
+        guard let timeZone = TimeZone.init(abbreviation: "EST") else { return false }
+
         var calendar = Calendar.current
-        calendar.timeZone = TimeZone.init(abbreviation: "EST")!
+        calendar.timeZone = timeZone
         
         let date = Date()
-
         let hour = calendar.component(.hour, from: date)
         let minute = calendar.component(.minute, from: date)
         let weekday = calendar.component(.weekday, from: date)
         
         switch self {
         case .summit:
-            if calendar.isDateInWeekend(date) {
-                if hour >= 11 && hour < 18 {
-                    if hour == 18 {
-                        if minute < 30 {
-                            return true
-                        }
-                    } else {
-                        return true
-                    }
-                }
-            } else {
-                if hour >= 7 && hour < 19 {
-                    return true
-                }
-            }
+            return calendar.isDateInWeekend(date) ? hour >= 11 && hour < 18 || hour == 18 && minute < 30 : hour >= 7 && hour < 19
         case .boreman:
-            if calendar.isDateInWeekend(date) {
-                if hour >= 11 && hour < 15 {
-                    return true
-                }
-            } else {
-                if hour >= 7 && hour < 19 {
-                    return true
-                }
-            }
+            return calendar.isDateInWeekend(date) ? hour >= 11 && hour < 15 : hour >= 7 && hour < 19
         case .hatfields:
-            if !calendar.isDateInWeekend(date) {
-                if ((hour == 7 && minute >= 15) || (hour >= 8) ) && hour < 10 {
-                    return true
-                } else if hour >= 11 && hour < 2 {
-                    return true
-                }
-            }
-        case .terraceRoom:
-            if !calendar.isDateInWeekend(date) {
-                if weekday == 6 {
-                    if hour >= 11 && hour < 14 {
-                        return true
-                    }
-                } else {
-                    if hour >= 11 && hour < 20 {
-                        return true
-                    }
-                }
-            }
-        case .cafeEvansdale:
-            if weekday == 1 {
-                if hour >= 9 && ( hour < 19 || hour == 19 && minute <= 30 ) {
-                    return true
-                }
-            } else if weekday == 6 {
-                if hour >= 7 && ( hour < 18 || hour == 18 && minute <= 30 ) {
-                    return true
-                }
-            } else if weekday == 7 {
-                if hour >= 9 && ( hour < 18 || hour == 18 && minute <= 30 ) {
-                    return true
-                }
-            } else {
-                if hour >= 7 && hour < 20 {
-                    return true
-                }
-            }
+            return !calendar.isDateInWeekend(date) ? ((hour == 7 && minute >= 15) || (hour >= 8) ) && hour < 10 || hour >= 11 && hour < 2 : false
+        case .terrace:
+            return !calendar.isDateInWeekend(date) ? weekday == 6 && hour >= 11 && hour < 14 || hour >= 11 && hour < 20 : false
+        case .evansdale:
+            return (weekday == 1 && hour >= 9 && (hour < 19 || hour == 19 && minute <= 30))
+                || (weekday == 6 && hour >= 7 && (hour < 18 || hour == 18 && minute <= 30))
+                || weekday == 7 && hour >= 9 && (hour < 18 || hour == 18 && minute <= 30)
+                || hour >= 7 && hour < 20
         }
-        return false
     }
     
     var hoursOfOperation: String {
         switch self {
-        case .cafeEvansdale:
+        case .evansdale:
             return  "Monday - Thursday 7:00 am – 8:00 pm\n" +
                     "Friday 7:00 am – 6:30 pm\n" +
                     "Saturday & Holidays 9:00 am – 6:30 pm\n" +
@@ -139,7 +86,7 @@ enum DiningHall: Int {
         case .boreman:
             return  "Monday - Friday 11:00 am - 7:00 pm\n" +
                     "Saturday & Sunday 11:00 am - 3:00 pm"
-        case .terraceRoom:
+        case .terrace:
             return  "Monday – Thursday 11:00 am - 8:00 pm\n" +
                     "Friday 11:00 am - 2:00 pm\n" +
                     "Saturday, Sunday & Holidays Closed"
@@ -152,9 +99,9 @@ enum DiningHall: Int {
     
     var meals: [Menu.Meal] {
         switch self {
-        case .cafeEvansdale, .summit, .boreman :
+        case .evansdale, .summit, .boreman :
             return  [.breakfast, .lunch, .dinner]
-        case .terraceRoom:
+        case .terrace:
             return   [.lunch, .dinner]
         case .hatfields:
             return  [.breakfast, .lunch]
@@ -163,13 +110,13 @@ enum DiningHall: Int {
     
     var description: String {
         switch self {
-        case .cafeEvansdale:
+        case .evansdale:
             return  "Cafe Evansdale is located in Brooke Tower and serves breakfast, lunch, and dinner."
         case .summit:
             return  "Summit Cafe is located in Summit Hall and serves breakfast, lunch, and dinner"
         case .boreman:
             return  "Boreman is located in Boreman Hall and serves lunch and dinner."
-        case .terraceRoom:
+        case .terrace:
             return  "The Terrace Room is located in Stalnaker Hall and serves lunch and dinner."
         case .hatfields:
             return  "Hatfields is located in the Mountainlair and serves breakfast and lunch. They only accept dining plans for breakfast."
@@ -178,13 +125,13 @@ enum DiningHall: Int {
     
     var latitude: Double {
         switch self {
-        case .cafeEvansdale:
+        case .evansdale:
             return 39.648935
         case .summit:
             return 39.638829
         case .boreman:
             return 39.633060
-        case .terraceRoom:
+        case .terrace:
             return 39.635357
         case .hatfields:
             return 39.634752
@@ -193,13 +140,13 @@ enum DiningHall: Int {
     
     var longitude: Double {
         switch self {
-        case .cafeEvansdale:
+        case .evansdale:
             return -79.966303
         case .summit:
             return -79.956533
         case .boreman:
             return -79.952642
-        case .terraceRoom:
+        case .terrace:
             return -79.952755
         case .hatfields:
             return -79.953916
@@ -237,6 +184,16 @@ enum DiningHall: Int {
             }
         }
         
+    }
+    
+}
+
+extension Date {
+    var apiFormat: String? {
+        let components = NSCalendar.current.dateComponents([.day, .month, .year], from: self)
+        guard let month = components.month, let day = components.day, let year = components.year else { return nil }
+        
+        return String(format: "%d%02d%d", year, month, day)
     }
     
 }

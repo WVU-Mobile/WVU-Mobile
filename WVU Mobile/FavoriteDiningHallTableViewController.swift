@@ -9,7 +9,7 @@
 import UIKit
 
 class FavoriteDiningHallTableViewController: UITableViewController {
-    let diningHalls: [DiningHall] = [.boreman, .cafeEvansdale, .hatfields, .summit, .terraceRoom]
+    let diningHalls: [DiningHall] = [.boreman, .evansdale, .hatfields, .summit, .terrace]
 
     // MARK: - Table view data source
     

@@ -7,24 +7,34 @@
 //
 
 import Foundation
+import UIKit
 
 class Menu {
     var diningHall: DiningHall
-    var menu = [MenuItem]()
+    
+    var breakfast: [MenuItem] = []
+    var lunch: [MenuItem] = []
+    var dinner: [MenuItem] = []
+    
+    typealias MenuItem = String
     
     init(diningHall: DiningHall) {
         self.diningHall = diningHall
     }
     
     func getMeal(meal: Meal) -> [MenuItem] {
-        var mealMenu = [MenuItem]()
-        
-        for i in menu {
-            if i.meal == meal {
-                mealMenu.append(i)
-            }
+        switch meal {
+        case .breakfast:
+           return breakfast
+        case .lunch:
+            return lunch
+        case .dinner:
+            return dinner
         }
-        return mealMenu
+    }
+
+    var empty: Bool {
+        return breakfast.isEmpty && lunch.isEmpty && dinner.isEmpty
     }
     
     enum Meal {
@@ -40,6 +50,14 @@ class Menu {
                 return "Dinner"
             }
         }
+    }
+    
+}
+
+extension String {
+    var removeTags: String {
+        let htmlReplaceString: String  = "<[^>]+>"
+        return self.replacingOccurrences(of: htmlReplaceString, with: "", options: .regularExpression)
     }
     
 }

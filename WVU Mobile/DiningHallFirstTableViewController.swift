@@ -9,7 +9,7 @@
 import UIKit
 
 class DiningHallFirstTableViewController: UITableViewController {
-    var items: [DiningHall] = [.boreman, .cafeEvansdale, .hatfields, .summit, .terraceRoom]
+    var items: [DiningHall] = [.boreman, .evansdale, .hatfields, .summit, .terrace]
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
@@ -32,9 +32,10 @@ class DiningHallFirstTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let view = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DiningContainer") as! DiningHallContainerViewController
-        view.diningHall = items[indexPath.row]
-        self.navigationController?.pushViewController(view, animated: true)
+        guard let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DiningContainer") as? DiningHallContainerViewController else { return }
+        
+        viewController.diningHall = items[indexPath.row]
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
 }

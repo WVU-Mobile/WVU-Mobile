@@ -13,7 +13,7 @@ class DiningHallContainerViewController: UIViewController, UIPageViewControllerD
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var pageViewContainer: UIView!
     
-    var pager: UIPageViewController!
+    var pager: UIPageViewController?
     var pages = [UIViewController]()
     
     var diningHall = DiningHall.boreman
@@ -21,48 +21,39 @@ class DiningHallContainerViewController: UIViewController, UIPageViewControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pager = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PageViewController") as! UIPageViewController
+        guard let menuPage = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MenuTable") as? DiningTableViewController,
+              let infoPage = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InfoView") as? DiningInfoViewController else { return }
+        
+        menuPage.menu = Menu(diningHall: diningHall)
+        infoPage.diningHall = diningHall
+        
+        pager = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PageViewController") as? UIPageViewController
+        
+        guard let pager = pager else { return }
+
         pager.dataSource = self
         pager.delegate = self
         
-        self.addChildViewController(pager)
-        
-        self.pageViewContainer.frame = self.view.frame
-        pager.view.frame = CGRect(x: 0, y: 0, width: pageViewContainer.frame.width, height: self.view.frame.height)
-        self.pageViewContainer.addSubview(pager.view)
+        pages = [menuPage, infoPage]
+        pager.setViewControllers([menuPage], direction: .forward, animated: true, completion: nil)
         pager.didMove(toParentViewController: self)
         
-        let menuPage = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MenuTable") as! DiningTableViewController
-        menuPage.diningHall = diningHall
-        
-        let infoPage = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InfoView") as! DiningInfoViewController
-        infoPage.diningHall = diningHall
-        
-        pages = [menuPage, infoPage]
-        
-        if let firstViewController = pages.first {
-            pager.setViewControllers([firstViewController],
-                               direction: .forward,
-                               animated: true,
-                               completion: nil)
-        }
-        
-       self.title = diningHall.name
+        pager.automaticallyAdjustsScrollViewInsets = true
+        pageViewContainer.addSubview(pager.view)
+
+        title = diningHall.name
     }
 
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         if segmentControl.selectedSegmentIndex == 1 {
-            pager.setViewControllers([pages[1]], direction: .forward, animated: true, completion: nil)
-
+            pager?.setViewControllers([pages[1]], direction: .forward, animated: true, completion: nil)
         } else {
-            pager.setViewControllers([pages[0]], direction: .reverse, animated: true, completion: nil)
+            pager?.setViewControllers([pages[0]], direction: .reverse, animated: true, completion: nil)
         }
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let currentIndex = pages.index(of: viewController) else {
-            return nil
-        }
+        guard let currentIndex = pages.index(of: viewController) else { return nil }
         
         let nextIndex = currentIndex + 1
         
@@ -74,9 +65,7 @@ class DiningHallContainerViewController: UIViewController, UIPageViewControllerD
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let currentIndex = pages.index(of: viewController) else {
-            return nil
-        }
+        guard let currentIndex = pages.index(of: viewController) else { return nil }
         
         let previous = currentIndex - 1
         
@@ -88,15 +77,9 @@ class DiningHallContainerViewController: UIViewController, UIPageViewControllerD
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        if !completed {
-            return
-        }
+        guard completed else { return }
         
-        if self.segmentControl.selectedSegmentIndex == 0 {
-            self.segmentControl.selectedSegmentIndex = 1
-        } else {
-            self.segmentControl.selectedSegmentIndex = 0
-        }
+        segmentControl.selectedSegmentIndex = segmentControl.selectedSegmentIndex == 0 ? 1 : 0
     }
     
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
@@ -104,13 +87,8 @@ class DiningHallContainerViewController: UIViewController, UIPageViewControllerD
     }
     
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        guard let firstViewController = pager.viewControllers?.first else {
-            return 0
-        }
-        
-        guard let firstViewControllerIndex = pages.index(of: firstViewController) else {
-            return 0
-        }
+        guard let firstViewController = pager?.viewControllers?.first,
+              let firstViewControllerIndex = pages.index(of: firstViewController) else { return 0 }
         
         return firstViewControllerIndex
     }

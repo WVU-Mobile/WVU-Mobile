@@ -9,17 +9,16 @@
 import UIKit
 
 class DiningTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DateSelectorViewControllerDelegate {
+    
     @IBOutlet weak var menuTable: UITableView!
     
     var noInfoAvailableLabel: UILabel!
     var progressIndicator: UIActivityIndicatorView!
     
-    var menu = Menu(diningHall: .boreman)
-    var diningHall = DiningHall.boreman
+    var menu: Menu?
     
-    
-    var dateSelector: DateSelectorViewController!
-    var gesture: UITapGestureRecognizer!
+    var dateSelector: DateSelectorViewController?
+    var gesture: UITapGestureRecognizer?
     
     var selectedDate = Date()
     
@@ -38,7 +37,7 @@ class DiningTableViewController: UIViewController, UITableViewDelegate, UITableV
         menuTable.delegate = self
         menuTable.dataSource = self
         
-        gesture = UITapGestureRecognizer(target: self, action: #selector(EventsViewController.tap))
+        gesture = UITapGestureRecognizer(target: self, action: #selector(DiningTableViewController.tap))
         
         noInfoAvailableLabel = UILabel(frame: view.frame)
         noInfoAvailableLabel.text = "No menu info is available."
@@ -46,8 +45,9 @@ class DiningTableViewController: UIViewController, UITableViewDelegate, UITableV
         noInfoAvailableLabel.textAlignment = .center
         
         dateSelector = DateSelectorViewController(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
-        dateSelector.delegate = self
+        dateSelector?.delegate = self
         
+        guard let dateSelector = dateSelector else { return }
         view.addSubview(dateSelector)
         
         progressIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 100, width: view.frame.width, height: 50))
@@ -55,26 +55,28 @@ class DiningTableViewController: UIViewController, UITableViewDelegate, UITableV
         progressIndicator.startAnimating()
         view.addSubview(progressIndicator)
         
-        menu.diningHall = diningHall
-        
         loadToday()
     }
     
     func loadToday() {
         DispatchQueue.global().async {
-            MenuRequest.getMenu(on: self.selectedDate, at: self.diningHall, completion: { result in
+            guard let menu = self.menu else { return }
+            
+            MenuRequest.getMenu(on: self.selectedDate, at: menu.diningHall, completion: { result in
                 DispatchQueue.main.sync {
-                    if let r = result {
-                        print(r.menu)
+                    guard let dateSelector = self.dateSelector else { return }
 
-                        self.menu = r
+                    if let menu = result {
+                        self.menu = menu
                     
-                        if r.menu.count == 0 {
-                            self.view.insertSubview(self.noInfoAvailableLabel, belowSubview: self.dateSelector)
+                        if menu.empty {
+                            self.view.insertSubview(self.noInfoAvailableLabel, belowSubview: dateSelector)
                         } else {
                             self.noInfoAvailableLabel.removeFromSuperview()
                             self.menuTable.reloadData()
                         }
+                    } else {
+                        self.view.insertSubview(self.noInfoAvailableLabel, belowSubview: dateSelector)
                     }
                     self.progressIndicator.isHidden = true
                     self.progressIndicator.stopAnimating()
@@ -82,52 +84,58 @@ class DiningTableViewController: UIViewController, UITableViewDelegate, UITableV
             })
         }
     }
+        
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if let m = menu {
+            return m.diningHall.meals.count
+        }
+        return 0
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menu.getMeal(meal: menu.diningHall.meals[section]).count
+        if let m = menu {
+            return m.getMeal(meal: m.diningHall.meals[section]).count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return menu.diningHall.meals[section].name
+        return menu?.diningHall.meals[section].name
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menu-item", for: indexPath)
         
-        cell.textLabel?.text = menu.getMeal(meal: menu.diningHall.meals[indexPath.section])[indexPath.row].name
+        if let meal = menu?.diningHall.meals[indexPath.section] {
+            cell.textLabel?.text = menu?.getMeal(meal: meal)[indexPath.row]
+        }
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-    
-    func tap() {
-        self.dateSelector.dismissCalendar()
+    @objc func tap() {
+        dateSelector?.dismissCalendar()
     }
     
     func didSelectNewDate(date: Date) {
-        self.selectedDate = date
+        selectedDate = date
         progressIndicator.isHidden = false
         progressIndicator.startAnimating()
         loadToday()
-
     }
     
     func calendarDidAppear() {
-        self.dateSelector.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 360)
-        self.menuTable.addGestureRecognizer(gesture)
+        guard let gesture = gesture else { return }
+
+        dateSelector?.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 360)
+        menuTable.addGestureRecognizer(gesture)
     }
     
     func calendarDidDisappear() {
-        self.dateSelector.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
-        self.menuTable.removeGestureRecognizer(gesture)
+        guard let gesture = gesture else { return }
+
+        dateSelector?.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
+        menuTable.removeGestureRecognizer(gesture)
     }
     
 }

@@ -33,7 +33,7 @@ class LiteMenuTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "food", for: indexPath)
         
         if let meal = menu?.diningHall.meals[indexPath.section] {
-            cell.textLabel?.text = menu?.getMeal(meal: meal)[indexPath.row].name
+            cell.textLabel?.text = menu?.getMeal(meal: meal)[indexPath.row]
         }
         
         return cell

@@ -11,6 +11,7 @@ import UIKit
 
 @IBDesignable class ShadowView: UIView {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var errorLabel: UILabel!
     @IBInspectable var cornerRadius: CGFloat = 0.0
     
     private var customBackgroundColor = UIColor.white

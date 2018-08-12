@@ -11,14 +11,13 @@ import Foundation
 class Global {
     static var favoriteDiningHall:DiningHall {
         get {
-            if let f = DiningHall(rawValue: UserDefaults.standard.integer(forKey: "favDiningHall")) {
-                return f
+            if let favoriteDiningHallString = UserDefaults.standard.string(forKey: "favoriteDiningHall"), let favoriteDiningHall = DiningHall(rawValue: favoriteDiningHallString) {
+                return favoriteDiningHall
             }
             return DiningHall.boreman
         }
-        
         set(value) {
-            UserDefaults.standard.set(value.rawValue, forKey: "favDiningHall")
+            UserDefaults.standard.set(value.rawValue, forKey: "favoriteDiningHall")
         }
     }
 }

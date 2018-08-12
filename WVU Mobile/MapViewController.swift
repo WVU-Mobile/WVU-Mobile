@@ -293,9 +293,9 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDelega
         MapCoordinate(code: "PRT",   type: .prt, name: "PRT Station - Health Sciences Center", latitude: 39.65508791, longitude: -79.9601993),
         MapCoordinate(code: "SRC-E", type: .recreation, name: "Student Recreation Center", latitude: 39.648185, longitude: -79.970821),
         MapCoordinate(code: "Boreman", type: .dining, name: "Boreman Dining Hall", latitude: DiningHall.boreman.latitude, longitude: DiningHall.boreman.longitude),
-        MapCoordinate(code: "Cafe Evansdale", type: .dining, name: "CafeEvansdale", latitude: DiningHall.cafeEvansdale.latitude, longitude: DiningHall.cafeEvansdale.longitude), MapCoordinate(code: "Hatfields", type: .dining, name: "Hatfields Dining Hall", latitude: DiningHall.hatfields.latitude, longitude: DiningHall.hatfields.longitude),
+        MapCoordinate(code: "Cafe Evansdale", type: .dining, name: "CafeEvansdale", latitude: DiningHall.evansdale.latitude, longitude: DiningHall.evansdale.longitude), MapCoordinate(code: "Hatfields", type: .dining, name: "Hatfields Dining Hall", latitude: DiningHall.hatfields.latitude, longitude: DiningHall.hatfields.longitude),
         MapCoordinate(code: "Summit", type: .dining, name: "Summit Dining Hall", latitude: DiningHall.summit.latitude, longitude: DiningHall.summit.longitude),
-        MapCoordinate(code: "Terrace Room", type: .dining, name: "Terrace Room Dining Hall", latitude: DiningHall.terraceRoom.latitude, longitude: DiningHall.terraceRoom.longitude)]
+        MapCoordinate(code: "Terrace Room", type: .dining, name: "Terrace Room Dining Hall", latitude: DiningHall.terrace.latitude, longitude: DiningHall.terrace.longitude)]
     
     enum CoordinateType {
         case recreation, prt, parking, dining, housing, academic
