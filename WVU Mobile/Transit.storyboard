@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Transit-->
+        <scene sceneID="dCM-M6-pM1">
+            <objects>
+                <tableViewController storyboardIdentifier="Transit" id="BdA-DY-Mps" customClass="TransitViewController" customModule="WVU_Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="75" sectionHeaderHeight="18" sectionFooterHeight="18" id="sSZ-91-gx7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="subtext" rowHeight="75" id="zSb-t3-gEg" customClass="BusTableViewCell" customModule="WVU_Mobile" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zSb-t3-gEg" id="H4N-JG-E0E">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="74.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Spring Semester Only" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXS-Fi-31m">
+                                            <rect key="frame" x="92" y="37" width="249" height="18"/>
+                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bus line" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LeA-p5-upN">
+                                            <rect key="frame" x="92" y="8" width="249" height="28"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bus" translatesAutoresizingMaskIntoConstraints="NO" id="fEH-2Y-ylv">
+                                            <rect key="frame" x="28" y="21" width="39" height="39"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="39" id="JPG-e2-WpK"/>
+                                                <constraint firstAttribute="width" constant="39" id="vWU-hj-NRi"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ZXS-Fi-31m" firstAttribute="leading" secondItem="fEH-2Y-ylv" secondAttribute="trailing" constant="25" id="9u3-zL-znF"/>
+                                        <constraint firstItem="ZXS-Fi-31m" firstAttribute="top" secondItem="LeA-p5-upN" secondAttribute="bottom" constant="1" id="Hlc-6t-xMb"/>
+                                        <constraint firstItem="fEH-2Y-ylv" firstAttribute="bottom" secondItem="H4N-JG-E0E" secondAttribute="bottomMargin" constant="-9" id="IVt-TH-m0M"/>
+                                        <constraint firstItem="ZXS-Fi-31m" firstAttribute="top" secondItem="LeA-p5-upN" secondAttribute="bottom" constant="1" id="Ky9-nx-g8y"/>
+                                        <constraint firstItem="ZXS-Fi-31m" firstAttribute="top" secondItem="LeA-p5-upN" secondAttribute="bottom" constant="1" id="QMr-fH-JkQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="LeA-p5-upN" secondAttribute="trailing" id="TUA-SO-Oza"/>
+                                        <constraint firstItem="fEH-2Y-ylv" firstAttribute="leading" secondItem="H4N-JG-E0E" secondAttribute="leadingMargin" constant="12" id="XFB-dN-zvq"/>
+                                        <constraint firstAttribute="trailing" secondItem="ZXS-Fi-31m" secondAttribute="trailing" id="Y88-DN-1OV"/>
+                                        <constraint firstAttribute="trailing" secondItem="LeA-p5-upN" secondAttribute="trailing" id="YCB-Tt-KjM"/>
+                                        <constraint firstItem="LeA-p5-upN" firstAttribute="leading" secondItem="fEH-2Y-ylv" secondAttribute="trailing" constant="25" id="d4K-KG-skE"/>
+                                        <constraint firstAttribute="bottom" secondItem="ZXS-Fi-31m" secondAttribute="bottom" constant="8" id="fp5-0S-x7T"/>
+                                        <constraint firstItem="fEH-2Y-ylv" firstAttribute="top" secondItem="H4N-JG-E0E" secondAttribute="topMargin" constant="10" id="hA7-gh-y0t"/>
+                                        <constraint firstItem="LeA-p5-upN" firstAttribute="leading" secondItem="fEH-2Y-ylv" secondAttribute="trailing" constant="25" id="jEZ-wN-MFj"/>
+                                        <constraint firstItem="ZXS-Fi-31m" firstAttribute="top" secondItem="LeA-p5-upN" secondAttribute="bottom" constant="1" id="kSx-KE-dl4"/>
+                                        <constraint firstAttribute="bottom" secondItem="ZXS-Fi-31m" secondAttribute="bottom" constant="8" id="lbw-7W-8EQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="ZXS-Fi-31m" secondAttribute="trailing" id="mfz-Rz-sVq"/>
+                                        <constraint firstItem="LeA-p5-upN" firstAttribute="top" secondItem="H4N-JG-E0E" secondAttribute="top" constant="8" id="oqQ-rN-du5"/>
+                                        <constraint firstItem="ZXS-Fi-31m" firstAttribute="leading" secondItem="fEH-2Y-ylv" secondAttribute="trailing" constant="25" id="plw-pk-5EA"/>
+                                        <constraint firstItem="ZXS-Fi-31m" firstAttribute="top" secondItem="LeA-p5-upN" secondAttribute="bottom" constant="1" id="q18-Cx-jTT"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="icon" destination="fEH-2Y-ylv" id="mrV-M6-PGc"/>
+                                    <outlet property="name" destination="LeA-p5-upN" id="NrZ-4t-FlD"/>
+                                    <outlet property="semester" destination="ZXS-Fi-31m" id="IP7-1p-5x0"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="bus" rowHeight="75" id="OWd-jR-n4E" customClass="BusTableViewCell" customModule="WVU_Mobile" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="130.5" width="375" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OWd-jR-n4E" id="3pe-DA-n6q">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="74.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bus line" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIa-a7-Dsb">
+                                            <rect key="frame" x="92" y="8" width="249" height="27.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bus" translatesAutoresizingMaskIntoConstraints="NO" id="hKZ-O9-xqi">
+                                            <rect key="frame" x="28" y="21" width="39" height="39"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="39" id="5wS-zN-EXm"/>
+                                                <constraint firstAttribute="width" constant="39" id="Hms-Au-dw1"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="lIa-a7-Dsb" secondAttribute="trailing" id="6Bj-cl-xbb"/>
+                                        <constraint firstItem="lIa-a7-Dsb" firstAttribute="top" secondItem="3pe-DA-n6q" secondAttribute="top" constant="8" id="Aun-if-d69"/>
+                                        <constraint firstAttribute="trailing" secondItem="lIa-a7-Dsb" secondAttribute="trailing" id="N8g-AV-97P"/>
+                                        <constraint firstItem="hKZ-O9-xqi" firstAttribute="leading" secondItem="3pe-DA-n6q" secondAttribute="leadingMargin" constant="12" id="Nwz-78-I2L"/>
+                                        <constraint firstItem="lIa-a7-Dsb" firstAttribute="leading" secondItem="hKZ-O9-xqi" secondAttribute="trailing" constant="25" id="ZUM-qv-fEG"/>
+                                        <constraint firstItem="hKZ-O9-xqi" firstAttribute="bottom" secondItem="3pe-DA-n6q" secondAttribute="bottomMargin" constant="-9" id="a2t-Jg-gcu"/>
+                                        <constraint firstItem="lIa-a7-Dsb" firstAttribute="leading" secondItem="hKZ-O9-xqi" secondAttribute="trailing" constant="25" id="fkH-df-kba"/>
+                                        <constraint firstAttribute="bottom" secondItem="lIa-a7-Dsb" secondAttribute="bottom" constant="8" id="iWE-JN-D3h"/>
+                                        <constraint firstItem="hKZ-O9-xqi" firstAttribute="top" secondItem="3pe-DA-n6q" secondAttribute="topMargin" constant="10" id="tfa-in-s8c"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="icon" destination="hKZ-O9-xqi" id="cuO-gb-GSL"/>
+                                    <outlet property="name" destination="lIa-a7-Dsb" id="DVY-XO-FV0"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="prt" rowHeight="75" id="tE6-na-gXt" customClass="BusTableViewCell" customModule="WVU_Mobile" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="205.5" width="375" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tE6-na-gXt" id="r7u-Ke-xrf">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="74.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PRT" translatesAutoresizingMaskIntoConstraints="NO" id="qNh-XJ-iD2">
+                                            <rect key="frame" x="23" y="12" width="55" height="55"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="55" id="Avq-uJ-V9P"/>
+                                                <constraint firstAttribute="width" constant="55" id="Rzz-gA-r6V"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Rapid Transit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sb4-uF-zmq">
+                                            <rect key="frame" x="97" y="8" width="249" height="27.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="sb4-uF-zmq" secondAttribute="trailing" constant="-5" id="3am-LA-eRf"/>
+                                        <constraint firstAttribute="bottom" secondItem="sb4-uF-zmq" secondAttribute="bottom" constant="8" id="5Tl-I0-O9J"/>
+                                        <constraint firstAttribute="trailing" secondItem="sb4-uF-zmq" secondAttribute="trailing" constant="-5" id="Ffq-oS-agw"/>
+                                        <constraint firstItem="sb4-uF-zmq" firstAttribute="leading" secondItem="qNh-XJ-iD2" secondAttribute="trailing" constant="19" id="Q2r-CX-h59"/>
+                                        <constraint firstItem="sb4-uF-zmq" firstAttribute="top" secondItem="r7u-Ke-xrf" secondAttribute="top" constant="8" id="RB0-iL-BKl"/>
+                                        <constraint firstItem="qNh-XJ-iD2" firstAttribute="bottom" secondItem="r7u-Ke-xrf" secondAttribute="bottomMargin" constant="-2.5" id="ZEs-vO-E3a"/>
+                                        <constraint firstItem="sb4-uF-zmq" firstAttribute="leading" secondItem="qNh-XJ-iD2" secondAttribute="trailing" constant="19" id="ZV8-Lg-QCu"/>
+                                        <constraint firstItem="qNh-XJ-iD2" firstAttribute="top" secondItem="r7u-Ke-xrf" secondAttribute="topMargin" constant="1" id="bzm-iU-yA4"/>
+                                        <constraint firstItem="qNh-XJ-iD2" firstAttribute="leading" secondItem="r7u-Ke-xrf" secondAttribute="leadingMargin" constant="7" id="wMo-Ic-HUl"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="icon" destination="qNh-XJ-iD2" id="YTL-h4-2Od"/>
+                                    <outlet property="name" destination="sb4-uF-zmq" id="gFg-ih-F7P"/>
+                                    <segue destination="iXS-Tz-rUv" kind="show" id="U60-rr-LnM"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BdA-DY-Mps" id="wQC-Gu-xke"/>
+                            <outlet property="delegate" destination="BdA-DY-Mps" id="j6b-GF-4cl"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Transit" id="oBk-td-7px"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B5U-re-Phy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1688.8" y="416.94152923538235"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="WkQ-6K-eZQ">
+            <objects>
+                <tableViewController id="iXS-Tz-rUv" customClass="PRTTableViewController" customModule="WVU_Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0pT-uw-3q5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="Zga-Y1-lPm">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zga-Y1-lPm" id="DvT-uS-Ymx">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iXS-Tz-rUv" id="iM8-73-tan"/>
+                            <outlet property="delegate" destination="iXS-Tz-rUv" id="iTa-wd-2tw"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E2b-nS-bhf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2422" y="417"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Bus" width="100" height="100"/>
+        <image name="PRT" width="200" height="200"/>
+    </resources>
+</document>

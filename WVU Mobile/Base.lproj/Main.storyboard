@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -103,7 +101,7 @@
                                         <rect key="frame" x="169" y="65" width="20" height="20"/>
                                     </activityIndicatorView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing's on the menu today." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXz-ia-jEg">
-                                        <rect key="frame" x="68.5" y="64.5" width="221" height="20.5"/>
+                                        <rect key="frame" x="68.5" y="65" width="221" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -266,7 +264,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="F57-tZ-38H">
-                                            <rect key="frame" x="289" y="6" width="51" height="31"/>
+                                            <rect key="frame" x="289" y="6" width="51" height="31.5"/>
                                             <color key="onTintColor" red="0.69411764710000001" green="0.78823529410000004" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
                                         </switch>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Night Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7WA-j6-mzc">
@@ -398,7 +396,7 @@
         <!--Transit-->
         <scene sceneID="wNe-SJ-yWi">
             <objects>
-                <tableViewController id="zYL-Lf-Hae" customClass="BusesTableViewController" customModule="WVU_Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="zYL-Lf-Hae" customClass="TransitViewController" customModule="WVU_Mobile" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="75" sectionHeaderHeight="18" sectionFooterHeight="18" id="RgP-m4-WCT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -613,7 +611,7 @@
                                                     <color key="highlightedColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUC-7U-M5a">
-                                                    <rect key="frame" x="15" y="104" width="345" height="109"/>
+                                                    <rect key="frame" x="15" y="104" width="345" height="108.5"/>
                                                     <string key="text">Event details. For new undergraduate students. Join your RA and other students on your floor to learn your way around campus. You'll find where your classes will be held (and other key locations) so you'll be prepared for the first day of class. Times will vary by hall.</string>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                     <nil key="textColor"/>
@@ -963,7 +961,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" customClass="TabBarController" customModule="WVU_Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
@@ -1071,13 +1069,13 @@
         <!--Campus-->
         <scene sceneID="nG5-aX-B8w">
             <objects>
-                <tableViewController id="G0g-Hn-UcB" customClass="OnCampusTableViewController" customModule="WVU_Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="G0g-Hn-UcB" customClass="CampusTableViewController" customModule="WVU_Mobile" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9ys-cf-uXJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="campus-item" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="campus-item" rowHeight="80" id="cBi-fU-gnO" customClass="OnCampusTableViewCell" customModule="WVU_Mobile" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="campus-item" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="campus-item" rowHeight="80" id="cBi-fU-gnO" customClass="CampusTableViewCell" customModule="WVU_Mobile" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cBi-fU-gnO" id="NB4-4r-XlA">
@@ -1475,18 +1473,18 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Bus" width="50" height="50"/>
-        <image name="DA" width="250" height="250"/>
-        <image name="Event" width="33" height="33"/>
-        <image name="FlyingWV" width="250" height="242"/>
-        <image name="Home" width="25" height="25"/>
-        <image name="Navigation" width="25" height="25"/>
-        <image name="News" width="33" height="33"/>
-        <image name="PRT" width="100" height="100"/>
-        <image name="Settings" width="25" height="25"/>
-        <image name="Star" width="125" height="125"/>
-        <image name="Star-Filled" width="25" height="25"/>
-        <image name="Sub" width="100" height="100"/>
-        <image name="Transportation" width="25" height="25"/>
+        <image name="Bus" width="100" height="100"/>
+        <image name="DA" width="500" height="500"/>
+        <image name="Event" width="313" height="313"/>
+        <image name="FlyingWV" width="500" height="485"/>
+        <image name="Home" width="50" height="50"/>
+        <image name="Navigation" width="50" height="50"/>
+        <image name="News" width="37.5" height="37.5"/>
+        <image name="PRT" width="200" height="200"/>
+        <image name="Settings" width="50" height="50"/>
+        <image name="Star" width="250" height="250"/>
+        <image name="Star-Filled" width="50" height="50"/>
+        <image name="Sub" width="200" height="200"/>
+        <image name="Transportation" width="50" height="50"/>
     </resources>
 </document>

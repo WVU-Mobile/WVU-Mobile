@@ -9,6 +9,9 @@
 import UIKit
 
 class NewsViewController: UITableViewController {
+    
+    private static let storyboardID = "News"
+    
     var news = [RSSElement]()
     
     override func viewDidLoad() {
@@ -86,6 +89,18 @@ class NewsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+    
+}
+
+extension NewsViewController {
+    
+    class var viewController: NewsViewController {
+        guard let viewController = UIStoryboard(name: NewsViewController.storyboardID, bundle: nil).instantiateViewController(withIdentifier: NewsViewController.storyboardID) as? NewsViewController else {
+            fatalError("View Controller with identifier '\(NewsViewController.storyboardID)' was not found.")
+        }
+        
+        return viewController
     }
     
 }

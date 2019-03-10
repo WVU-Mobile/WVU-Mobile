@@ -57,7 +57,7 @@ class CalendarView: ShadowView, UIPageViewControllerDelegate, UIPageViewControll
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         let v = viewController as! MonthViewController
-        print("\(v.firstDayOfMonth) and next \(v.firstDayOfMonth.nextMonth())")
+        print("\(String(describing: v.firstDayOfMonth)) and next \(v.firstDayOfMonth.nextMonth())")
         return newViewController(date: v.firstDayOfMonth.nextMonth())
     }
     

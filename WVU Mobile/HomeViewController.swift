@@ -9,6 +9,8 @@
 import UIKit
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    fileprivate static let storyboardID = "Today"
+
     @IBOutlet var prtView: PRTView!
     @IBOutlet var eventsView: LiteEventsView!
     @IBOutlet var diningMenu: LiteDiningMenu!
@@ -18,7 +20,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var events = [RSSElement]()
     
-    override func viewDidLoad() {
+    override func viewDidLoad() {        
         super.viewDidLoad()
         
         eventsView.eventsTable.dataSource = self
@@ -128,6 +130,18 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
         navigationController?.pushViewController(webView, animated: true)
         eventsView.eventsTable.cellForRow(at: indexPath)?.isSelected = false
+    }
+    
+}
+
+extension HomeViewController {
+    
+    class var viewController: HomeViewController {
+        guard let viewController = UIStoryboard(name: HomeViewController.storyboardID, bundle: nil).instantiateViewController(withIdentifier: HomeViewController.storyboardID) as? HomeViewController else {
+            fatalError("View Controller with identifier '\(HomeViewController.storyboardID)' was not found.")
+        }
+        
+        return viewController
     }
     
 }

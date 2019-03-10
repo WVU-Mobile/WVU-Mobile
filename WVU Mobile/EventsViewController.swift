@@ -10,7 +10,10 @@ import UIKit
 
 class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DateSelectorViewControllerDelegate {
 
-    @IBOutlet weak var events: EventsTable!
+    @IBOutlet weak var events: UITableView!
+    
+    fileprivate static let storyboardID = "Events"
+    
     var dateSelector: DateSelectorViewController!
     var gesture: UITapGestureRecognizer!
     var progressIndicator: UIActivityIndicatorView!
@@ -196,4 +199,16 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.events.removeGestureRecognizer(gesture)
     }
 
+}
+
+extension EventsViewController {
+    
+    class var viewController: EventsViewController {
+        guard let viewController = UIStoryboard(name: EventsViewController.storyboardID, bundle: nil).instantiateViewController(withIdentifier: EventsViewController.storyboardID) as? EventsViewController else {
+            fatalError("View Controller with identifier '\(EventsViewController.storyboardID)' was not found.")
+        }
+        
+        return viewController
+    }
+    
 }

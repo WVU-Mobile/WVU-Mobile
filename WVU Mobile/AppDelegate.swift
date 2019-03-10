@@ -13,13 +13,25 @@ import GoogleMaps
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
     var googleMapsApiKey = "AIzaSyB4m2xqBE4nwoHsb0gKVDEBdRIpXZ9ZkCg"
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         //Google Maps key
         GMSServices.provideAPIKey(googleMapsApiKey)
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+    
+        let tabs = [ WVUTab.today,
+                     WVUTab.events,
+                     WVUTab.transit,
+                     WVUTab.campus,
+                     WVUTab.news
+                    ]
+        
+        self.window?.rootViewController = WVUMobilePresenter.createTabBarController(with: tabs)
+        self.window?.makeKeyAndVisible()
         
         return true
     }

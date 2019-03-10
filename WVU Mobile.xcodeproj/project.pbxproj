@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		42173E431E1572C300CD1B4A /* EventsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42173E421E1572C300CD1B4A /* EventsTable.swift */; };
-		4233455F1E1BE6C000630003 /* OnCampusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4233455E1E1BE6C000630003 /* OnCampusTableViewController.swift */; };
+		4233455F1E1BE6C000630003 /* CampusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4233455E1E1BE6C000630003 /* CampusTableViewController.swift */; };
 		4252D4881E1C46C900946774 /* MapStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252D4871E1C46C900946774 /* MapStyles.swift */; };
 		425D1AA01E12F2C400B88972 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425D1A9F1E12F2C400B88972 /* ShadowView.swift */; };
 		425D1AA21E12F89600B88972 /* RoundedTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425D1AA11E12F89600B88972 /* RoundedTable.swift */; };
@@ -36,9 +35,8 @@
 		44022A751E06DC00004FC92F /* DiningHall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A741E06DC00004FC92F /* DiningHall.swift */; };
 		44022A771E06DE3F004FC92F /* MenuRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A761E06DE3F004FC92F /* MenuRequest.swift */; };
 		44022A7C1E06FF04004FC92F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A7B1E06FF04004FC92F /* Colors.swift */; };
-		44022A7E1E0700FD004FC92F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A7D1E0700FD004FC92F /* TabBarController.swift */; };
-		44022A801E0707A6004FC92F /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A7F1E0707A6004FC92F /* NavigationController.swift */; };
-		440CE5241E42C11800C34B53 /* OnCampusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CE5231E42C11800C34B53 /* OnCampusTableViewCell.swift */; };
+		44022A801E0707A6004FC92F /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44022A7F1E0707A6004FC92F /* Style.swift */; };
+		440CE5241E42C11800C34B53 /* CampusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440CE5231E42C11800C34B53 /* CampusTableViewCell.swift */; };
 		441B3BF51E417B75001304D7 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441B3BF41E417B75001304D7 /* HelpViewController.swift */; };
 		441B3BFB1E418136001304D7 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441B3BFA1E418136001304D7 /* SettingsTableViewController.swift */; };
 		442B48481E1C9E5B0014349E /* DiningHallFirstTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B48471E1C9E5B0014349E /* DiningHallFirstTableViewController.swift */; };
@@ -68,7 +66,6 @@
 		44A80B1F1E2125B5006DBFEA /* 38 - Blue & Gold.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80B0A1E2125B5006DBFEA /* 38 - Blue & Gold.txt */; };
 		44A80B201E2125B5006DBFEA /* 44 - Valley View.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44A80B0B1E2125B5006DBFEA /* 44 - Valley View.txt */; };
 		44A80B221E2125B5006DBFEA /* LineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A80B0D1E2125B5006DBFEA /* LineViewController.swift */; };
-		44A80B251E212710006DBFEA /* BusesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A80B241E212710006DBFEA /* BusesTableViewController.swift */; };
 		44A80B271E212856006DBFEA /* BusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A80B261E212856006DBFEA /* BusTableViewCell.swift */; };
 		44A80B291E212C4E006DBFEA /* BusLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A80B281E212C4E006DBFEA /* BusLine.swift */; };
 		44D097641E0D693D007476DD /* PRT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D097631E0D693D007476DD /* PRT.swift */; };
@@ -76,6 +73,16 @@
 		44D097681E0DEB5D007476DD /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D097671E0DEB5D007476DD /* Menu.swift */; };
 		44D0976A1E0E0755007476DD /* LiteDiningMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D097691E0E0755007476DD /* LiteDiningMenu.swift */; };
 		44FBEEF21E4F746A0067E661 /* PRTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FBEEF11E4F746A0067E661 /* PRTTableViewController.swift */; };
+		5F8C3B1C222CBF120002D05C /* WVUMobilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C3B1B222CBF120002D05C /* WVUMobilePresenter.swift */; };
+		5F8C3B1E222CCD660002D05C /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F8C3B1D222CCD660002D05C /* Events.storyboard */; };
+		5F8C3B20222CD0BF0002D05C /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F8C3B1F222CD0BF0002D05C /* News.storyboard */; };
+		5F8C3B23222CD31A0002D05C /* Campus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F8C3B22222CD31A0002D05C /* Campus.storyboard */; };
+		5F8C3B26222CD70A0002D05C /* Transit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F8C3B25222CD70A0002D05C /* Transit.storyboard */; };
+		5F8C3B28222CDA250002D05C /* TransitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C3B27222CDA250002D05C /* TransitViewController.swift */; };
+		5F8C3B2B222CE15B0002D05C /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F8C3B2A222CE15B0002D05C /* Today.storyboard */; };
+		5F8C3B2D222CEE220002D05C /* WVUTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C3B2C222CEE220002D05C /* WVUTab.swift */; };
+		5F8C3B30222F84E60002D05C /* LightStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C3B2F222F84E60002D05C /* LightStyle.swift */; };
+		5F8C3B33223060EB0002D05C /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C3B32223060EB0002D05C /* AppStyle.swift */; };
 		73497A515B69D2B0FF6DE443 /* Pods_PRT_Status_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B273B0E33D7BFB6819C6606E /* Pods_PRT_Status_Widget.framework */; };
 		9C8603531E03764600FE6531 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8603521E03764600FE6531 /* AppDelegate.swift */; };
 		9C8603551E03764600FE6531 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8603541E03764600FE6531 /* HomeViewController.swift */; };
@@ -118,8 +125,7 @@
 /* Begin PBXFileReference section */
 		17589BFFC7BC6CDEDF138938 /* Pods-PRT Status Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PRT Status Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PRT Status Widget/Pods-PRT Status Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		27C4A3E2EF693647B2218A0D /* Pods-WVU Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WVU Mobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WVU Mobile/Pods-WVU Mobile.debug.xcconfig"; sourceTree = "<group>"; };
-		42173E421E1572C300CD1B4A /* EventsTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTable.swift; sourceTree = "<group>"; };
-		4233455E1E1BE6C000630003 /* OnCampusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnCampusTableViewController.swift; sourceTree = "<group>"; };
+		4233455E1E1BE6C000630003 /* CampusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusTableViewController.swift; sourceTree = "<group>"; };
 		4252D4871E1C46C900946774 /* MapStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapStyles.swift; sourceTree = "<group>"; };
 		425D1A9F1E12F2C400B88972 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		425D1AA11E12F89600B88972 /* RoundedTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTable.swift; sourceTree = "<group>"; };
@@ -147,9 +153,8 @@
 		44022A741E06DC00004FC92F /* DiningHall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningHall.swift; sourceTree = "<group>"; };
 		44022A761E06DE3F004FC92F /* MenuRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuRequest.swift; sourceTree = "<group>"; };
 		44022A7B1E06FF04004FC92F /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		44022A7D1E0700FD004FC92F /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		44022A7F1E0707A6004FC92F /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		440CE5231E42C11800C34B53 /* OnCampusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnCampusTableViewCell.swift; sourceTree = "<group>"; };
+		44022A7F1E0707A6004FC92F /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		440CE5231E42C11800C34B53 /* CampusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusTableViewCell.swift; sourceTree = "<group>"; };
 		441B3BF41E417B75001304D7 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		441B3BFA1E418136001304D7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		442B48471E1C9E5B0014349E /* DiningHallFirstTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningHallFirstTableViewController.swift; sourceTree = "<group>"; };
@@ -179,7 +184,6 @@
 		44A80B0A1E2125B5006DBFEA /* 38 - Blue & Gold.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "38 - Blue & Gold.txt"; sourceTree = "<group>"; };
 		44A80B0B1E2125B5006DBFEA /* 44 - Valley View.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "44 - Valley View.txt"; sourceTree = "<group>"; };
 		44A80B0D1E2125B5006DBFEA /* LineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineViewController.swift; sourceTree = "<group>"; };
-		44A80B241E212710006DBFEA /* BusesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusesTableViewController.swift; sourceTree = "<group>"; };
 		44A80B261E212856006DBFEA /* BusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusTableViewCell.swift; sourceTree = "<group>"; };
 		44A80B281E212C4E006DBFEA /* BusLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLine.swift; sourceTree = "<group>"; };
 		44D097631E0D693D007476DD /* PRT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRT.swift; sourceTree = "<group>"; };
@@ -188,6 +192,16 @@
 		44D097691E0E0755007476DD /* LiteDiningMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiteDiningMenu.swift; sourceTree = "<group>"; };
 		44FBEEF11E4F746A0067E661 /* PRTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRTTableViewController.swift; sourceTree = "<group>"; };
 		4D33691FFEDCFF585CEACD1C /* Pods-PRT Status Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PRT Status Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-PRT Status Widget/Pods-PRT Status Widget.release.xcconfig"; sourceTree = "<group>"; };
+		5F8C3B1B222CBF120002D05C /* WVUMobilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WVUMobilePresenter.swift; sourceTree = "<group>"; };
+		5F8C3B1D222CCD660002D05C /* Events.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Events.storyboard; sourceTree = "<group>"; };
+		5F8C3B1F222CD0BF0002D05C /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
+		5F8C3B22222CD31A0002D05C /* Campus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Campus.storyboard; sourceTree = "<group>"; };
+		5F8C3B25222CD70A0002D05C /* Transit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Transit.storyboard; sourceTree = "<group>"; };
+		5F8C3B27222CDA250002D05C /* TransitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitViewController.swift; sourceTree = "<group>"; };
+		5F8C3B2A222CE15B0002D05C /* Today.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Today.storyboard; sourceTree = "<group>"; };
+		5F8C3B2C222CEE220002D05C /* WVUTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WVUTab.swift; sourceTree = "<group>"; };
+		5F8C3B2F222F84E60002D05C /* LightStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightStyle.swift; sourceTree = "<group>"; };
+		5F8C3B32223060EB0002D05C /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		942477C8A4B6B62F1DB1B436 /* Pods_WVU_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WVU_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C86034F1E03764600FE6531 /* WVU Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WVU Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8603521E03764600FE6531 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -306,11 +320,12 @@
 		5F10766B20C8A36000AD79F6 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				427537811E0C6485007E46B1 /* RSSRequest.swift */,
-				427537771E0C2581007E46B1 /* RSSElement.swift */,
+				5F8C3B1F222CD0BF0002D05C /* News.storyboard */,
 				425D1AAA1E1402B500B88972 /* NewsCell.swift */,
 				425D1AAE1E14114800B88972 /* NewsImageCell.swift */,
 				425D1AAC1E14044000B88972 /* NewsViewController.swift */,
+				427537771E0C2581007E46B1 /* RSSElement.swift */,
+				427537811E0C6485007E46B1 /* RSSRequest.swift */,
 			);
 			name = News;
 			sourceTree = "<group>";
@@ -319,7 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				44A80B231E2125BB006DBFEA /* Line Data */,
-				44A80B241E212710006DBFEA /* BusesTableViewController.swift */,
+				5F8C3B27222CDA250002D05C /* TransitViewController.swift */,
 				44A80B261E212856006DBFEA /* BusTableViewCell.swift */,
 				44A80B281E212C4E006DBFEA /* BusLine.swift */,
 				44A80B0D1E2125B5006DBFEA /* LineViewController.swift */,
@@ -330,11 +345,12 @@
 		5F10766D20C8A37200AD79F6 /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				42173E421E1572C300CD1B4A /* EventsTable.swift */,
+				5F8C3B1D222CCD660002D05C /* Events.storyboard */,
+				9C8603561E03764600FE6531 /* EventsViewController.swift */,
+				42FE8F901E1ABD6700FFCD85 /* FavoriteEventsTableViewController.swift */,
 				42FE8F8E1E157EA100FFCD85 /* LargeEventsCell.swift */,
 				4275377D1E0C352A007E46B1 /* LiteEventCell.swift */,
 				4275377F1E0C3775007E46B1 /* LiteEventsView.swift */,
-				9C8603561E03764600FE6531 /* EventsViewController.swift */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -367,19 +383,13 @@
 			name = Map;
 			sourceTree = "<group>";
 		};
-		5F10767120C8A39200AD79F6 /* Navigation */ = {
+		5F10767120C8A39200AD79F6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				44022A7D1E0700FD004FC92F /* TabBarController.swift */,
-				44022A7F1E0707A6004FC92F /* NavigationController.swift */,
-				440CE5231E42C11800C34B53 /* OnCampusTableViewCell.swift */,
-				4233455E1E1BE6C000630003 /* OnCampusTableViewController.swift */,
-				9C8603541E03764600FE6531 /* HomeViewController.swift */,
+				5F8C3B31222F85180002D05C /* Style */,
 				42D6472D1E14388900D0CE9F /* WebViewController.swift */,
-				425D1A9F1E12F2C400B88972 /* ShadowView.swift */,
-				425D1AA11E12F89600B88972 /* RoundedTable.swift */,
 			);
-			name = Navigation;
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		5F10767220C8A3B400AD79F6 /* Settings */ = {
@@ -387,7 +397,6 @@
 			children = (
 				441B3BFA1E418136001304D7 /* SettingsTableViewController.swift */,
 				44A6A5651E53483500468E44 /* FavoriteDiningHallTableViewController.swift */,
-				42FE8F901E1ABD6700FFCD85 /* FavoriteEventsTableViewController.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -395,15 +404,15 @@
 		5F10767320C8A55800AD79F6 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				5F8C3B1B222CBF120002D05C /* WVUMobilePresenter.swift */,
+				5F8C3B2C222CEE220002D05C /* WVUTab.swift */,
 				9C8603581E03764600FE6531 /* Main.storyboard */,
-				5F10766C20C8A36700AD79F6 /* Buses */,
-				5F10766A20C8A31A00AD79F6 /* Dining */,
+				5F8C3B21222CD2F50002D05C /* Campus */,
+				5F8C3B29222CDAB30002D05C /* Today */,
 				5F10766D20C8A37200AD79F6 /* Events */,
-				5F10766F20C8A38800AD79F6 /* Help */,
-				5F10767120C8A39200AD79F6 /* Navigation */,
-				5F10767020C8A38D00AD79F6 /* Map */,
+				5F10767120C8A39200AD79F6 /* Utilities */,
 				5F10766B20C8A36000AD79F6 /* News */,
-				5F10766E20C8A37C00AD79F6 /* PRT */,
+				5F8C3B24222CD65C0002D05C /* Transit */,
 				5F10767220C8A3B400AD79F6 /* Settings */,
 			);
 			name = Features;
@@ -425,6 +434,50 @@
 				4252D4871E1C46C900946774 /* MapStyles.swift */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		5F8C3B21222CD2F50002D05C /* Campus */ = {
+			isa = PBXGroup;
+			children = (
+				5F8C3B22222CD31A0002D05C /* Campus.storyboard */,
+				440CE5231E42C11800C34B53 /* CampusTableViewCell.swift */,
+				4233455E1E1BE6C000630003 /* CampusTableViewController.swift */,
+				5F10766A20C8A31A00AD79F6 /* Dining */,
+				5F10766F20C8A38800AD79F6 /* Help */,
+				5F10767020C8A38D00AD79F6 /* Map */,
+			);
+			name = Campus;
+			sourceTree = "<group>";
+		};
+		5F8C3B24222CD65C0002D05C /* Transit */ = {
+			isa = PBXGroup;
+			children = (
+				5F8C3B25222CD70A0002D05C /* Transit.storyboard */,
+				5F10766E20C8A37C00AD79F6 /* PRT */,
+				5F10766C20C8A36700AD79F6 /* Buses */,
+			);
+			name = Transit;
+			sourceTree = "<group>";
+		};
+		5F8C3B29222CDAB30002D05C /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				9C8603541E03764600FE6531 /* HomeViewController.swift */,
+				425D1A9F1E12F2C400B88972 /* ShadowView.swift */,
+				425D1AA11E12F89600B88972 /* RoundedTable.swift */,
+				5F8C3B2A222CE15B0002D05C /* Today.storyboard */,
+			);
+			name = Today;
+			sourceTree = "<group>";
+		};
+		5F8C3B31222F85180002D05C /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				5F8C3B32223060EB0002D05C /* AppStyle.swift */,
+				5F8C3B2F222F84E60002D05C /* LightStyle.swift */,
+				44022A7F1E0707A6004FC92F /* Style.swift */,
+			);
+			name = Style;
 			sourceTree = "<group>";
 		};
 		9C8603461E03764500FE6531 = {
@@ -490,13 +543,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C8603631E03764600FE6531 /* Build configuration list for PBXNativeTarget "WVU Mobile" */;
 			buildPhases = (
-				0D472175F437D2C2C0926D9E /* [CP] Check Pods Manifest.lock */,
 				9C86034B1E03764500FE6531 /* Sources */,
 				9C86034C1E03764500FE6531 /* Frameworks */,
 				9C86034D1E03764500FE6531 /* Resources */,
 				9C86037B1E037FDB00FE6531 /* Embed App Extensions */,
 				D60D6660AD3DE2AEFB1B6347 /* [CP] Embed Pods Frameworks */,
-				3669DDB30C417207492A2463 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -577,14 +628,17 @@
 			files = (
 				44A80B0F1E2125B5006DBFEA /* 2 - DT PM Mall.txt in Resources */,
 				44A80B131E2125B5006DBFEA /* 7 - Red Line.txt in Resources */,
+				5F8C3B20222CD0BF0002D05C /* News.storyboard in Resources */,
 				44A80B1B1E2125B5006DBFEA /* 16 - Pink Line.txt in Resources */,
 				44A80B181E2125B5006DBFEA /* 13 - Crown.txt in Resources */,
 				44A80B1E1E2125B5006DBFEA /* 30 - WR Late.txt in Resources */,
+				5F8C3B1E222CCD660002D05C /* Events.storyboard in Resources */,
 				44A80B1A1E2125B5006DBFEA /* 15 - Grafton Rd..txt in Resources */,
 				44A80B161E2125B5006DBFEA /* 11 - Cassville.txt in Resources */,
 				9C86035F1E03764600FE6531 /* LaunchScreen.storyboard in Resources */,
 				44A80B141E2125B5006DBFEA /* 8 - Tyrone.txt in Resources */,
 				44A80B101E2125B5006DBFEA /* 3 - Green Line.txt in Resources */,
+				5F8C3B2B222CE15B0002D05C /* Today.storyboard in Resources */,
 				44A80B1F1E2125B5006DBFEA /* 38 - Blue & Gold.txt in Resources */,
 				44A80B0E1E2125B5006DBFEA /* 1 - Campus PM.txt in Resources */,
 				44A80B1C1E2125B5006DBFEA /* 29 - Grey Line.txt in Resources */,
@@ -594,10 +648,12 @@
 				44A80B121E2125B5006DBFEA /* 6 - Gold Line.txt in Resources */,
 				44A80B171E2125B5006DBFEA /* 12 - Blue Line.txt in Resources */,
 				9C86035A1E03764600FE6531 /* Main.storyboard in Resources */,
+				5F8C3B26222CD70A0002D05C /* Transit.storyboard in Resources */,
 				44A80B201E2125B5006DBFEA /* 44 - Valley View.txt in Resources */,
 				44A80B111E2125B5006DBFEA /* 4 - Orange Line.txt in Resources */,
 				44A80B191E2125B5006DBFEA /* 14 - Mtn. Heights.txt in Resources */,
 				42A3E75B1E1BEA3600DB8140 /* PRT.txt in Resources */,
+				5F8C3B23222CD31A0002D05C /* Campus.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,42 +669,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0D472175F437D2C2C0926D9E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WVU Mobile-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3669DDB30C417207492A2463 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-WVU Mobile/Pods-WVU Mobile-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WVU Mobile/Pods-WVU Mobile-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D37CC6D6214A5E6C129088DB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -705,9 +725,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				42A3E7611E1BEB2200DB8140 /* MapViewController.swift in Sources */,
-				42173E431E1572C300CD1B4A /* EventsTable.swift in Sources */,
 				427537821E0C6485007E46B1 /* RSSRequest.swift in Sources */,
 				9C8603571E03764600FE6531 /* EventsViewController.swift in Sources */,
+				5F8C3B33223060EB0002D05C /* AppStyle.swift in Sources */,
 				442B48481E1C9E5B0014349E /* DiningHallFirstTableViewController.swift in Sources */,
 				427537801E0C3775007E46B1 /* LiteEventsView.swift in Sources */,
 				44D0976A1E0E0755007476DD /* LiteDiningMenu.swift in Sources */,
@@ -716,27 +736,28 @@
 				425D1AA01E12F2C400B88972 /* ShadowView.swift in Sources */,
 				441B3BFB1E418136001304D7 /* SettingsTableViewController.swift in Sources */,
 				42AC2DE71E3BDD79005A2638 /* CalendarDayCollectionViewCell.swift in Sources */,
-				44022A7E1E0700FD004FC92F /* TabBarController.swift in Sources */,
 				44022A751E06DC00004FC92F /* DiningHall.swift in Sources */,
 				9C8603531E03764600FE6531 /* AppDelegate.swift in Sources */,
 				44A80B271E212856006DBFEA /* BusTableViewCell.swift in Sources */,
 				425D1AAF1E14114800B88972 /* NewsImageCell.swift in Sources */,
+				5F8C3B1C222CBF120002D05C /* WVUMobilePresenter.swift in Sources */,
 				442B48501E1CA2820014349E /* DiningInfoViewController.swift in Sources */,
 				4252D4881E1C46C900946774 /* MapStyles.swift in Sources */,
 				44A6A5661E53483500468E44 /* FavoriteDiningHallTableViewController.swift in Sources */,
 				44D097681E0DEB5D007476DD /* Menu.swift in Sources */,
 				42E1BFEE1E1D42C4004E2CA4 /* DiningHallContainerViewController.swift in Sources */,
-				44A80B251E212710006DBFEA /* BusesTableViewController.swift in Sources */,
 				44FBEEF21E4F746A0067E661 /* PRTTableViewController.swift in Sources */,
 				427537781E0C2581007E46B1 /* RSSElement.swift in Sources */,
 				441B3BF51E417B75001304D7 /* HelpViewController.swift in Sources */,
-				44022A801E0707A6004FC92F /* NavigationController.swift in Sources */,
+				44022A801E0707A6004FC92F /* Style.swift in Sources */,
 				44A80B221E2125B5006DBFEA /* LineViewController.swift in Sources */,
 				42D6472E1E14388900D0CE9F /* WebViewController.swift in Sources */,
-				4233455F1E1BE6C000630003 /* OnCampusTableViewController.swift in Sources */,
+				4233455F1E1BE6C000630003 /* CampusTableViewController.swift in Sources */,
 				44022A7C1E06FF04004FC92F /* Colors.swift in Sources */,
 				42AC2DEA1E3BDD79005A2638 /* MonthViewController.swift in Sources */,
+				5F8C3B28222CDA250002D05C /* TransitViewController.swift in Sources */,
 				425D1AAD1E14044000B88972 /* NewsViewController.swift in Sources */,
+				5F8C3B2D222CEE220002D05C /* WVUTab.swift in Sources */,
 				42FE8F911E1ABD6700FFCD85 /* FavoriteEventsTableViewController.swift in Sources */,
 				44D097641E0D693D007476DD /* PRT.swift in Sources */,
 				42AC2DE91E3BDD79005A2638 /* DateSelectorViewController.swift in Sources */,
@@ -747,13 +768,14 @@
 				44A80B291E212C4E006DBFEA /* BusLine.swift in Sources */,
 				425D1AA21E12F89600B88972 /* RoundedTable.swift in Sources */,
 				44A6A5681E534BC700468E44 /* Global.swift in Sources */,
+				5F8C3B30222F84E60002D05C /* LightStyle.swift in Sources */,
 				9C8603551E03764600FE6531 /* HomeViewController.swift in Sources */,
 				442B484E1E1CA25D0014349E /* DiningTableViewController.swift in Sources */,
 				4275377E1E0C352A007E46B1 /* LiteEventCell.swift in Sources */,
 				44D097661E0D6AF0007476DD /* PRTRequest.swift in Sources */,
 				42AC2DE81E3BDD79005A2638 /* CalendarView.swift in Sources */,
 				44022A771E06DE3F004FC92F /* MenuRequest.swift in Sources */,
-				440CE5241E42C11800C34B53 /* OnCampusTableViewCell.swift in Sources */,
+				440CE5241E42C11800C34B53 /* CampusTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
