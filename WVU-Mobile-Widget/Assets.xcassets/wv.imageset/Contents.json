@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "da-1 2.png",
+      "filename" : "flyingwv 2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "da-1 1.png",
+      "filename" : "flyingwv 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "da-1.png",
+      "filename" : "flyingwv.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
