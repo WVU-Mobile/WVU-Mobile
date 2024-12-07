@@ -7,6 +7,7 @@
 
 import SwiftUI
 import UIKit
+import PRTStatus
 
 /// The main view of the app - contains PRT status, news snippet, and "More" section linking to the rest of the app content.
 struct ContentView: View {
@@ -28,7 +29,7 @@ struct ContentView: View {
                     }
                 }
                 .refreshable {
-                    prtViewModel.fetch()
+                    await prtViewModel.fetch()
                     newsViewModel.fetch()
                 }
             }

@@ -30,9 +30,7 @@ extension Date {
             return Date()
         }
     }
-}
-
-extension Date {
+    
     var hourPrint: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm a"

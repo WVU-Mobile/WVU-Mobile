@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+import PRTStatus
+
 /// An overview of the current PRT status.
 struct PRTView: View {
     @StateObject var viewModel: PRTService
@@ -32,8 +34,8 @@ struct PRTView: View {
                 .foregroundColor(Styles.Colors.text2)
                 .multilineTextAlignment(.center)
         }.padding()
-            .onAppear {
-                viewModel.fetch()
+            .task {
+                await viewModel.fetch()
             }
     }
 }

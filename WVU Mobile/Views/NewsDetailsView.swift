@@ -112,15 +112,3 @@ struct SafariView: UIViewControllerRepresentable {
     }
 
 }
-
-//struct NewsDetailsView_Previews: PreviewProvider {
-//    @StateObject static var viewModel = NewspaperService()
-//
-//    static var previews: some View {
-//        NavigationView {
-//            NewsDetailsView(viewModel: viewModel)
-//        }.onAppear {
-//            viewModel.fetch()
-//        }
-//    }
-//}

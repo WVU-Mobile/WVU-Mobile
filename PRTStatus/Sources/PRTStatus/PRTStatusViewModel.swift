@@ -1,25 +1,22 @@
 //
 //  PRTStatusViewModel.swift
-//  WVU Mobile
+//  WVU Mobile Networking
 //
-//  Created by Kaitlyn Landmesser on 11/15/22.
+//  Created by Kaitlyn Landmesser on 12/5/24.
 //
-
 import Foundation
 
-class PRTService: ObservableObject {
-    @Published var headlineText: String = ""
-    @Published var detailText: String = ""
-    @Published var lastUpdatedText: String = ""
+public class PRTService: ObservableObject {
+    @Published public var headlineText: String = ""
+    @Published public var detailText: String = ""
+    @Published public var lastUpdatedText: String = ""
         
-    init() {}
+    public init() {}
 
-    func fetch() {
-        PRTStatusService.getStatus { prtModel, error in
-            DispatchQueue.main.async {
-                self.updatePublishedProperties(prtModel: prtModel)
-            }
-        }
+    public func fetch() async {
+        let service = PRTStatusService()
+        let model = try? await service.fetchData(at: Date())
+        updatePublishedProperties(prtModel: model)
     }
     
     private func updatePublishedProperties(prtModel: PRTModel?) {
@@ -37,14 +34,14 @@ class PRTService: ObservableObject {
     }
 }
 
-class PRTStatusViewModel {
+public class PRTStatusViewModel {
     private let model: PRTModel
     
-    init(model: PRTModel) {
+    public init(model: PRTModel) {
         self.model = model
     }
     
-    var headlineText: String {
+    public var headlineText: String {
         switch model.status {
         case .normal:
             return "All systems go."
@@ -59,14 +56,27 @@ class PRTStatusViewModel {
         }
     }
     
-    var detailText: String {
+    public var detailText: String {
         return model.message
     }
     
-    var lastUpdatedText: String {
+    public var lastUpdatedText: String {
         guard let timeInterval = TimeInterval(model.timestamp) else { return "" }
         let lastUpdatedDate = Date(timeIntervalSince1970: timeInterval)
         return "Updated at \(lastUpdatedDate.hourPrint) on \(lastUpdatedDate.day)."
     }
 }
     
+extension Date {
+    var hourPrint: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm a"
+        return dateFormatter.string(from: self)
+    }
+    
+    var day: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        return dateFormatter.string(from: self)
+    }
+}

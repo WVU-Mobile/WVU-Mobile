@@ -16,6 +16,8 @@
 		42B0D2F52CF3866100EFB124 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4298AD062CEFCB8500B0D1EA /* WidgetKit.framework */; };
 		42B0D2F62CF3866100EFB124 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4298AD082CEFCB8500B0D1EA /* SwiftUI.framework */; };
 		42B0D3032CF3866300EFB124 /* WVU-Mobile-WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 42B0D2F42CF3866100EFB124 /* WVU-Mobile-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		42C1A6422D032409005CDF4D /* PRTStatus in Frameworks */ = {isa = PBXBuildFile; productRef = 42C1A6412D032409005CDF4D /* PRTStatus */; };
+		42C1A6442D04748D005CDF4D /* PRTStatus in Frameworks */ = {isa = PBXBuildFile; productRef = 42C1A6432D04748D005CDF4D /* PRTStatus */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,7 @@
 		4298AD062CEFCB8500B0D1EA /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		4298AD082CEFCB8500B0D1EA /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		42B0D2F42CF3866100EFB124 /* WVU-Mobile-WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WVU-Mobile-WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42C1A63B2D032034005CDF4D /* PRTStatus */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PRTStatus; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -94,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42C1A6422D032409005CDF4D /* PRTStatus in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +120,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42B0D2F62CF3866100EFB124 /* SwiftUI.framework in Frameworks */,
+				42C1A6442D04748D005CDF4D /* PRTStatus in Frameworks */,
 				42B0D2F52CF3866100EFB124 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +137,7 @@
 				42B0D2F72CF3866100EFB124 /* WVU-Mobile-Widget */,
 				4298AD052CEFCB8500B0D1EA /* Frameworks */,
 				428DA87B291EC978004BA178 /* Products */,
+				42C1A63B2D032034005CDF4D /* PRTStatus */,
 			);
 			sourceTree = "<group>";
 		};
@@ -274,6 +280,7 @@
 			);
 			name = "WVU-Mobile-WidgetExtension";
 			packageProductDependencies = (
+				42C1A6432D04748D005CDF4D /* PRTStatus */,
 			);
 			productName = "WVU-Mobile-WidgetExtension";
 			productReference = 42B0D2F42CF3866100EFB124 /* WVU-Mobile-WidgetExtension.appex */;
@@ -817,6 +824,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		42C1A6412D032409005CDF4D /* PRTStatus */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PRTStatus;
+		};
+		42C1A6432D04748D005CDF4D /* PRTStatus */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PRTStatus;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 428DA872291EC978004BA178 /* Project object */;
 }
