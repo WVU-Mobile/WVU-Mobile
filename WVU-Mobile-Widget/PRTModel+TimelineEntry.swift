@@ -7,6 +7,7 @@
 import WidgetKit
 import PRTStatus
 
+/// Extends PRTModel to support Widgets. 
 extension PRTModel: @retroactive TimelineEntry {
     public var date: Date {
         guard let timeInterval = TimeInterval(timestamp) else {

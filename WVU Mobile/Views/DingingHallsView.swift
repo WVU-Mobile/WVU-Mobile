@@ -59,10 +59,14 @@ struct DiningHallDetailsView: View {
     var model: DiningHallModel
     var body: some View {
         VStack {
-            Text(model.name)
-                .font(Styles.Fonts.body)
-                .foregroundColor(Styles.Colors.text2)
-                .multilineTextAlignment(.leading)
+            Button {
+                showSafari = true
+            } label: {
+                Text(model.name)
+                    .font(Styles.Fonts.body)
+                    .foregroundColor(Styles.Colors.text2)
+                    .multilineTextAlignment(.leading)
+            }
         }
         .padding()
         .background(Styles.Colors.accent)
@@ -72,9 +76,6 @@ struct DiningHallDetailsView: View {
             radius: Styles.Constants.cornerRadius
         )
         .frame(maxWidth: .infinity)
-        .onTapGesture {
-            self.showSafari = true
-        }
         .sheet(isPresented: self.$showSafari) {
             if let url = model.url {
                 SafariView(url: url)

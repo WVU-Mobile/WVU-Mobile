@@ -11,7 +11,7 @@ import Foundation
 struct RSSElement: Hashable {
     var title: String
     var description: String
-    var link: String // possible URL?
+    var link: String 
     var date: Date
     
     var source: RSSService.NewsSource?

@@ -98,25 +98,26 @@ struct NumberView: View {
     var model: EmergencyNumberModel
     var body: some View {
         VStack {
-            Text(model.name)
-                .font(Styles.Fonts.bodyStrong)
-                .foregroundColor(Styles.Colors.text2)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            Spacer(minLength: 5)
-            Text(model.phoneNumber)
-                .font(Styles.Fonts.body)
-                .foregroundColor(Styles.Colors.accentBlue)
-                .frame(maxWidth: .infinity, alignment: .leading)
+            Button {
+                if let url = model.url {
+                    UIApplication.shared.open(url)
+                }
+            } label: {
+                Text(model.name)
+                    .font(Styles.Fonts.bodyStrong)
+                    .foregroundColor(Styles.Colors.text2)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .multilineTextAlignment(.leading)
+                Spacer(minLength: 5)
+                Text(model.phoneNumber)
+                    .font(Styles.Fonts.body)
+                    .foregroundColor(Styles.Colors.accentBlue)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+            }
         }
         .padding()
         .background(Styles.Colors.background2)
         .cornerRadius(Styles.Constants.cornerRadius)
         .shadow(color: Styles.Colors.shadow, radius: Styles.Constants.cornerRadius)
-        .onTapGesture {
-            if let url = model.url {
-                UIApplication.shared.open(url)
-            }
-        }
-
     }
 }

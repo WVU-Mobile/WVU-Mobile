@@ -8,8 +8,9 @@
 import PRTStatus
 import SwiftUI
 
+/// Support for Small, Medium, and Large Home Screen Widgets. 
 struct PRTWidgetView: View {
-    var viewModel: PRTStatusViewModel
+    var viewModel: PRTViewModel
     @Environment(\.widgetFamily) var family
 
     var body: some View {
@@ -23,71 +24,75 @@ struct PRTWidgetView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
                 Text(viewModel.headlineText)
-                    .font(.custom("AvenirNext-Bold", size: 25))
-                    .foregroundColor(Color("text2"))
+                    .font(Styles.Fonts.headline)
+                    .foregroundColor(Styles.Colors.text)
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                 Text(viewModel.lastUpdatedText)
-                    .font(.custom("AvenirNext-Medium", size: 15))
-                    .foregroundColor(Color("text2"))
+                    .font(Styles.Fonts.bodyStrong)
+                    .foregroundColor(Styles.Colors.text)
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
             case .systemMedium:
                 HStack {
                     Text(viewModel.headlineText)
-                        .font(.custom("AvenirNext-Bold", size: 25))
-                        .foregroundColor(Color("text2"))
+                        .font(Styles.Fonts.headline)
+                        .foregroundColor(Styles.Colors.text)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Spacer()
-                    Image(uiImage: UIImage(imageLiteralResourceName: "prt"))
+                    Image(uiImage: Styles.Image.prt)
                         .resizable()
-                        .frame(width: 40, height: 40)
+                        .frame(
+                            width: Styles.ImageSize.small,
+                            height: Styles.ImageSize.small)
                         .frame(maxWidth: .infinity, alignment: .trailing)
                 }
 
                 Text(viewModel.detailText)
-                    .font(.custom("AvenirNext-Medium", size: 20))
-                    .foregroundColor(Color("text2"))
+                    .font(Styles.Fonts.bodyStrong)
+                    .foregroundColor(Styles.Colors.text)
                     .multilineTextAlignment(.leading)
                     .lineLimit(2)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Text(viewModel.lastUpdatedText)
-                    .font(.custom("AvenirNext-Medium", size: 12))
-                    .foregroundColor(Color("text2"))
+                    .font(Styles.Fonts.subtitle)
+                    .foregroundColor(Styles.Colors.text)
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
             case .systemLarge:
                 Text(viewModel.headlineText)
-                    .font(.custom("AvenirNext-Bold", size: 35))
-                    .foregroundColor(Color("text2"))
+                    .font(Styles.Fonts.headline)
+                    .foregroundColor(Styles.Colors.text)
                     .frame(maxWidth: .infinity, alignment: .center)
                 Text(viewModel.detailText)
-                    .font(.custom("AvenirNext-Medium", size: 20))
-                    .foregroundColor(Color("text2"))
+                    .font(Styles.Fonts.bodyStrong)
+                    .foregroundColor(Styles.Colors.text)
                     .multilineTextAlignment(.center)
                     .lineLimit(7)
                     .frame(maxWidth: .infinity, alignment: .center)
-                Image(uiImage: UIImage(imageLiteralResourceName: "prt"))
+                Image(uiImage: Styles.Image.prt)
                     .resizable()
-                    .frame(width: 75, height: 75)
+                    .frame(
+                        width: Styles.ImageSize.large,
+                        height: Styles.ImageSize.large)
                     .frame(maxWidth: .infinity, alignment: .center)
                 Text(viewModel.lastUpdatedText)
-                    .font(.custom("AvenirNext-Medium", size: 12))
-                    .foregroundColor(Color("text2"))
+                    .font(Styles.Fonts.subtitle)
+                    .foregroundColor(Styles.Colors.text)
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, alignment: .center)
-            case .accessoryInline:
+            case .accessoryInline, .accessoryCircular, .accessoryRectangular:
                 Text(viewModel.headlineText)
             default:
                 Text(viewModel.headlineText)
-                    .font(.custom("AvenirNext-Bold", size: 25))
-                    .foregroundColor(Color("text2"))
+                    .font(Styles.Fonts.headline)
+                    .foregroundColor(Styles.Colors.text)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                 Text(viewModel.lastUpdatedText)
-                    .font(.custom("AvenirNext-Medium", size: 15))
-                    .foregroundColor(Color("text2"))
+                    .font(Styles.Fonts.bodyStrong)
+                    .foregroundColor(Styles.Colors.text)
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }

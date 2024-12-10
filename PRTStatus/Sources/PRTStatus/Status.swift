@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum Status: String, Codable {
+public enum Status: String, Codable, Sendable {
     case normal = "1"
     case downBetween = "2"
     case down = "3"

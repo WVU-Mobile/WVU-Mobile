@@ -26,7 +26,6 @@ struct EventsView: View {
                 .edgesIgnoringSafeArea(.all)
                 VStack {
                     if showDatePicker {
-                        
                         DatePicker("Date", selection: $current_date, in: Date()..., displayedComponents: [.date])
                             .datePickerStyle(GraphicalDatePickerStyle())
                             .padding()
@@ -85,35 +84,5 @@ struct EventsView: View {
             }
         }
         .toolbarBackground(Styles.Colors.background1, for: .navigationBar)
-    }
-}
-
-struct EventsViewDetailsView: View {
-    @State var showSafari = false
-    
-    var model: EventsViewModel
-    var body: some View {
-        VStack {
-            Text(model.name)
-                .font(Styles.Fonts.body)
-                .foregroundColor(Styles.Colors.text)
-                .multilineTextAlignment(.leading)
-        }
-        .padding()
-        .background(Styles.Colors.accent)
-        .cornerRadius(10)
-        .shadow(color: Styles.Colors.shadow, radius: 10)
-        .frame(maxWidth: .infinity)
-        .onTapGesture {
-            self.showSafari = true
-        }
-        .sheet(isPresented: self.$showSafari) {
-            if let url = model.url {
-                SafariView(url: url)
-            } else {
-                Text("Something went wrong.")
-            }
-        }
-
     }
 }

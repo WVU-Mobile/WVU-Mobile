@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct PRTModel: Codable {
+public struct PRTModel: Codable, Sendable {
     public let status: Status
     public let message: String
     public let timestamp: String

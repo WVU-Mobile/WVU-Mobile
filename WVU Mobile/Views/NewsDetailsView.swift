@@ -78,6 +78,9 @@ struct NewsHeadlineDetailsView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
+        .accessibilityRepresentation {
+            Text("\(newsModel.title), Published at \(newsModel.date.hourPrint), \(newsModel.date.day). \(showBody ? newsModel.body : "") Tap to read more.")
+        }
         .padding()
         .background(Styles.Colors.accent)
         .cornerRadius(Styles.Constants.cornerRadius)

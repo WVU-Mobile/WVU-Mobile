@@ -11,7 +11,7 @@ import PRTStatus
 
 /// The main view of the app - contains PRT status, news snippet, and "More" section linking to the rest of the app content.
 struct ContentView: View {
-    @StateObject var prtViewModel = PRTService()
+    @StateObject var prtViewModel = PRTViewModel()
     @StateObject var newsViewModel = NewspaperService()
 
     var body: some View {
@@ -29,7 +29,7 @@ struct ContentView: View {
                     }
                 }
                 .refreshable {
-                    await prtViewModel.fetch()
+                    prtViewModel.fetch()
                     newsViewModel.fetch()
                 }
             }

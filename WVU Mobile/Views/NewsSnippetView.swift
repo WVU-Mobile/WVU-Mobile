@@ -26,14 +26,26 @@ struct NewsSnippetView: View {
                         .foregroundColor(Styles.Colors.text)
                 })
             }
+            .accessibilityRepresentation(representation: {
+                NavigationLink(destination: NewsDetailsView(viewModel: newsViewModel, showBody: true),
+                               label: {
+                    Text("News. View.")
+                        .font(Styles.Fonts.bodyStrong)
+                        .padding()
+                        .foregroundColor(Styles.Colors.text)
+                })
+            })
             VStack {
                 ForEach(newsViewModel.news.prefix(2), id: \.self) { news in
                     let newsModel = RSSModel(title: news.title,
                                               body: news.description,
                                               imageName: news.source?.imageName ?? "wv",
                                               urlString: news.link,
-                                              date: news.date)
-                    NewsHeadlineView(newsModel: newsModel)
+                                              date: news.date)                    
+                    NavigationLink(destination: NewsDetailsView(viewModel: newsViewModel, showBody: true),
+                                   label: {
+                        NewsHeadlineView(newsModel: newsModel)
+                    })
                 }
             }
         }
@@ -61,12 +73,18 @@ struct NewsHeadlineView: View {
                     .lineLimit(1)
                     .font(Styles.Fonts.bodyStrong)
                     .foregroundColor(Styles.Colors.text2)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 Text(newsModel.body)
                     .font(Styles.Fonts.subtitle)
                     .lineLimit(3)
                     .foregroundColor(Styles.Colors.text2)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+
             }
-            .frame(maxWidth: .infinity)
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .accessibilityRepresentation {
+            Text("\(newsModel.title). \(newsModel.body). Tap for more news stories.")
         }
         .padding()
         .background(Styles.Colors.accent)

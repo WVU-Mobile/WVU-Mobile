@@ -6,12 +6,11 @@
 //
 
 import SwiftUI
-
 import PRTStatus
 
 /// An overview of the current PRT status.
 struct PRTView: View {
-    @StateObject var viewModel: PRTService
+    @StateObject var viewModel: PRTViewModel
     
     var body: some View {
         VStack(alignment: .center) {
@@ -33,9 +32,12 @@ struct PRTView: View {
                 .font(Styles.Fonts.subtitleStrong)
                 .foregroundColor(Styles.Colors.text2)
                 .multilineTextAlignment(.center)
-        }.padding()
-            .task {
-                await viewModel.fetch()
-            }
+        }.accessibilityRepresentation(representation: {
+            Text("\(viewModel.headlineText) \(viewModel.detailText) \(viewModel.lastUpdatedText)")
+        })
+        .padding()
+        .onAppear {
+            viewModel.fetch()
+        }
     }
 }

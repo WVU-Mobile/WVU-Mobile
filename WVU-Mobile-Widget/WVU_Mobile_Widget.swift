@@ -45,7 +45,7 @@ struct WVU_Mobile_WidgetEntryView : View {
 
     var body: some View {
         VStack {
-            PRTWidgetView(viewModel: PRTStatusViewModel(model: entry))
+            PRTWidgetView(viewModel: PRTViewModel(model: entry))
         }
     }
 }
@@ -55,9 +55,9 @@ struct WVU_Mobile_Widget: Widget {
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            PRTWidgetView(viewModel: PRTStatusViewModel(model: entry))
+            PRTWidgetView(viewModel: PRTViewModel(model: entry))
             .containerBackground(for: .widget) {
-                Color("background1")
+                Color("background")
             }
         }
         .configurationDisplayName("WVU PRT")
@@ -69,8 +69,22 @@ struct WVU_Mobile_Widget: Widget {
 #Preview(as: .systemSmall) {
     WVU_Mobile_Widget()
 } timeline: {
-    PRTModel(status: .downBetween,
-                         message: "The PRT is down between Beechurst and Engineering Stations. Buses dispatched.",
-                         timestamp: "",
-                         bussesDispatched: "true")
+    PRTModel(
+        status: .downBetween,
+        message: "The PRT is down between Beechurst and Engineering Stations. Buses dispatched.",
+        timestamp: Date().timeIntervalSince1970.description,
+        bussesDispatched: "true"
+    )
+    PRTModel(
+        status: .normal,
+        message: "The PRT is running on a normal schedule.",
+        timestamp: Date().timeIntervalSince1970.description,
+        bussesDispatched: "true"
+    )
+    PRTModel(
+        status: .closed,
+        message: "The PRT is closed on Sundays.",
+        timestamp: Date().timeIntervalSince1970.description,
+        bussesDispatched: "true"
+    )
 }
