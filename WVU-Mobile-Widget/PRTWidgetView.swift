@@ -23,13 +23,13 @@ struct PRTWidgetView: View {
                     .frame(width: 40, height: 40)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                Text(viewModel.headlineText)
+                Text(viewModel.miniHeadlineText)
                     .font(Styles.Fonts.headline)
                     .foregroundColor(Styles.Colors.text)
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
-                Text(viewModel.lastUpdatedText)
+                Text(viewModel.miniLastUpdatedText)
                     .font(Styles.Fonts.bodyStrong)
                     .foregroundColor(Styles.Colors.text)
                     .multilineTextAlignment(.leading)
@@ -37,16 +37,15 @@ struct PRTWidgetView: View {
             case .systemMedium:
                 HStack {
                     Text(viewModel.headlineText)
-                        .font(Styles.Fonts.headline)
+                        .font(Styles.Fonts.headlineMedium)
                         .foregroundColor(Styles.Colors.text)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    Spacer()
                     Image(uiImage: Styles.Image.prt)
                         .resizable()
                         .frame(
                             width: Styles.ImageSize.small,
                             height: Styles.ImageSize.small)
-                        .frame(maxWidth: .infinity, alignment: .trailing)
+                        .frame(maxWidth: .leastNonzeroMagnitude, alignment: .trailing)
                 }
 
                 Text(viewModel.detailText)
@@ -83,14 +82,14 @@ struct PRTWidgetView: View {
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, alignment: .center)
             case .accessoryInline, .accessoryCircular, .accessoryRectangular:
-                Text(viewModel.headlineText)
+                Text(viewModel.miniHeadlineText)
             default:
-                Text(viewModel.headlineText)
+                Text(viewModel.miniHeadlineText)
                     .font(Styles.Fonts.headline)
                     .foregroundColor(Styles.Colors.text)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
-                Text(viewModel.lastUpdatedText)
+                Text(viewModel.miniLastUpdatedText)
                     .font(Styles.Fonts.bodyStrong)
                     .foregroundColor(Styles.Colors.text)
                     .multilineTextAlignment(.leading)

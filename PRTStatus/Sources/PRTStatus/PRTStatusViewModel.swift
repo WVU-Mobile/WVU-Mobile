@@ -50,9 +50,9 @@ import Foundation
     private func getHeadlineText(model: PRTModel) -> String {
         switch model.status {
         case .normal:
-            return "Let's Go Mountaineers!"
+            return "All systems go."
         case .downBetween, .free, .downOne, .downMultiple,  .downAll, .down:
-            return "Eat ..it Pitt."
+            return "We've got a problem here."
         case .closedSunday, .closed:
             return "No ones home."
         case .unknown:
@@ -63,13 +63,13 @@ import Foundation
     private func getLastUpdatedText(model: PRTModel) -> String {
         guard let timeInterval = TimeInterval(model.timestamp) else { return "" }
         let lastUpdatedDate = Date(timeIntervalSince1970: timeInterval)
-        return "Updated at \(lastUpdatedDate.hourPrint) on \(lastUpdatedDate.day)."
+        return "Updated \(lastUpdatedDate.relativeDateFull)."
     }
     
     public func getMiniLastUpdatedText(model: PRTModel) -> String {
         guard let timeInterval = TimeInterval(model.timestamp) else { return "" }
         let lastUpdatedDate = Date(timeIntervalSince1970: timeInterval)
-        return "\(lastUpdatedDate.hourPrint), \(lastUpdatedDate.dayShort)"
+        return lastUpdatedDate.relativeDateMini
     }
     
     private func getMiniText(model: PRTModel) -> String {
@@ -103,5 +103,17 @@ extension Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "M/d"
         return dateFormatter.string(from: self)
+    }
+    
+    var relativeDateFull: String {
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .full
+        return formatter.string(for: self) ?? ""
+    }
+    
+    var relativeDateMini: String {
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .short
+        return formatter.string(for: self) ?? ""
     }
 }

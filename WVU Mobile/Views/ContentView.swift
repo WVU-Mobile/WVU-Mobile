@@ -35,6 +35,10 @@ struct ContentView: View {
             }
             .navigationBarTitle("")
         }
+        .onAppear() {
+            prtViewModel.fetch()
+            newsViewModel.fetch()
+        }
         .accentColor(Styles.Colors.text)
     }
 }

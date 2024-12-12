@@ -15,6 +15,7 @@ enum Styles {
     
     struct Fonts {
         static let headline = Font.custom("AvenirNext-Bold", size: 25)
+        static let headlineMedium = Font.custom("AvenirNext-Bold", size: 20)
         static let body = Font.custom("AvenirNext", size: 20)
         static let bodyStrong = Font.custom("AvenirNext-Medium", size: 15)
         static let subtitle = Font.custom("AvenirNext-Medium", size: 12)

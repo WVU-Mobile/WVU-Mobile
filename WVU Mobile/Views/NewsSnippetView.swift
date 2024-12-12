@@ -79,6 +79,7 @@ struct NewsHeadlineView: View {
                     .lineLimit(3)
                     .foregroundColor(Styles.Colors.text2)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    .multilineTextAlignment(.leading)
 
             }
             .frame(maxWidth: .infinity, alignment: .leading)

@@ -62,7 +62,7 @@ struct WVU_Mobile_Widget: Widget {
         }
         .configurationDisplayName("WVU PRT")
         .description("View the PRT status in one glance.")
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge, .accessoryInline])
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge, .accessoryInline, .accessoryCircular, .accessoryRectangular])
     }
 }
 
@@ -72,19 +72,19 @@ struct WVU_Mobile_Widget: Widget {
     PRTModel(
         status: .downBetween,
         message: "The PRT is down between Beechurst and Engineering Stations. Buses dispatched.",
-        timestamp: Date().timeIntervalSince1970.description,
+        timestamp: "1733054252",
         bussesDispatched: "true"
     )
     PRTModel(
         status: .normal,
         message: "The PRT is running on a normal schedule.",
-        timestamp: Date().timeIntervalSince1970.description,
+        timestamp: "1733831852",
         bussesDispatched: "true"
     )
     PRTModel(
         status: .closed,
         message: "The PRT is closed on Sundays.",
-        timestamp: Date().timeIntervalSince1970.description,
+        timestamp: "1733896652",
         bussesDispatched: "true"
     )
 }
