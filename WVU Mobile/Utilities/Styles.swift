@@ -11,7 +11,7 @@ enum Styles {
     struct Colors {
         static let background1 = Color("background")
         static let background2 = Color("background2")
-        static let accent = Color("accent")
+        static let accent = Color("AccentColor")
         static let accent2 = Color("accent2").opacity(0.4)
         static let accentBlue = Color("accentBlue")
         static let shadow = Color("shadow").opacity(0.2)
