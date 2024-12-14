@@ -52,9 +52,9 @@ import Foundation
         case .normal:
             return "All systems go."
         case .downBetween, .free, .downOne, .downMultiple,  .downAll, .down:
-            return "We've got a problem here."
+            return "We’ve got a problem here."
         case .closedSunday, .closed:
-            return "No ones home."
+            return "No one’s home."
         case .unknown:
             return "Searching..."
         }
